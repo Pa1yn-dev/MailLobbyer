@@ -30,13 +30,13 @@
     <AppXManifest Include="C:\Users\peter\Documents\GitHub\Mail-Lobbyer\src\bin\Debug\net7.0-windows10.0.19041.0\win10-x64\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2023-05-17T20:47:43.969</Modified>
+      <Modified>2023-05-17T22:18:46.908</Modified>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
     <AppxPackagedFile Include="C:\Users\peter\Documents\GitHub\Mail-Lobbyer\src\bin\Debug\net7.0-windows10.0.19041.0\win10-x64\resources.pri">
       <PackagePath>resources.pri</PackagePath>
-      <Modified>2023-05-17T20:47:43.532</Modified>
+      <Modified>2023-05-17T22:18:46.500</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\peter\Documents\GitHub\Mail-Lobbyer\src\bin\Debug\net7.0-windows10.0.19041.0\win10-x64\Mail-Lobbyer.runtimeconfig.json">
       <PackagePath>Mail-Lobbyer.runtimeconfig.json</PackagePath>
@@ -44,11 +44,11 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\peter\Documents\GitHub\Mail-Lobbyer\src\bin\Debug\net7.0-windows10.0.19041.0\win10-x64\Mail-Lobbyer.dll">
       <PackagePath>Mail-Lobbyer.dll</PackagePath>
-      <Modified>2023-05-17T20:47:42.431</Modified>
+      <Modified>2023-05-17T22:18:45.282</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\peter\Documents\GitHub\Mail-Lobbyer\src\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\apphost.exe">
       <PackagePath>Mail-Lobbyer.exe</PackagePath>
-      <Modified>2023-05-17T20:47:42.522</Modified>
+      <Modified>2023-05-17T22:18:45.381</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\peter\.nuget\packages\microsoft.netcore.app.runtime.win-x64\7.0.4\runtimes\win-x64\lib\net7.0\Microsoft.CSharp.dll">
       <PackagePath>Microsoft.CSharp.dll</PackagePath>
@@ -920,7 +920,7 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\peter\Documents\GitHub\Mail-Lobbyer\src\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\Mail-Lobbyer.deps.json">
       <PackagePath>Mail-Lobbyer.deps.json</PackagePath>
-      <Modified>2023-05-17T20:47:43.817</Modified>
+      <Modified>2023-05-17T22:18:46.767</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Program Files\dotnet\packs\Microsoft.Maui.Controls.Ref.win\7.0.59\ref\net7.0-windows10.0.19041\Microsoft.Maui.Controls.Compatibility.pri">
       <PackagePath>Microsoft.Maui.Controls.Compatibility.pri</PackagePath>
