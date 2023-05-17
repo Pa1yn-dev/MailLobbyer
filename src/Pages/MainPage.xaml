@@ -6,38 +6,61 @@
             
 
     <ScrollView>
-        <VerticalStackLayout
+
+        <StackLayout
             Spacing="25"
             Padding="30,0"
             VerticalOptions="Center">
-
-            <Image
-                Source="dotnet_bot.png"
-                SemanticProperties.Description="Cute dot net bot waving hi to you!"
-                HeightRequest="200"
-                HorizontalOptions="Center" />
-
+            
             <Label
-                Text="Hello, World!"
+                Text="Mail-Lobbyer"
                 SemanticProperties.HeadingLevel="Level1"
-                FontSize="32"
+                FontSize="15"
                 HorizontalOptions="Center" />
 
-            <Label
-                Text="Welcome to .NET Multi-platform App UI"
-                SemanticProperties.HeadingLevel="Level2"
-                SemanticProperties.Description="Welcome to dot net Multi platform App U I"
-                FontSize="18"
-                HorizontalOptions="Center" />
+            <Picker x:Name="GroupPicker" 
+                        FontSize="18" Title="Group:" 
+                        Margin="0,0,0,10">
+                <Picker.ItemsSource>
+                    <x:Array Type="{x:Type x:String}">
+                        <x:String>USA</x:String>
+                        <x:String>Canada</x:String>
+                        <x:String>UK</x:String>
+                        <x:String>Australia</x:String>
+                    </x:Array>
+                </Picker.ItemsSource>
+            </Picker>
+
+            <Label Text="Name:" 
+                       FontSize="18" />
+
+            <Entry x:Name="NameEntry" 
+                       Placeholder="Enter your name" 
+                       Margin="0,0,0,10" />
+
+            <Label Text="Email:" 
+                       FontSize="18" />
+
+            <Entry x:Name="EmailEntry" 
+                       Placeholder="Enter your email" 
+                       Margin="0,0,0,10" />
+
+            <Label Text="Phone Number:" 
+                       FontSize="18" />
+
+            <Entry x:Name="PhoneEntry" 
+                       Placeholder="Enter your phone number" 
+                       Margin="0,0,0,10" />
 
             <Button
-                x:Name="CounterBtn"
-                Text="Click me"
-                SemanticProperties.Hint="Counts the number of times you click"
-                Clicked="OnCounterClicked"
+                x:Name="SendEmail"
+                Text="Send"
+                SemanticProperties.Hint="Sends email to defined group"
+                Clicked="SendEmail_Clicked"
                 HorizontalOptions="Center" />
 
-        </VerticalStackLayout>
+        </StackLayout>
+        
     </ScrollView>
 
 </ContentPage>

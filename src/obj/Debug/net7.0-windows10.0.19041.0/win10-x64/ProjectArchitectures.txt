@@ -1,1 +1,1 @@
-C:\Users\peter\Documents\GitHub\Mail-Lobbyer\Mail-Lobbyer.csproj;x64
+C:\Users\peter\Documents\GitHub\Mail-Lobbyer\src\Mail-Lobbyer.csproj;x64

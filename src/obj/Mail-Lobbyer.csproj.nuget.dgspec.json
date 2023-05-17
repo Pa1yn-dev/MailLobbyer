@@ -1,24 +1,26 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\peter\\Documents\\GitHub\\Mail-Lobbyer\\Mail-Lobbyer.csproj": {}
+    "C:\\Users\\peter\\Documents\\GitHub\\Mail-Lobbyer\\src\\Mail-Lobbyer.csproj": {}
   },
   "projects": {
-    "C:\\Users\\peter\\Documents\\GitHub\\Mail-Lobbyer\\Mail-Lobbyer.csproj": {
+    "C:\\Users\\peter\\Documents\\GitHub\\Mail-Lobbyer\\src\\Mail-Lobbyer.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\peter\\Documents\\GitHub\\Mail-Lobbyer\\Mail-Lobbyer.csproj",
+        "projectUniqueName": "C:\\Users\\peter\\Documents\\GitHub\\Mail-Lobbyer\\src\\Mail-Lobbyer.csproj",
         "projectName": "Mail-Lobbyer",
-        "projectPath": "C:\\Users\\peter\\Documents\\GitHub\\Mail-Lobbyer\\Mail-Lobbyer.csproj",
+        "projectPath": "C:\\Users\\peter\\Documents\\GitHub\\Mail-Lobbyer\\src\\Mail-Lobbyer.csproj",
         "packagesPath": "C:\\Users\\peter\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\peter\\Documents\\GitHub\\Mail-Lobbyer\\obj\\",
+        "outputPath": "C:\\Users\\peter\\Documents\\GitHub\\Mail-Lobbyer\\src\\obj\\",
         "projectStyle": "PackageReference",
         "crossTargeting": true,
         "fallbackFolders": [
+          "C:\\Users\\peter\\AppData\\Roaming\\Godot\\mono\\GodotNuGetFallbackFolder",
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
           "C:\\Users\\peter\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\peter\\AppData\\Roaming\\NuGet\\config\\Godot.Offline.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],

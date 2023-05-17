@@ -8,45 +8,45 @@ build_property.PlatformNeutralAssembly =
 build_property.EnforceExtendedAnalyzerRules = 
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = Mail_Lobbyer
-build_property.ProjectDir = C:\Users\peter\Documents\GitHub\Mail-Lobbyer\
+build_property.ProjectDir = C:\Users\peter\Documents\GitHub\Mail-Lobbyer\src\
 
-[C:/Users/peter/Documents/GitHub/Mail-Lobbyer/App.xaml]
+[C:/Users/peter/Documents/GitHub/Mail-Lobbyer/src/App.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = Mail_Lobbyer.App.xaml
 build_metadata.AdditionalFiles.TargetPath = App.xaml
 build_metadata.AdditionalFiles.RelativePath = App.xaml
 
-[C:/Users/peter/Documents/GitHub/Mail-Lobbyer/AppShell.xaml]
+[C:/Users/peter/Documents/GitHub/Mail-Lobbyer/src/AppShell.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = Mail_Lobbyer.AppShell.xaml
 build_metadata.AdditionalFiles.TargetPath = AppShell.xaml
 build_metadata.AdditionalFiles.RelativePath = AppShell.xaml
 
-[C:/Users/peter/Documents/GitHub/Mail-Lobbyer/Pages/AboutPage.xaml]
+[C:/Users/peter/Documents/GitHub/Mail-Lobbyer/src/Pages/AboutPage.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = Mail_Lobbyer.Pages.AboutPage.xaml
 build_metadata.AdditionalFiles.TargetPath = Pages\AboutPage.xaml
 build_metadata.AdditionalFiles.RelativePath = Pages\AboutPage.xaml
 
-[C:/Users/peter/Documents/GitHub/Mail-Lobbyer/Pages/GroupPage.xaml]
+[C:/Users/peter/Documents/GitHub/Mail-Lobbyer/src/Pages/GroupPage.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = Mail_Lobbyer.Pages.GroupPage.xaml
 build_metadata.AdditionalFiles.TargetPath = Pages\GroupPage.xaml
 build_metadata.AdditionalFiles.RelativePath = Pages\GroupPage.xaml
 
-[C:/Users/peter/Documents/GitHub/Mail-Lobbyer/Pages/MainPage.xaml]
+[C:/Users/peter/Documents/GitHub/Mail-Lobbyer/src/Pages/MainPage.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = Mail_Lobbyer.Pages.MainPage.xaml
 build_metadata.AdditionalFiles.TargetPath = Pages\MainPage.xaml
 build_metadata.AdditionalFiles.RelativePath = Pages\MainPage.xaml
 
-[C:/Users/peter/Documents/GitHub/Mail-Lobbyer/Resources/Styles/Colors.xaml]
+[C:/Users/peter/Documents/GitHub/Mail-Lobbyer/src/Resources/Styles/Colors.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = Mail_Lobbyer.Resources.Styles.Colors.xaml
 build_metadata.AdditionalFiles.TargetPath = Resources\Styles\Colors.xaml
 build_metadata.AdditionalFiles.RelativePath = Resources\Styles\Colors.xaml
 
-[C:/Users/peter/Documents/GitHub/Mail-Lobbyer/Resources/Styles/Styles.xaml]
+[C:/Users/peter/Documents/GitHub/Mail-Lobbyer/src/Resources/Styles/Styles.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = Mail_Lobbyer.Resources.Styles.Styles.xaml
 build_metadata.AdditionalFiles.TargetPath = Resources\Styles\Styles.xaml

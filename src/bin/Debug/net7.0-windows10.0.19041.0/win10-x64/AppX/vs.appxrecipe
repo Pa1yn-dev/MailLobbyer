@@ -10,14 +10,15 @@
     <PackageArchitecture>x64</PackageArchitecture>
     <PackageIdentityName>f88b3b0f-8ee5-4a06-894e-32ece9aeaae3</PackageIdentityName>
     <PackageIdentityPublisher>CN=User Name</PackageIdentityPublisher>
-    <IntermediateOutputPath>C:\Users\peter\Documents\GitHub\Mail-Lobbyer\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\</IntermediateOutputPath>
+    <IntermediateOutputPath>C:\Users\peter\Documents\GitHub\Mail-Lobbyer\src\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\</IntermediateOutputPath>
     <RemoteDeploymentType>CopyToDevice</RemoteDeploymentType>
     <PackageRegistrationPath>
     </PackageRegistrationPath>
     <RemoveNonLayoutFiles>false</RemoveNonLayoutFiles>
     <DeployOptionalPackages>false</DeployOptionalPackages>
-    <WindowsSdkPath>C:\Program Files %28x86%29\Windows Kits\10\</WindowsSdkPath>
-    <LayoutDir>C:\Users\peter\Documents\GitHub\Mail-Lobbyer\bin\Debug\net7.0-windows10.0.19041.0\win10-x64\AppX</LayoutDir>
+    <WindowsSdkPath>
+    </WindowsSdkPath>
+    <LayoutDir>C:\Users\peter\Documents\GitHub\Mail-Lobbyer\src\bin\Debug\net7.0-windows10.0.19041.0\win10-x64\AppX</LayoutDir>
     <RegisteredManifestChecksum>AF4843E75D0DF61FC23844D6CA91932BD136F88B62EB6652F641C36C007B28D4</RegisteredManifestChecksum>
     <RegisteredPackageMoniker>f88b3b0f-8ee5-4a06-894e-32ece9aeaae3_1.0.0.1_x64__9zz4h110yvjzm</RegisteredPackageMoniker>
     <RegisteredUserModeAppID>f88b3b0f-8ee5-4a06-894e-32ece9aeaae3_9zz4h110yvjzm!App</RegisteredUserModeAppID>
@@ -26,28 +27,28 @@
     <RegisteredVersion>1.0.0.1</RegisteredVersion>
   </PropertyGroup>
   <ItemGroup>
-    <AppXManifest Include="C:\Users\peter\Documents\GitHub\Mail-Lobbyer\bin\Debug\net7.0-windows10.0.19041.0\win10-x64\AppxManifest.xml">
+    <AppXManifest Include="C:\Users\peter\Documents\GitHub\Mail-Lobbyer\src\bin\Debug\net7.0-windows10.0.19041.0\win10-x64\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2023-03-22T14:21:16.863</Modified>
+      <Modified>2023-05-17T20:47:43.969</Modified>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
-    <AppxPackagedFile Include="C:\Users\peter\Documents\GitHub\Mail-Lobbyer\bin\Debug\net7.0-windows10.0.19041.0\win10-x64\resources.pri">
+    <AppxPackagedFile Include="C:\Users\peter\Documents\GitHub\Mail-Lobbyer\src\bin\Debug\net7.0-windows10.0.19041.0\win10-x64\resources.pri">
       <PackagePath>resources.pri</PackagePath>
-      <Modified>2023-03-22T14:21:16.414</Modified>
+      <Modified>2023-05-17T20:47:43.532</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\peter\Documents\GitHub\Mail-Lobbyer\bin\Debug\net7.0-windows10.0.19041.0\win10-x64\Mail-Lobbyer.runtimeconfig.json">
+    <AppxPackagedFile Include="C:\Users\peter\Documents\GitHub\Mail-Lobbyer\src\bin\Debug\net7.0-windows10.0.19041.0\win10-x64\Mail-Lobbyer.runtimeconfig.json">
       <PackagePath>Mail-Lobbyer.runtimeconfig.json</PackagePath>
-      <Modified>2023-03-22T14:02:47.141</Modified>
+      <Modified>2023-05-17T20:22:07.086</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\peter\Documents\GitHub\Mail-Lobbyer\bin\Debug\net7.0-windows10.0.19041.0\win10-x64\Mail-Lobbyer.dll">
+    <AppxPackagedFile Include="C:\Users\peter\Documents\GitHub\Mail-Lobbyer\src\bin\Debug\net7.0-windows10.0.19041.0\win10-x64\Mail-Lobbyer.dll">
       <PackagePath>Mail-Lobbyer.dll</PackagePath>
-      <Modified>2023-03-22T14:21:14.727</Modified>
+      <Modified>2023-05-17T20:47:42.431</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\peter\Documents\GitHub\Mail-Lobbyer\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\apphost.exe">
+    <AppxPackagedFile Include="C:\Users\peter\Documents\GitHub\Mail-Lobbyer\src\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\apphost.exe">
       <PackagePath>Mail-Lobbyer.exe</PackagePath>
-      <Modified>2023-03-22T14:21:14.810</Modified>
+      <Modified>2023-05-17T20:47:42.522</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\peter\.nuget\packages\microsoft.netcore.app.runtime.win-x64\7.0.4\runtimes\win-x64\lib\net7.0\Microsoft.CSharp.dll">
       <PackagePath>Microsoft.CSharp.dll</PackagePath>
@@ -917,9 +918,9 @@
       <PackagePath>Microsoft.WindowsAppRuntime.Bootstrap.dll</PackagePath>
       <Modified>2022-11-08T19:31:24.000</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\peter\Documents\GitHub\Mail-Lobbyer\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\Mail-Lobbyer.deps.json">
+    <AppxPackagedFile Include="C:\Users\peter\Documents\GitHub\Mail-Lobbyer\src\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\Mail-Lobbyer.deps.json">
       <PackagePath>Mail-Lobbyer.deps.json</PackagePath>
-      <Modified>2023-03-22T14:21:16.678</Modified>
+      <Modified>2023-05-17T20:47:43.817</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Program Files\dotnet\packs\Microsoft.Maui.Controls.Ref.win\7.0.59\ref\net7.0-windows10.0.19041\Microsoft.Maui.Controls.Compatibility.pri">
       <PackagePath>Microsoft.Maui.Controls.Compatibility.pri</PackagePath>
@@ -933,241 +934,241 @@
       <PackagePath>Microsoft.Maui.pri</PackagePath>
       <Modified>2023-01-19T17:16:40.000</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\peter\Documents\GitHub\Mail-Lobbyer\Resources\Raw\AboutAssets.txt">
+    <AppxPackagedFile Include="C:\Users\peter\Documents\GitHub\Mail-Lobbyer\src\Resources\Raw\AboutAssets.txt">
       <PackagePath>AboutAssets.txt</PackagePath>
-      <Modified>2023-03-22T13:51:21.439</Modified>
+      <Modified>2023-05-17T20:20:13.745</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\peter\Documents\GitHub\Mail-Lobbyer\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\sp\splashSplashScreen.scale-100.png">
+    <AppxPackagedFile Include="C:\Users\peter\Documents\GitHub\Mail-Lobbyer\src\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\sp\splashSplashScreen.scale-100.png">
       <PackagePath>splashSplashScreen.scale-100.png</PackagePath>
-      <Modified>2023-03-22T13:51:56.528</Modified>
+      <Modified>2023-05-17T20:20:19.822</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\peter\Documents\GitHub\Mail-Lobbyer\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\sp\splashSplashScreen.scale-125.png">
+    <AppxPackagedFile Include="C:\Users\peter\Documents\GitHub\Mail-Lobbyer\src\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\sp\splashSplashScreen.scale-125.png">
       <PackagePath>splashSplashScreen.scale-125.png</PackagePath>
-      <Modified>2023-03-22T13:51:56.547</Modified>
+      <Modified>2023-05-17T20:20:19.823</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\peter\Documents\GitHub\Mail-Lobbyer\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\sp\splashSplashScreen.scale-150.png">
+    <AppxPackagedFile Include="C:\Users\peter\Documents\GitHub\Mail-Lobbyer\src\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\sp\splashSplashScreen.scale-150.png">
       <PackagePath>splashSplashScreen.scale-150.png</PackagePath>
-      <Modified>2023-03-22T13:51:56.573</Modified>
+      <Modified>2023-05-17T20:20:19.824</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\peter\Documents\GitHub\Mail-Lobbyer\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\sp\splashSplashScreen.scale-200.png">
+    <AppxPackagedFile Include="C:\Users\peter\Documents\GitHub\Mail-Lobbyer\src\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\sp\splashSplashScreen.scale-200.png">
       <PackagePath>splashSplashScreen.scale-200.png</PackagePath>
-      <Modified>2023-03-22T13:51:56.613</Modified>
+      <Modified>2023-05-17T20:20:19.824</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\peter\Documents\GitHub\Mail-Lobbyer\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\sp\splashSplashScreen.scale-400.png">
+    <AppxPackagedFile Include="C:\Users\peter\Documents\GitHub\Mail-Lobbyer\src\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\sp\splashSplashScreen.scale-400.png">
       <PackagePath>splashSplashScreen.scale-400.png</PackagePath>
-      <Modified>2023-03-22T13:51:56.767</Modified>
+      <Modified>2023-05-17T20:20:19.826</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\peter\Documents\GitHub\Mail-Lobbyer\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\f\OpenSans-Regular.ttf">
+    <AppxPackagedFile Include="C:\Users\peter\Documents\GitHub\Mail-Lobbyer\src\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\f\OpenSans-Regular.ttf">
       <PackagePath>OpenSans-Regular.ttf</PackagePath>
-      <Modified>2023-03-22T13:51:21.435</Modified>
+      <Modified>2023-05-17T20:20:19.778</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\peter\Documents\GitHub\Mail-Lobbyer\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\f\OpenSans-Semibold.ttf">
+    <AppxPackagedFile Include="C:\Users\peter\Documents\GitHub\Mail-Lobbyer\src\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\f\OpenSans-Semibold.ttf">
       <PackagePath>OpenSans-Semibold.ttf</PackagePath>
-      <Modified>2023-03-22T13:51:21.436</Modified>
+      <Modified>2023-05-17T20:20:19.780</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\peter\Documents\GitHub\Mail-Lobbyer\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\r\appicon.ico">
+    <AppxPackagedFile Include="C:\Users\peter\Documents\GitHub\Mail-Lobbyer\src\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\r\appicon.ico">
       <PackagePath>appicon.ico</PackagePath>
-      <Modified>2023-03-22T13:51:56.818</Modified>
+      <Modified>2023-05-17T20:20:19.782</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\peter\Documents\GitHub\Mail-Lobbyer\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLargeTile.scale-100.png">
+    <AppxPackagedFile Include="C:\Users\peter\Documents\GitHub\Mail-Lobbyer\src\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLargeTile.scale-100.png">
       <PackagePath>appiconLargeTile.scale-100.png</PackagePath>
-      <Modified>2023-03-22T13:51:57.105</Modified>
+      <Modified>2023-05-17T20:20:19.783</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\peter\Documents\GitHub\Mail-Lobbyer\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLargeTile.scale-125.png">
+    <AppxPackagedFile Include="C:\Users\peter\Documents\GitHub\Mail-Lobbyer\src\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLargeTile.scale-125.png">
       <PackagePath>appiconLargeTile.scale-125.png</PackagePath>
-      <Modified>2023-03-22T13:51:57.120</Modified>
+      <Modified>2023-05-17T20:20:19.784</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\peter\Documents\GitHub\Mail-Lobbyer\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLargeTile.scale-150.png">
+    <AppxPackagedFile Include="C:\Users\peter\Documents\GitHub\Mail-Lobbyer\src\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLargeTile.scale-150.png">
       <PackagePath>appiconLargeTile.scale-150.png</PackagePath>
-      <Modified>2023-03-22T13:51:57.134</Modified>
+      <Modified>2023-05-17T20:20:19.785</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\peter\Documents\GitHub\Mail-Lobbyer\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLargeTile.scale-200.png">
+    <AppxPackagedFile Include="C:\Users\peter\Documents\GitHub\Mail-Lobbyer\src\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLargeTile.scale-200.png">
       <PackagePath>appiconLargeTile.scale-200.png</PackagePath>
-      <Modified>2023-03-22T13:51:57.155</Modified>
+      <Modified>2023-05-17T20:20:19.786</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\peter\Documents\GitHub\Mail-Lobbyer\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLargeTile.scale-400.png">
+    <AppxPackagedFile Include="C:\Users\peter\Documents\GitHub\Mail-Lobbyer\src\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLargeTile.scale-400.png">
       <PackagePath>appiconLargeTile.scale-400.png</PackagePath>
-      <Modified>2023-03-22T13:51:57.235</Modified>
+      <Modified>2023-05-17T20:20:19.787</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\peter\Documents\GitHub\Mail-Lobbyer\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.altform-lightunplated_targetsize-16.png">
+    <AppxPackagedFile Include="C:\Users\peter\Documents\GitHub\Mail-Lobbyer\src\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.altform-lightunplated_targetsize-16.png">
       <PackagePath>appiconLogo.altform-lightunplated_targetsize-16.png</PackagePath>
-      <Modified>2023-03-22T13:51:56.904</Modified>
+      <Modified>2023-05-17T20:20:19.787</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\peter\Documents\GitHub\Mail-Lobbyer\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.altform-lightunplated_targetsize-24.png">
+    <AppxPackagedFile Include="C:\Users\peter\Documents\GitHub\Mail-Lobbyer\src\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.altform-lightunplated_targetsize-24.png">
       <PackagePath>appiconLogo.altform-lightunplated_targetsize-24.png</PackagePath>
-      <Modified>2023-03-22T13:51:56.907</Modified>
+      <Modified>2023-05-17T20:20:19.788</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\peter\Documents\GitHub\Mail-Lobbyer\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.altform-lightunplated_targetsize-256.png">
+    <AppxPackagedFile Include="C:\Users\peter\Documents\GitHub\Mail-Lobbyer\src\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.altform-lightunplated_targetsize-256.png">
       <PackagePath>appiconLogo.altform-lightunplated_targetsize-256.png</PackagePath>
-      <Modified>2023-03-22T13:51:56.920</Modified>
+      <Modified>2023-05-17T20:20:19.789</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\peter\Documents\GitHub\Mail-Lobbyer\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.altform-lightunplated_targetsize-32.png">
+    <AppxPackagedFile Include="C:\Users\peter\Documents\GitHub\Mail-Lobbyer\src\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.altform-lightunplated_targetsize-32.png">
       <PackagePath>appiconLogo.altform-lightunplated_targetsize-32.png</PackagePath>
-      <Modified>2023-03-22T13:51:56.910</Modified>
+      <Modified>2023-05-17T20:20:19.789</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\peter\Documents\GitHub\Mail-Lobbyer\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.altform-lightunplated_targetsize-48.png">
+    <AppxPackagedFile Include="C:\Users\peter\Documents\GitHub\Mail-Lobbyer\src\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.altform-lightunplated_targetsize-48.png">
       <PackagePath>appiconLogo.altform-lightunplated_targetsize-48.png</PackagePath>
-      <Modified>2023-03-22T13:51:56.912</Modified>
+      <Modified>2023-05-17T20:20:19.790</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\peter\Documents\GitHub\Mail-Lobbyer\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.altform-unplated_targetsize-16.png">
+    <AppxPackagedFile Include="C:\Users\peter\Documents\GitHub\Mail-Lobbyer\src\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.altform-unplated_targetsize-16.png">
       <PackagePath>appiconLogo.altform-unplated_targetsize-16.png</PackagePath>
-      <Modified>2023-03-22T13:51:56.885</Modified>
+      <Modified>2023-05-17T20:20:19.791</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\peter\Documents\GitHub\Mail-Lobbyer\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.altform-unplated_targetsize-24.png">
+    <AppxPackagedFile Include="C:\Users\peter\Documents\GitHub\Mail-Lobbyer\src\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.altform-unplated_targetsize-24.png">
       <PackagePath>appiconLogo.altform-unplated_targetsize-24.png</PackagePath>
-      <Modified>2023-03-22T13:51:56.887</Modified>
+      <Modified>2023-05-17T20:20:19.792</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\peter\Documents\GitHub\Mail-Lobbyer\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.altform-unplated_targetsize-256.png">
+    <AppxPackagedFile Include="C:\Users\peter\Documents\GitHub\Mail-Lobbyer\src\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.altform-unplated_targetsize-256.png">
       <PackagePath>appiconLogo.altform-unplated_targetsize-256.png</PackagePath>
-      <Modified>2023-03-22T13:51:56.901</Modified>
+      <Modified>2023-05-17T20:20:19.792</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\peter\Documents\GitHub\Mail-Lobbyer\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.altform-unplated_targetsize-32.png">
+    <AppxPackagedFile Include="C:\Users\peter\Documents\GitHub\Mail-Lobbyer\src\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.altform-unplated_targetsize-32.png">
       <PackagePath>appiconLogo.altform-unplated_targetsize-32.png</PackagePath>
-      <Modified>2023-03-22T13:51:56.890</Modified>
+      <Modified>2023-05-17T20:20:19.793</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\peter\Documents\GitHub\Mail-Lobbyer\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.altform-unplated_targetsize-48.png">
+    <AppxPackagedFile Include="C:\Users\peter\Documents\GitHub\Mail-Lobbyer\src\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.altform-unplated_targetsize-48.png">
       <PackagePath>appiconLogo.altform-unplated_targetsize-48.png</PackagePath>
-      <Modified>2023-03-22T13:51:56.893</Modified>
+      <Modified>2023-05-17T20:20:19.793</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\peter\Documents\GitHub\Mail-Lobbyer\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.scale-100.png">
+    <AppxPackagedFile Include="C:\Users\peter\Documents\GitHub\Mail-Lobbyer\src\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.scale-100.png">
       <PackagePath>appiconLogo.scale-100.png</PackagePath>
-      <Modified>2023-03-22T13:51:56.845</Modified>
+      <Modified>2023-05-17T20:20:19.794</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\peter\Documents\GitHub\Mail-Lobbyer\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.scale-125.png">
+    <AppxPackagedFile Include="C:\Users\peter\Documents\GitHub\Mail-Lobbyer\src\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.scale-125.png">
       <PackagePath>appiconLogo.scale-125.png</PackagePath>
-      <Modified>2023-03-22T13:51:56.848</Modified>
+      <Modified>2023-05-17T20:20:19.794</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\peter\Documents\GitHub\Mail-Lobbyer\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.scale-150.png">
+    <AppxPackagedFile Include="C:\Users\peter\Documents\GitHub\Mail-Lobbyer\src\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.scale-150.png">
       <PackagePath>appiconLogo.scale-150.png</PackagePath>
-      <Modified>2023-03-22T13:51:56.852</Modified>
+      <Modified>2023-05-17T20:20:19.795</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\peter\Documents\GitHub\Mail-Lobbyer\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.scale-200.png">
+    <AppxPackagedFile Include="C:\Users\peter\Documents\GitHub\Mail-Lobbyer\src\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.scale-200.png">
       <PackagePath>appiconLogo.scale-200.png</PackagePath>
-      <Modified>2023-03-22T13:51:56.856</Modified>
+      <Modified>2023-05-17T20:20:19.796</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\peter\Documents\GitHub\Mail-Lobbyer\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.scale-400.png">
+    <AppxPackagedFile Include="C:\Users\peter\Documents\GitHub\Mail-Lobbyer\src\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.scale-400.png">
       <PackagePath>appiconLogo.scale-400.png</PackagePath>
-      <Modified>2023-03-22T13:51:56.861</Modified>
+      <Modified>2023-05-17T20:20:19.796</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\peter\Documents\GitHub\Mail-Lobbyer\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.targetsize-16.png">
+    <AppxPackagedFile Include="C:\Users\peter\Documents\GitHub\Mail-Lobbyer\src\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.targetsize-16.png">
       <PackagePath>appiconLogo.targetsize-16.png</PackagePath>
-      <Modified>2023-03-22T13:51:56.864</Modified>
+      <Modified>2023-05-17T20:20:19.797</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\peter\Documents\GitHub\Mail-Lobbyer\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.targetsize-24.png">
+    <AppxPackagedFile Include="C:\Users\peter\Documents\GitHub\Mail-Lobbyer\src\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.targetsize-24.png">
       <PackagePath>appiconLogo.targetsize-24.png</PackagePath>
-      <Modified>2023-03-22T13:51:56.867</Modified>
+      <Modified>2023-05-17T20:20:19.797</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\peter\Documents\GitHub\Mail-Lobbyer\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.targetsize-256.png">
+    <AppxPackagedFile Include="C:\Users\peter\Documents\GitHub\Mail-Lobbyer\src\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.targetsize-256.png">
       <PackagePath>appiconLogo.targetsize-256.png</PackagePath>
-      <Modified>2023-03-22T13:51:56.881</Modified>
+      <Modified>2023-05-17T20:20:19.798</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\peter\Documents\GitHub\Mail-Lobbyer\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.targetsize-32.png">
+    <AppxPackagedFile Include="C:\Users\peter\Documents\GitHub\Mail-Lobbyer\src\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.targetsize-32.png">
       <PackagePath>appiconLogo.targetsize-32.png</PackagePath>
-      <Modified>2023-03-22T13:51:56.870</Modified>
+      <Modified>2023-05-17T20:20:19.799</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\peter\Documents\GitHub\Mail-Lobbyer\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.targetsize-48.png">
+    <AppxPackagedFile Include="C:\Users\peter\Documents\GitHub\Mail-Lobbyer\src\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.targetsize-48.png">
       <PackagePath>appiconLogo.targetsize-48.png</PackagePath>
-      <Modified>2023-03-22T13:51:56.873</Modified>
+      <Modified>2023-05-17T20:20:19.800</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\peter\Documents\GitHub\Mail-Lobbyer\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconMediumTile.scale-100.png">
+    <AppxPackagedFile Include="C:\Users\peter\Documents\GitHub\Mail-Lobbyer\src\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconMediumTile.scale-100.png">
       <PackagePath>appiconMediumTile.scale-100.png</PackagePath>
-      <Modified>2023-03-22T13:51:56.968</Modified>
+      <Modified>2023-05-17T20:20:19.801</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\peter\Documents\GitHub\Mail-Lobbyer\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconMediumTile.scale-125.png">
+    <AppxPackagedFile Include="C:\Users\peter\Documents\GitHub\Mail-Lobbyer\src\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconMediumTile.scale-125.png">
       <PackagePath>appiconMediumTile.scale-125.png</PackagePath>
-      <Modified>2023-03-22T13:51:56.974</Modified>
+      <Modified>2023-05-17T20:20:19.802</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\peter\Documents\GitHub\Mail-Lobbyer\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconMediumTile.scale-150.png">
+    <AppxPackagedFile Include="C:\Users\peter\Documents\GitHub\Mail-Lobbyer\src\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconMediumTile.scale-150.png">
       <PackagePath>appiconMediumTile.scale-150.png</PackagePath>
-      <Modified>2023-03-22T13:51:56.980</Modified>
+      <Modified>2023-05-17T20:20:19.802</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\peter\Documents\GitHub\Mail-Lobbyer\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconMediumTile.scale-200.png">
+    <AppxPackagedFile Include="C:\Users\peter\Documents\GitHub\Mail-Lobbyer\src\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconMediumTile.scale-200.png">
       <PackagePath>appiconMediumTile.scale-200.png</PackagePath>
-      <Modified>2023-03-22T13:51:56.991</Modified>
+      <Modified>2023-05-17T20:20:19.803</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\peter\Documents\GitHub\Mail-Lobbyer\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconMediumTile.scale-400.png">
+    <AppxPackagedFile Include="C:\Users\peter\Documents\GitHub\Mail-Lobbyer\src\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconMediumTile.scale-400.png">
       <PackagePath>appiconMediumTile.scale-400.png</PackagePath>
-      <Modified>2023-03-22T13:51:57.013</Modified>
+      <Modified>2023-05-17T20:20:19.804</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\peter\Documents\GitHub\Mail-Lobbyer\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconSmallTile.scale-100.png">
+    <AppxPackagedFile Include="C:\Users\peter\Documents\GitHub\Mail-Lobbyer\src\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconSmallTile.scale-100.png">
       <PackagePath>appiconSmallTile.scale-100.png</PackagePath>
-      <Modified>2023-03-22T13:51:56.943</Modified>
+      <Modified>2023-05-17T20:20:19.804</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\peter\Documents\GitHub\Mail-Lobbyer\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconSmallTile.scale-125.png">
+    <AppxPackagedFile Include="C:\Users\peter\Documents\GitHub\Mail-Lobbyer\src\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconSmallTile.scale-125.png">
       <PackagePath>appiconSmallTile.scale-125.png</PackagePath>
-      <Modified>2023-03-22T13:51:56.947</Modified>
+      <Modified>2023-05-17T20:20:19.805</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\peter\Documents\GitHub\Mail-Lobbyer\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconSmallTile.scale-150.png">
+    <AppxPackagedFile Include="C:\Users\peter\Documents\GitHub\Mail-Lobbyer\src\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconSmallTile.scale-150.png">
       <PackagePath>appiconSmallTile.scale-150.png</PackagePath>
-      <Modified>2023-03-22T13:51:56.951</Modified>
+      <Modified>2023-05-17T20:20:19.805</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\peter\Documents\GitHub\Mail-Lobbyer\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconSmallTile.scale-200.png">
+    <AppxPackagedFile Include="C:\Users\peter\Documents\GitHub\Mail-Lobbyer\src\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconSmallTile.scale-200.png">
       <PackagePath>appiconSmallTile.scale-200.png</PackagePath>
-      <Modified>2023-03-22T13:51:56.955</Modified>
+      <Modified>2023-05-17T20:20:19.806</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\peter\Documents\GitHub\Mail-Lobbyer\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconSmallTile.scale-400.png">
+    <AppxPackagedFile Include="C:\Users\peter\Documents\GitHub\Mail-Lobbyer\src\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconSmallTile.scale-400.png">
       <PackagePath>appiconSmallTile.scale-400.png</PackagePath>
-      <Modified>2023-03-22T13:51:56.963</Modified>
+      <Modified>2023-05-17T20:20:19.807</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\peter\Documents\GitHub\Mail-Lobbyer\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconStoreLogo.scale-100.png">
+    <AppxPackagedFile Include="C:\Users\peter\Documents\GitHub\Mail-Lobbyer\src\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconStoreLogo.scale-100.png">
       <PackagePath>appiconStoreLogo.scale-100.png</PackagePath>
-      <Modified>2023-03-22T13:51:56.924</Modified>
+      <Modified>2023-05-17T20:20:19.807</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\peter\Documents\GitHub\Mail-Lobbyer\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconStoreLogo.scale-125.png">
+    <AppxPackagedFile Include="C:\Users\peter\Documents\GitHub\Mail-Lobbyer\src\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconStoreLogo.scale-125.png">
       <PackagePath>appiconStoreLogo.scale-125.png</PackagePath>
-      <Modified>2023-03-22T13:51:56.927</Modified>
+      <Modified>2023-05-17T20:20:19.808</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\peter\Documents\GitHub\Mail-Lobbyer\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconStoreLogo.scale-150.png">
+    <AppxPackagedFile Include="C:\Users\peter\Documents\GitHub\Mail-Lobbyer\src\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconStoreLogo.scale-150.png">
       <PackagePath>appiconStoreLogo.scale-150.png</PackagePath>
-      <Modified>2023-03-22T13:51:56.931</Modified>
+      <Modified>2023-05-17T20:20:19.808</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\peter\Documents\GitHub\Mail-Lobbyer\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconStoreLogo.scale-200.png">
+    <AppxPackagedFile Include="C:\Users\peter\Documents\GitHub\Mail-Lobbyer\src\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconStoreLogo.scale-200.png">
       <PackagePath>appiconStoreLogo.scale-200.png</PackagePath>
-      <Modified>2023-03-22T13:51:56.935</Modified>
+      <Modified>2023-05-17T20:20:19.809</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\peter\Documents\GitHub\Mail-Lobbyer\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconStoreLogo.scale-400.png">
+    <AppxPackagedFile Include="C:\Users\peter\Documents\GitHub\Mail-Lobbyer\src\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconStoreLogo.scale-400.png">
       <PackagePath>appiconStoreLogo.scale-400.png</PackagePath>
-      <Modified>2023-03-22T13:51:56.940</Modified>
+      <Modified>2023-05-17T20:20:19.810</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\peter\Documents\GitHub\Mail-Lobbyer\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconWideTile.scale-100.png">
+    <AppxPackagedFile Include="C:\Users\peter\Documents\GitHub\Mail-Lobbyer\src\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconWideTile.scale-100.png">
       <PackagePath>appiconWideTile.scale-100.png</PackagePath>
-      <Modified>2023-03-22T13:51:57.019</Modified>
+      <Modified>2023-05-17T20:20:19.810</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\peter\Documents\GitHub\Mail-Lobbyer\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconWideTile.scale-125.png">
+    <AppxPackagedFile Include="C:\Users\peter\Documents\GitHub\Mail-Lobbyer\src\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconWideTile.scale-125.png">
       <PackagePath>appiconWideTile.scale-125.png</PackagePath>
-      <Modified>2023-03-22T13:51:57.027</Modified>
+      <Modified>2023-05-17T20:20:19.811</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\peter\Documents\GitHub\Mail-Lobbyer\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconWideTile.scale-150.png">
+    <AppxPackagedFile Include="C:\Users\peter\Documents\GitHub\Mail-Lobbyer\src\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconWideTile.scale-150.png">
       <PackagePath>appiconWideTile.scale-150.png</PackagePath>
-      <Modified>2023-03-22T13:51:57.037</Modified>
+      <Modified>2023-05-17T20:20:19.812</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\peter\Documents\GitHub\Mail-Lobbyer\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconWideTile.scale-200.png">
+    <AppxPackagedFile Include="C:\Users\peter\Documents\GitHub\Mail-Lobbyer\src\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconWideTile.scale-200.png">
       <PackagePath>appiconWideTile.scale-200.png</PackagePath>
-      <Modified>2023-03-22T13:51:57.053</Modified>
+      <Modified>2023-05-17T20:20:19.813</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\peter\Documents\GitHub\Mail-Lobbyer\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconWideTile.scale-400.png">
+    <AppxPackagedFile Include="C:\Users\peter\Documents\GitHub\Mail-Lobbyer\src\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconWideTile.scale-400.png">
       <PackagePath>appiconWideTile.scale-400.png</PackagePath>
-      <Modified>2023-03-22T13:51:57.095</Modified>
+      <Modified>2023-05-17T20:20:19.813</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\peter\Documents\GitHub\Mail-Lobbyer\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\r\dotnet_bot.scale-100.png">
+    <AppxPackagedFile Include="C:\Users\peter\Documents\GitHub\Mail-Lobbyer\src\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\r\dotnet_bot.scale-100.png">
       <PackagePath>dotnet_bot.scale-100.png</PackagePath>
-      <Modified>2023-03-22T13:51:56.870</Modified>
+      <Modified>2023-05-17T20:20:19.814</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\peter\Documents\GitHub\Mail-Lobbyer\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\r\dotnet_bot.scale-125.png">
+    <AppxPackagedFile Include="C:\Users\peter\Documents\GitHub\Mail-Lobbyer\src\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\r\dotnet_bot.scale-125.png">
       <PackagePath>dotnet_bot.scale-125.png</PackagePath>
-      <Modified>2023-03-22T13:51:56.880</Modified>
+      <Modified>2023-05-17T20:20:19.818</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\peter\Documents\GitHub\Mail-Lobbyer\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\r\dotnet_bot.scale-150.png">
+    <AppxPackagedFile Include="C:\Users\peter\Documents\GitHub\Mail-Lobbyer\src\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\r\dotnet_bot.scale-150.png">
       <PackagePath>dotnet_bot.scale-150.png</PackagePath>
-      <Modified>2023-03-22T13:51:56.893</Modified>
+      <Modified>2023-05-17T20:20:19.819</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\peter\Documents\GitHub\Mail-Lobbyer\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\r\dotnet_bot.scale-200.png">
+    <AppxPackagedFile Include="C:\Users\peter\Documents\GitHub\Mail-Lobbyer\src\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\r\dotnet_bot.scale-200.png">
       <PackagePath>dotnet_bot.scale-200.png</PackagePath>
-      <Modified>2023-03-22T13:51:56.914</Modified>
+      <Modified>2023-05-17T20:20:19.820</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\peter\Documents\GitHub\Mail-Lobbyer\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\r\dotnet_bot.scale-400.png">
+    <AppxPackagedFile Include="C:\Users\peter\Documents\GitHub\Mail-Lobbyer\src\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\r\dotnet_bot.scale-400.png">
       <PackagePath>dotnet_bot.scale-400.png</PackagePath>
-      <Modified>2023-03-22T13:51:56.967</Modified>
+      <Modified>2023-05-17T20:20:19.821</Modified>
     </AppxPackagedFile>
   </ItemGroup>
   <ItemGroup>

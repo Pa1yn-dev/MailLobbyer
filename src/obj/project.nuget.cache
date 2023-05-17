@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "m0wu81t8EIlEsMEQsfi3XO/U8ZSEmNPK2ItdJTZeqPMDQPjxPFrDogu88CJTGN29ZSP5O/nI0tkiTYU6EAoTmA==",
+  "dgSpecHash": "gtffS+X0hiXBNsjFDW2jQpYHDCYuFzihXZJ8WqMfisSoH6ZgSB2IDWBdY/Ru4UluFbR3pnM4Tgv9hIe6Xdf7Fg==",
   "success": true,
-  "projectFilePath": "C:\\Users\\peter\\Documents\\GitHub\\Mail-Lobbyer\\Mail-Lobbyer.csproj",
+  "projectFilePath": "C:\\Users\\peter\\Documents\\GitHub\\Mail-Lobbyer\\src\\Mail-Lobbyer.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\peter\\.nuget\\packages\\googlegson\\2.9.1.1\\googlegson.2.9.1.1.nupkg.sha512",
     "C:\\Users\\peter\\.nuget\\packages\\microsoft.extensions.configuration\\7.0.0\\microsoft.extensions.configuration.7.0.0.nupkg.sha512",
