@@ -1,0 +1,39 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:viewModels="clr-namespace:Mail_Lobbyer.ViewModels"
+             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+             x:Class="Mail_Lobbyer.Views.EmailFieldView"
+             Foreground="White"
+             Background="#171C2C">
+
+	<ScrollViewer>
+		<StackPanel>
+
+
+			<TextBlock Text="Mail-Lobbyer" FontSize="24" HorizontalAlignment="Center" Margin="0,20,0,10" />
+
+			<TextBlock Text="Name:" FontSize="18" />
+			<TextBox Name="NameTextBox" Margin="0,0,0,10" Grid.Row="1" />
+
+			<TextBlock Text="Subject:" FontSize="18" Grid.Row="2" />
+			<TextBox Name="EmailTextBox" Margin="0,0,0,10" Grid.Row="2" />
+
+			<TextBlock Text="Content:" FontSize="18" Grid.Row="3" />
+			<TextBox Name="PhoneTextBox" Margin="0,0,0,10" Grid.Row="3" />
+
+			<TextBlock Text="Group:" FontSize="18" Grid.Row="4" />
+
+			<ComboBox Name="GroupComboBox" Margin="0,0,0,10" Grid.Row="4">
+				<ComboBoxItem Content="A" />
+				<ComboBoxItem Content="B" />
+				<ComboBoxItem Content="C" />
+				<ComboBoxItem Content="D" />
+			</ComboBox>
+
+			<Button Content="Submit" Command="{Binding OnSubmitClicked}" HorizontalAlignment="Center" Grid.Row="5" />
+
+		</StackPanel>
+	</ScrollViewer>
+</UserControl>

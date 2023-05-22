@@ -8,5 +8,5 @@
         x:Class="Mail_Lobbyer.Views.MainWindow"
         Icon="/Assets/avalonia-logo.ico"
         Title="Mail_Lobbyer">
-        <views:MainView />
+        <views:EmailFieldView />
 </Window>
