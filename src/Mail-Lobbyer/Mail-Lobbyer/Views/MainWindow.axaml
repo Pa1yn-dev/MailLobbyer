@@ -7,6 +7,38 @@
         mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
         x:Class="Mail_Lobbyer.Views.MainWindow"
         Icon="/Assets/avalonia-logo.ico"
+		Background="Gray"
         Title="Mail_Lobbyer">
-        <views:EmailFieldView />
+	<Grid>
+		<TabControl Grid.Row="0">
+			<TabItem Header="Email" AutomationProperties.Name="Email">
+				<ScrollViewer>
+					<StackPanel Margin="0,20,0,0">
+						<views:EmailFieldView/>
+					</StackPanel>
+				</ScrollViewer>
+			</TabItem>
+
+			<TabItem Header="Settings" AutomationProperties.Name="Settings">
+				<ScrollViewer>
+					<StackPanel Margin="0,20,0,0">
+						<views:EmailFieldView/>
+					</StackPanel>
+				</ScrollViewer>
+			</TabItem>
+
+			<TabItem Header="About" AutomationProperties.Name="About">
+				<ScrollViewer>
+					<StackPanel Margin="0,20,0,0">
+						<views:EmailFieldView/>
+					</StackPanel>
+				</ScrollViewer>
+			</TabItem>
+		</TabControl>
+
+		<StackPanel Margin="0,0,0,10" VerticalAlignment="Bottom" HorizontalAlignment="Center">
+			<TextBlock Text="Mail-Lobbyer" FontSize="10"/>
+		</StackPanel>
+	</Grid>
 </Window>
+

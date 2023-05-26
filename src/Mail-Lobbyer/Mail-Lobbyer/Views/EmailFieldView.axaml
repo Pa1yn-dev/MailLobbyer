@@ -6,34 +6,32 @@
              mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
              x:Class="Mail_Lobbyer.Views.EmailFieldView"
              Foreground="White"
-             Background="#171C2C">
-
-	<ScrollViewer>
+             Background="Gray">
+	
+	
 		<StackPanel>
+    <TextBlock Text="Name:" FontSize="18" />
+    <TextBox Name="NameTextBox" Margin="0,0,0,10" Watermark="Enter the sender name for the email" AutomationProperties.Name="Name" AutomationProperties.HelpText="Enter the sender name for the email" />
 
+    <TextBlock Text="Subject:" FontSize="18" />
+    <TextBox Name="SubjectTextBox" Margin="0,0,0,10" Watermark="Enter the email subject" AutomationProperties.Name="Subject" AutomationProperties.HelpText="Enter the email subject" />
 
-			<TextBlock Text="Mail-Lobbyer" FontSize="24" HorizontalAlignment="Center" Margin="0,20,0,10" />
+    <TextBlock Text="Content:" FontSize="18" />
+    <ScrollViewer VerticalScrollBarVisibility="Auto">
+        <TextBox Name="ContentTextBox" Margin="0,0,0,10" Height="200" Watermark="Enter the email content" TextWrapping="Wrap" AutomationProperties.Name="Content" AutomationProperties.HelpText="Enter the email content" />
+    </ScrollViewer>
 
-			<TextBlock Text="Name:" FontSize="18" />
-			<TextBox Name="NameTextBox" Margin="0,0,0,10" Grid.Row="1" />
+    <TextBlock Text="Group:" FontSize="18" />
+    <ComboBox Name="GroupComboBox" Margin="0,0,0,10" AutomationProperties.Name="Group" AutomationProperties.HelpText="Select a group for the email">
+        <ComboBoxItem Content="A" />
+        <ComboBoxItem Content="B" />
+        <ComboBoxItem Content="C" />
+        <ComboBoxItem Content="D" />
+    </ComboBox>
 
-			<TextBlock Text="Subject:" FontSize="18" Grid.Row="2" />
-			<TextBox Name="EmailTextBox" Margin="0,0,0,10" Grid.Row="2" />
+    <Button Content="Submit" Command="{Binding OnSubmitClicked}" HorizontalAlignment="Center" AutomationProperties.Name="Send" AutomationProperties.HelpText="Send email" />
+		
+</StackPanel>
 
-			<TextBlock Text="Content:" FontSize="18" Grid.Row="3" />
-			<TextBox Name="PhoneTextBox" Margin="0,0,0,10" Grid.Row="3" />
-
-			<TextBlock Text="Group:" FontSize="18" Grid.Row="4" />
-
-			<ComboBox Name="GroupComboBox" Margin="0,0,0,10" Grid.Row="4">
-				<ComboBoxItem Content="A" />
-				<ComboBoxItem Content="B" />
-				<ComboBoxItem Content="C" />
-				<ComboBoxItem Content="D" />
-			</ComboBox>
-
-			<Button Content="Submit" Command="{Binding OnSubmitClicked}" HorizontalAlignment="Center" Grid.Row="5" />
-
-		</StackPanel>
-	</ScrollViewer>
+	
 </UserControl>
