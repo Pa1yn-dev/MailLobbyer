@@ -8,12 +8,13 @@ namespace MailLobbyer.EmailHandlerComponent
 {
     public class EmailHandler
     {
+
+        private readonly SmtpClientSettings _smtpSettings;
         public EmailHandler(IConfiguration configuration)
         {
             _smtpSettings = new SmtpClientSettings();
             configuration.GetSection("SmtpClientSettings").Bind(_smtpSettings);
         }
-        private readonly SmtpClientSettings _smtpSettings;
 
         public async Task SendEmailAsync(string EmailRecipient, string subject, string body)
         {
