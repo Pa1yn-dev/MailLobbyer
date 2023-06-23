@@ -2,45 +2,32 @@ using MailKit.Net.Smtp;
 using MailKit.Security;
 using MimeKit;
 using System.Threading.Tasks;
-using MailLobbyer.SmtpClientSettings;
+using MailLobbyer.SmtpClientSettingsComponent;
 
-namespace MailLobbyer.EmailHandler
+namespace MailLobbyer.EmailHandlerComponent
 {
     public class EmailHandler
     {
-
-        // Constructor that accepts SMTP client settings upon creating an instance of EmailHandler, accepts parameter of SmtpClientSettings.SmtpClientSettings object as smtpsettings
-        public EmailHandler(SmtpClientSettings.SmtpClientSettings smtpsettings)
+        public EmailHandler(IConfiguration configuration)
         {
-            _smtpsettings = smtpsettings;
+            _smtpSettings = new SmtpClientSettings();
+            configuration.GetSection("SmtpClientSettings").Bind(_smtpSettings);
         }
+        private readonly SmtpClientSettings _smtpSettings;
 
-        // The SMTP client settings provided during object creation, value passed as smtpsettings is assigned to the _smtpsettings
-        private readonly SmtpClientSettings.SmtpClientSettings _smtpsettings;
-
-        // Method to send an email asynchronously
         public async Task SendEmailAsync(string EmailRecipient, string subject, string body)
         {
-            // Create a new MimeMessage for the email
             var message = new MimeMessage();
-            message.From.Add(new MailboxAddress("Sender name", "Sender email"));
+            message.From.Add(new MailboxAddress(_smtpSettings.Sendername, _smtpSettings.Senderemail));
             message.To.Add(new MailboxAddress("", EmailRecipient));
             message.Subject = subject;
             message.Body = new TextPart("plain") { Text = body };
-    
-            // Create a new SmtpClient to send the email
+
             using (var client = new SmtpClient())
             {
-                // Connect to the SMTP server
-                await client.ConnectAsync(_smtpsettings.Host, _smtpsettings.Port, SecureSocketOptions.StartTls);
-                
-                // Authenticate with the SMTP server using the provided settings
-                await client.AuthenticateAsync(_smtpsettings.Username, _smtpsettings.Password);
-                
-                // Send the email
+                await client.ConnectAsync(_smtpSettings.Host, _smtpSettings.Port, SecureSocketOptions.StartTls);
+                await client.AuthenticateAsync(_smtpSettings.Username, _smtpSettings.Password);
                 await client.SendAsync(message);
-                
-                // Disconnect from the SMTP server
                 await client.DisconnectAsync(true);
             }
         }

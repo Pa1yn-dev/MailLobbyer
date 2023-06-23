@@ -4,20 +4,15 @@
 
 <h3>Send group email</h3>
 
-<form>
-    <div class="form-group">
-        <label for="sender-name">Sender Name:</label>
-        <input type="text" id="sender-name" class="form-control" />
-    </div>
-
+<form @onsubmit="FormSubmitHandler">
     <div class="form-group">
         <label for="subject">Subject:</label>
-        <input type="text" id="subject" class="form-control" />
+        <input type="text" id="subject" class="form-control" @bind="subject" />
     </div>
 
     <div class="form-group">
         <label for="body">Body:</label>
-        <textarea id="body" class="form-control"></textarea>
+        <textarea id="body" class="form-control" @bind="body"></textarea>
     </div>
 
     <div class="form-group">
@@ -31,3 +26,21 @@
 
     <button type="submit" class="btn btn-primary">Send</button>
 </form>
+
+@code {
+
+    private string subject;
+    private string body;
+
+    private async Task FormSubmitHandler()
+    {
+        IConfiguration configuration = new ConfigurationBuilder()
+            .SetBasePath(Directory.GetCurrentDirectory())
+            .AddJsonFile("appsettings.json")
+            .Build();
+
+        EmailHandlerComponent.EmailHandler emailHandler = new EmailHandlerComponent.EmailHandler(configuration);
+        await emailHandler.SendEmailAsync("peterhamilton522@gmail.com", subject, body);
+    }
+
+}
