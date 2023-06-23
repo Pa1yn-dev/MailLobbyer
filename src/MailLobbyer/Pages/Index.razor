@@ -40,7 +40,7 @@
             .Build();
 
         EmailHandlerComponent.EmailHandler emailHandler = new EmailHandlerComponent.EmailHandler(configuration);
-        await emailHandler.SendEmailAsync("", subject, body);
+        await emailHandler.SendEmailAsync("","", subject, body);
     }
 
 }

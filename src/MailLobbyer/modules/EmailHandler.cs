@@ -16,11 +16,11 @@ namespace MailLobbyer.EmailHandlerComponent
             configuration.GetSection("SmtpClientSettings").Bind(_smtpSettings);
         }
 
-        public async Task SendEmailAsync(string EmailRecipient, string subject, string body)
+        public async Task SendEmailAsync(string RecipientName, string RecipientEmail, string subject, string body)
         {
             var message = new MimeMessage();
             message.From.Add(new MailboxAddress(_smtpSettings.Sendername, _smtpSettings.Senderemail));
-            message.To.Add(new MailboxAddress("", EmailRecipient));
+            message.To.Add(new MailboxAddress(RecipientName, RecipientEmail));
             message.Subject = subject;
             message.Body = new TextPart("plain") { Text = body };
 
