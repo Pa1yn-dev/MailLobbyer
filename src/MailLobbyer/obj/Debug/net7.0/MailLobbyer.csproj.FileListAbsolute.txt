@@ -6,6 +6,11 @@
 /home/kitt/Documents/GitHub/MailLobbyer/src/MailLobbyer/bin/Debug/net7.0/MailLobbyer.runtimeconfig.json
 /home/kitt/Documents/GitHub/MailLobbyer/src/MailLobbyer/bin/Debug/net7.0/MailLobbyer.dll
 /home/kitt/Documents/GitHub/MailLobbyer/src/MailLobbyer/bin/Debug/net7.0/MailLobbyer.pdb
+/home/kitt/Documents/GitHub/MailLobbyer/src/MailLobbyer/bin/Debug/net7.0/BouncyCastle.Cryptography.dll
+/home/kitt/Documents/GitHub/MailLobbyer/src/MailLobbyer/bin/Debug/net7.0/MailKit.dll
+/home/kitt/Documents/GitHub/MailLobbyer/src/MailLobbyer/bin/Debug/net7.0/MimeKit.dll
+/home/kitt/Documents/GitHub/MailLobbyer/src/MailLobbyer/bin/Debug/net7.0/System.Security.Cryptography.Pkcs.dll
+/home/kitt/Documents/GitHub/MailLobbyer/src/MailLobbyer/bin/Debug/net7.0/runtimes/win/lib/net7.0/System.Security.Cryptography.Pkcs.dll
 /home/kitt/Documents/GitHub/MailLobbyer/src/MailLobbyer/obj/Debug/net7.0/MailLobbyer.csproj.AssemblyReference.cache
 /home/kitt/Documents/GitHub/MailLobbyer/src/MailLobbyer/obj/Debug/net7.0/MailLobbyer.GeneratedMSBuildEditorConfig.editorconfig
 /home/kitt/Documents/GitHub/MailLobbyer/src/MailLobbyer/obj/Debug/net7.0/MailLobbyer.AssemblyInfoInputs.cache
@@ -25,14 +30,9 @@
 /home/kitt/Documents/GitHub/MailLobbyer/src/MailLobbyer/obj/Debug/net7.0/scopedcss/Shared/NavMenu.razor.rz.scp.css
 /home/kitt/Documents/GitHub/MailLobbyer/src/MailLobbyer/obj/Debug/net7.0/scopedcss/bundle/MailLobbyer.styles.css
 /home/kitt/Documents/GitHub/MailLobbyer/src/MailLobbyer/obj/Debug/net7.0/scopedcss/projectbundle/MailLobbyer.bundle.scp.css
+/home/kitt/Documents/GitHub/MailLobbyer/src/MailLobbyer/obj/Debug/net7.0/MailLobbyer.csproj.CopyComplete
 /home/kitt/Documents/GitHub/MailLobbyer/src/MailLobbyer/obj/Debug/net7.0/MailLobbyer.dll
 /home/kitt/Documents/GitHub/MailLobbyer/src/MailLobbyer/obj/Debug/net7.0/refint/MailLobbyer.dll
 /home/kitt/Documents/GitHub/MailLobbyer/src/MailLobbyer/obj/Debug/net7.0/MailLobbyer.pdb
 /home/kitt/Documents/GitHub/MailLobbyer/src/MailLobbyer/obj/Debug/net7.0/MailLobbyer.genruntimeconfig.cache
 /home/kitt/Documents/GitHub/MailLobbyer/src/MailLobbyer/obj/Debug/net7.0/ref/MailLobbyer.dll
-/home/kitt/Documents/GitHub/MailLobbyer/src/MailLobbyer/bin/Debug/net7.0/BouncyCastle.Cryptography.dll
-/home/kitt/Documents/GitHub/MailLobbyer/src/MailLobbyer/bin/Debug/net7.0/MailKit.dll
-/home/kitt/Documents/GitHub/MailLobbyer/src/MailLobbyer/bin/Debug/net7.0/MimeKit.dll
-/home/kitt/Documents/GitHub/MailLobbyer/src/MailLobbyer/bin/Debug/net7.0/System.Security.Cryptography.Pkcs.dll
-/home/kitt/Documents/GitHub/MailLobbyer/src/MailLobbyer/bin/Debug/net7.0/runtimes/win/lib/net7.0/System.Security.Cryptography.Pkcs.dll
-/home/kitt/Documents/GitHub/MailLobbyer/src/MailLobbyer/obj/Debug/net7.0/MailLobbyer.csproj.CopyComplete
