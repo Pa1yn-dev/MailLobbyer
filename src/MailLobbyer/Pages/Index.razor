@@ -1,8 +1,9 @@
 ﻿@page "/"
 
+
 <PageTitle>Index</PageTitle>
 
-<h3>Send group email</h3>
+<h1 class="page-title">Home</h1>
 
 <form @onsubmit="FormSubmitHandler">
     <div class="form-group">
@@ -16,12 +17,8 @@
     </div>
 
     <div class="form-group">
-        <label for="contactGroup">Contact Group:</label>
-        <select id="contactGroup" class="form-control">
-            <option value="group1">Group 1</option>
-            <option value="group2">Group 2</option>
-            <option value="group3">Group 3</option>
-        </select>
+        <label for="contactGroup">Select Contact Group:</label>
+        <input type="file" @onchange="FileSelectionHandler" />
     </div>
 
     <button type="submit" class="btn btn-primary">Send</button>
@@ -31,6 +28,13 @@
 
     private string subject;
     private string body;
+    private IBrowserFile selectedfile;
+
+    private void  FileSelectionHandler(InputFileChangeEventArgs e)
+    {
+        selectedfile = e.File;
+    }
+
 
     private async Task FormSubmitHandler()
     {
@@ -38,9 +42,12 @@
             .SetBasePath(Directory.GetCurrentDirectory())
             .AddJsonFile("appsettings.json")
             .Build();
+            
+        CSVParserComponent.CSVParser csvparser = new CSVParserComponent.CSVParser();
+        await csvparser.CSVReader(selectedfile);
 
-        EmailHandlerComponent.EmailHandler emailHandler = new EmailHandlerComponent.EmailHandler(configuration);
-        await emailHandler.SendEmailAsync("","", subject, body);
+        EmailHandlerComponent.EmailHandler emailhandler = new EmailHandlerComponent.EmailHandler(configuration);
+        await emailhandler.SendEmailAsync("","", subject, body);
     }
 
 }

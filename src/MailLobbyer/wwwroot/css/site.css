@@ -4,6 +4,12 @@ html, body {
     font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
 }
 
+.page-title h1 {
+    font-weight: bold;
+    text-decoration: underline;
+    font-size: medium;
+}
+
 h1:focus {
     outline: none;
 }
