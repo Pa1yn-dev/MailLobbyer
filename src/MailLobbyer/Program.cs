@@ -48,7 +48,7 @@ csvserviceinstance.CSVFileSeeker(directorypath);
 
 foreach (CSVFile csvfile in csvserviceinstance.CSVFilesindir)
 {
-    csvserviceinstance.CSVParser(csvfile.Filepath);
+    await csvserviceinstance.CSVParser(csvfile.Filepath);
 }
 
 app.Run();

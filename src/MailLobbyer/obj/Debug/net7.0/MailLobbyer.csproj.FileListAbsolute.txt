@@ -36,3 +36,4 @@
 /home/kitt/Documents/GitHub/MailLobbyer/src/MailLobbyer/obj/Debug/net7.0/MailLobbyer.pdb
 /home/kitt/Documents/GitHub/MailLobbyer/src/MailLobbyer/obj/Debug/net7.0/MailLobbyer.genruntimeconfig.cache
 /home/kitt/Documents/GitHub/MailLobbyer/src/MailLobbyer/obj/Debug/net7.0/ref/MailLobbyer.dll
+/home/kitt/Documents/GitHub/MailLobbyer/src/MailLobbyer/bin/Debug/net7.0/Newtonsoft.Json.dll
