@@ -28,7 +28,6 @@
     @foreach (CSVFile csvfile in csvserviceinstance.CSVFilesindir)
     {
         <option value="@csvfile.Filepath">@csvfile.Filename</option>
-
     }
 </select>
     </div>
@@ -42,14 +41,36 @@
     private string body;
     private string exclude;
     private string selectedgroup;
+    CSVService csvserviceinstance = new CSVService();
 
-    private CSVService csvserviceinstance;
+    protected override async Task OnInitializedAsync()
+    {
+        //Checks for a folder for CSV files for contact groups in easy to access locations on both Linux and Windows, if it does not exist a folder is created.
+        string documentspath = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
+        string directoryname = "MailLobbyer";
+        string directorypath = Path.Combine(documentspath, directoryname);
 
-
-        protected override void OnInitialized()
+        if (!Directory.Exists(directorypath))
         {
-            csvserviceinstance = new CSVService();
+        Directory.CreateDirectory(directorypath);
+        Console.WriteLine("CSV contact-grouping directory created successfully.");
         }
+        else
+        {
+            Console.WriteLine("CSV contact-grouping directory already exists.");
+        }
+
+        
+        csvserviceinstance.CSVFileSeeker(directorypath);
+
+        foreach (CSVFile csvfile in csvserviceinstance.CSVFilesindir)
+        {
+            await csvserviceinstance.CSVParser(csvfile.Filepath);
+            
+        }
+    }
+
+    
 
     private async Task FormSubmitHandler()
     {
