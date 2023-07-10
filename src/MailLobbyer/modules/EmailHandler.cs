@@ -32,5 +32,6 @@ namespace MailLobbyer.EmailHandlerComponent
                 await client.DisconnectAsync(true);
             }
         }
+
     }
 }
