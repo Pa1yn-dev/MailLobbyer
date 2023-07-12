@@ -9,7 +9,7 @@
 
 <h1 class="page-title">Settings</h1>
 
-<form @onsubmit="FormSubmitHandler">
+<form class="input-form" @onsubmit="FormSubmitHandler">
     <div class="form-group">
         <label for="sendername">Sender name:</label>
         <input type="text" value="@smtpclisettings.Sendername" id="sendername" class="form-control" @oninput="UpdateSendername" aria-label="Sender name" />

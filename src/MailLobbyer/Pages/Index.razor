@@ -7,9 +7,7 @@
 
 <h1 class="page-title">Home</h1>
 
-@if (displayform)
-{
-    <form @onsubmit="FormSubmitHandler">
+<form class="input-form" @onsubmit="FormSubmitHandler">
     <div class="form-group">
         <label for="subject">Subject:</label>
         <input type="text" id="subject" class="form-control" @bind="subject" aria-label="Subject" />
@@ -31,18 +29,19 @@
         </select>
     </div>
 
-    <button type="submit" class="btn btn-primary">Continue</button>
-</form>
-
-}
-else
-{
-    <form @onsubmit="ExclusionFormSubmitHandler">
-        <p>Contact exclusion:</p>
+    @if (displayform)
+    {
+        <button type="submit" class="btn btn-primary">Continue</button>
+    }
+    
+    else
+    {
+        <form @onsubmit="ExclusionFormSubmitHandler">
 
         @foreach (Contact contact in csvserviceinstance.contacts)
         {
-            <div class="form-group">
+            <div class="subform-group">
+                <label>Contact exclusion:</label>
                 <label for="excludecontacts">@string.Concat(contact.Forename, " ", contact.Surname) - @contact.Email</label>
                 <input type="checkbox" id="excludecontacts" value="@contact.Email" checked="@contact.IsSelected" @onchange="() => ToggleContactExclusion(contact)" aria-label="Exclude contact: @(string.Concat(contact.Forename, " ", contact.Surname) + " - " + contact.Email)" />
             </div>
@@ -50,7 +49,10 @@ else
 
         <button type="submit" class="btn btn-primary">Send</button>
     </form>
-}
+    }
+
+    
+</form>
 
 @code {
     private bool displayform = true;
