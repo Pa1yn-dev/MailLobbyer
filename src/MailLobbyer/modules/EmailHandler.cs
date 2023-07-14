@@ -24,17 +24,22 @@ namespace MailLobbyer.EmailHandlerComponent
         {
             if(selectedfiles.Count > 0)
             {
-                foreach (var file in selectedfiles)
+                using (var ms = new MemoryStream())
                 {
-                    byte[] filecontents = new byte[file.Size];
-                    await file.OpenReadStream().ReadAsync(filecontents);
-                    FileUpload fileupload = new FileUpload(file.Name, file.Size, filecontents);
-                    fileuploads.Add(fileupload);
+                    foreach (var file in selectedfiles)
+                    {
+                        await file.OpenReadStream().CopyToAsync(ms);
+                        byte[] filecontents = ms.ToArray();
+                        FileUpload fileupload = new FileUpload(file.Name, file.Size, filecontents);
+                        fileuploads.Add(fileupload);
+                    }
+
                 }
+                
             }
         }
 
-        public async Task EmailSyntaxHandler(string subject, string body, string exclude, Contact contact, List<FileUpload> fileUploads)
+        public async Task EmailSyntaxHandler(string subject, string body, Contact contact, List<FileUpload> fileuploads)
         {
             string prefixsyntax = "/P";
             string fullnamesyntax = "/FN";
@@ -51,7 +56,7 @@ namespace MailLobbyer.EmailHandlerComponent
                             .Replace(forenamesyntax, contact.Forename, StringComparison.OrdinalIgnoreCase)
                             .Replace(surnamesyntax, contact.Surname, StringComparison.OrdinalIgnoreCase);
             
-            await SendEmailAsync(string.Concat(contact.Forename, " ", contact.Surname),contact.Email,subject,body,fileUploads);
+            await SendEmailAsync(string.Concat(contact.Forename, " ", contact.Surname),contact.Email,subject,body,fileuploads);
         }
 
         public async Task SendEmailAsync(string RecipientName, string RecipientEmail, string subject, string body, List<FileUpload> fileuploads)

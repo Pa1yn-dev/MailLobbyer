@@ -19,7 +19,7 @@
         <textarea id="body" class="form-control" @bind="body" aria-label="Body"></textarea>
     </div>
 
-    <InputFile multiple="true" onchange="FileUploadHandler" />
+    <InputFile OnChange="@FileUploadHandler" multiple />
 
     @if (displayform)
     {
@@ -122,6 +122,8 @@
 
         EmailHandler emailhandlerinstance = new EmailHandler(configuration);
 
+        await emailhandlerinstance.ExtractUploadedFileContents(selectedfiles);
+
         foreach (Contact contact in csvserviceinstance.contacts)
         {
             if (!contact.IsSelected == true)
@@ -133,6 +135,7 @@
         // Reset form fields
         subject = string.Empty;
         body = string.Empty;
+        selectedfiles = new List<IBrowserFile>();
         selectedgroup = string.Empty;
         displayform = true;
     }
