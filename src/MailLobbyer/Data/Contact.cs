@@ -8,11 +8,11 @@ namespace MailLobbyer.ContactClass
         public string Email { get; set; }
         public bool IsSelected { get; set;}
 
-        public Contact (string prefix, string forename, string surname, string email)
+        public Contact (string prefix, string surname, string forename, string email)
         {
             Prefix = prefix;
-            Forename = forename;
             Surname = surname;
+            Forename = forename;
             Email = email;
         }
     }
