@@ -3,8 +3,8 @@ namespace MailLobbyer.ContactClass
     public class Contact
     {
         public string Prefix { get; set; }
-        public string Forename { get; set; }
         public string Surname { get; set; }
+        public string Forename { get; set; }
         public string Email { get; set; }
         public bool IsSelected { get; set;}
 
