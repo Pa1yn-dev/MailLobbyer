@@ -1,0 +1,120 @@
+@page "/Settings"
+@inject IConfiguration Configuration
+@using System.IO
+@using Newtonsoft.Json
+@using Newtonsoft.Json.Linq
+@using System.Text
+
+<PageTitle>Settings</PageTitle>
+
+<h1 class="page-title">Settings</h1>
+
+<form class="input-form" @onsubmit="FormSubmitHandler">
+    <div class="form-group">
+        <label for="sendername">Sender name:</label>
+        <input type="text" value="@smtpclisettings.Sendername" id="sendername" class="form-control" @oninput="UpdateSendername" aria-label="Sender name" />
+    </div>
+
+    <div class="form-group">
+        <label for="senderemail">Sender email:</label>
+        <input type="text" value="@smtpclisettings.Senderemail" id="senderemail" class="form-control" @oninput="UpdateSenderemail" aria-label="Sender email" />
+    </div>
+
+    <div class="form-group">
+        <label for="username">SMTP username:</label>
+        <input type="text" value="@smtpclisettings.Username" id="username" class="form-control" @oninput="UpdateUsername" aria-label="SMTP username" />
+    </div>
+
+    <div class="form-group">
+        <label for="password">SMTP password:</label>
+        <input type="text" value="@smtpclisettings.Password" id="password" class="form-control" @oninput="UpdatePassword" aria-label="SMTP password" />
+    </div>
+
+    <div class="form-group">
+        <label for="host">SMTP host:</label>
+        <input type="text" value="@smtpclisettings.Host" id="host" class="form-control" @oninput="UpdateHost" aria-label="SMTP host" />
+    </div>
+
+    <div class="form-group">
+        <label for="port">SMTP port:</label>
+        <input type="text" value="@smtpclisettings.Port" id="port" class="form-control" @oninput="UpdatePort" aria-label="SMTP port" />
+    </div>
+
+    <button type="submit" class="btn btn-primary">Save</button>
+</form>
+
+@code {
+    private SmtpClientSettingsComponent.SmtpClientSettings smtpclisettings = new SmtpClientSettingsComponent.SmtpClientSettings();
+
+    protected override void OnInitialized()
+    {
+        Configuration.Bind("SmtpClientSettings", smtpclisettings);
+    }
+
+    private void UpdateSendername(ChangeEventArgs e)
+    {
+        smtpclisettings.Sendername = e.Value.ToString();
+    }
+
+    private void UpdateSenderemail(ChangeEventArgs e)
+    {
+        smtpclisettings.Senderemail = e.Value.ToString();
+    }
+
+    private void UpdateUsername(ChangeEventArgs e)
+    {
+        smtpclisettings.Username = e.Value.ToString();
+    }
+
+    private void UpdatePassword(ChangeEventArgs e)
+    {
+        smtpclisettings.Password = e.Value.ToString();
+    }
+
+    private void UpdateHost(ChangeEventArgs e)
+    {
+        smtpclisettings.Host = e.Value.ToString();
+    }
+
+    private void UpdatePort(ChangeEventArgs e)
+    {
+        smtpclisettings.Port = int.Parse(e.Value.ToString());
+    }
+
+    private async Task FormSubmitHandler()
+    {
+        var builder = new ConfigurationBuilder()
+            .SetBasePath(Directory.GetCurrentDirectory())
+            .AddJsonFile("appsettings.json", optional: false, reloadOnChange: true);
+
+        Configuration = builder.Build();
+        
+        // Update the values in memory
+        Configuration["SmtpClientSettings:Sendername"] = smtpclisettings.Sendername;
+        Configuration["SmtpClientSettings:Senderemail"] = smtpclisettings.Senderemail;
+        Configuration["SmtpClientSettings:Username"] = smtpclisettings.Username;
+        Configuration["SmtpClientSettings:Password"] = smtpclisettings.Password;
+        Configuration["SmtpClientSettings:Host"] = smtpclisettings.Host;
+        Configuration["SmtpClientSettings:Port"] = smtpclisettings.Port.ToString();
+        
+
+        
+
+        JObject existingobj = JObject.Parse(File.ReadAllText(Path.Combine(Directory.GetCurrentDirectory(), "appsettings.json")));
+        JObject blockformodification = (JObject)existingobj["SmtpClientSettings"];
+
+        blockformodification["Sendername"] = Configuration["SmtpClientSettings:Sendername"];
+        blockformodification["Senderemail"] = Configuration["SmtpClientSettings:Senderemail"];
+        blockformodification["Username"] = Configuration["SmtpClientSettings:Username"];
+        blockformodification["Password"] = Configuration["SmtpClientSettings:Password"];
+        blockformodification["Host"] = Configuration["SmtpClientSettings:Host"];
+        blockformodification["Port"] = Configuration["SmtpClientSettings:Port"];
+
+        using (StreamWriter writer = File.CreateText(Path.Combine(Directory.GetCurrentDirectory(), "appsettings.json")))
+        using (JsonTextWriter jsontxtwriter = new JsonTextWriter(writer))
+        {
+            jsontxtwriter.Formatting = Formatting.Indented;
+            existingobj.WriteTo(jsontxtwriter);
+        }
+    }
+}
