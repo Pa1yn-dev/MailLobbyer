@@ -8,7 +8,7 @@
 .navbar[b-3qkxyhumpy] {
     background-color: #515151;
     opacity: 0.8;
-    background: repeating-linear-gradient( -45deg, #000000, #000000 10px, #515151 10px, #515151 50px );
+    background: repeating-linear-gradient( -45deg, #000000, #000000 10px, rgb(80, 80, 80) 10px, rgb(80, 80, 80) 50px );
     color: white;
     display: flex;
     justify-content: space-between;
