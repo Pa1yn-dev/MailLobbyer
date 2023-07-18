@@ -1,68 +1,72 @@
-.navbar-toggler {
-    background-color: rgba(255, 255, 255, 0.1);
+.navbar ul,
+.navbar li {
+    margin: 0;
+    padding: 0;
+    list-style: none;
 }
 
-.top-row {
-    height: 3.5rem;
-    background-color: rgba(0,0,0,0.4);
+.navbar {
+    background-color: #515151;
+    opacity: 0.8;
+    background: repeating-linear-gradient( -45deg, #000000, #000000 10px, #515151 10px, #515151 50px );
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
 }
 
 .navbar-brand {
-    font-size: 1.1rem;
+    font-size: 24px;
+    font-weight: bold;
 }
 
-.oi {
-    width: 2rem;
-    font-size: 1.1rem;
-    vertical-align: text-top;
-    top: -2px;
+.navbar-links {
+    flex: 1;
+    display: flex;
+    justify-content: center;
 }
 
-.nav-item {
-    font-size: 0.9rem;
-    padding-bottom: 0.5rem;
+.navbar-links ul {
+    display: flex;
+    justify-content: center;
 }
 
-    .nav-item:first-of-type {
-        padding-top: 1rem;
-    }
+.navbar-links li {
+    margin-left: 15px;
+}
 
-    .nav-item:last-of-type {
-        padding-bottom: 1rem;
-    }
+.navbar-links a {
+    color: white;
+    text-decoration: none;
+    padding: 5px 10px;
+}
 
-    .nav-item ::deep a {
-        color: white;
-        border-radius: 4px;
-        height: 3rem;
-        display: flex;
-        align-items: center;
-        line-height: 3rem;
-    }
+.navbar-links a:hover {
+    background-color: #555;
+    border-radius: 5px;
+}
 
-.nav-item ::deep a.active {
-    background-color: rgba(255,255,255,0.25);
+.navbar-link {
     color: white;
 }
 
-.nav-item ::deep a:hover {
-    background-color: rgba(255,255,255,0.1);
-    color: white;
-}
-
-@media (min-width: 641px) {
-    .navbar-toggler {
-        display: none;
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        text-align: center;
     }
 
-    .collapse {
-        /* Never collapse the sidebar for wide screens */
-        display: block;
+    .navbar-links {
+        flex: none;
+        margin-top: 10px;
     }
-    
-    .nav-scrollable {
-        /* Allow sidebar to scroll for tall menus */
-        height: calc(100vh - 3.5rem);
-        overflow-y: auto;
+
+    .navbar-links ul {
+        flex-direction: row; 
+    }
+
+    .navbar-brand {
+        position: static; 
     }
 }
