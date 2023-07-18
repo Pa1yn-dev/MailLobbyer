@@ -9,12 +9,6 @@ main[b-gk9azpv4sx] {
     flex: 1;
 }
 
-.sidebar[b-gk9azpv4sx] {
-    background-color: #7f7f7f;
-    opacity: 1;
-    background: repeating-linear-gradient( -45deg, #000000, #000000 10.5px, #7f7f7f 10.5px, #7f7f7f 52.5px );
-}
-
 .top-row[b-gk9azpv4sx] {
     background-color: #f7f7f7;
     border-bottom: 1px solid #d6d5d5;
@@ -72,71 +66,75 @@ main[b-gk9azpv4sx] {
     }
 }
 /* _content/MailLobbyer/Shared/NavMenu.razor.rz.scp.css */
-.navbar-toggler[b-3qkxyhumpy] {
-    background-color: rgba(255, 255, 255, 0.1);
+.navbar ul[b-3qkxyhumpy],
+.navbar li[b-3qkxyhumpy] {
+    margin: 0;
+    padding: 0;
+    list-style: none;
 }
 
-.top-row[b-3qkxyhumpy] {
-    height: 3.5rem;
-    background-color: rgba(0,0,0,0.4);
+.navbar[b-3qkxyhumpy] {
+    background-color: #515151;
+    opacity: 0.8;
+    background: repeating-linear-gradient( -45deg, #000000, #000000 10px, rgb(80, 80, 80) 10px, rgb(80, 80, 80) 50px );
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
 }
 
 .navbar-brand[b-3qkxyhumpy] {
-    font-size: 1.1rem;
+    font-size: 24px;
+    font-weight: bold;
 }
 
-.oi[b-3qkxyhumpy] {
-    width: 2rem;
-    font-size: 1.1rem;
-    vertical-align: text-top;
-    top: -2px;
+.navbar-links[b-3qkxyhumpy] {
+    flex: 1;
+    display: flex;
+    justify-content: center;
 }
 
-.nav-item[b-3qkxyhumpy] {
-    font-size: 0.9rem;
-    padding-bottom: 0.5rem;
+.navbar-links ul[b-3qkxyhumpy] {
+    display: flex;
+    justify-content: center;
 }
 
-    .nav-item:first-of-type[b-3qkxyhumpy] {
-        padding-top: 1rem;
-    }
+.navbar-links li[b-3qkxyhumpy] {
+    margin-left: 15px;
+}
 
-    .nav-item:last-of-type[b-3qkxyhumpy] {
-        padding-bottom: 1rem;
-    }
+.navbar-links a[b-3qkxyhumpy] {
+    color: white;
+    text-decoration: none;
+    padding: 5px 10px;
+}
 
-    .nav-item[b-3qkxyhumpy]  a {
-        color: white;
-        border-radius: 4px;
-        height: 3rem;
-        display: flex;
-        align-items: center;
-        line-height: 3rem;
-    }
+.navbar-links a:hover[b-3qkxyhumpy] {
+    background-color: #555;
+    border-radius: 5px;
+}
 
-.nav-item[b-3qkxyhumpy]  a.active {
-    background-color: rgba(255,255,255,0.25);
+.navbar-link[b-3qkxyhumpy] {
     color: white;
 }
 
-.nav-item[b-3qkxyhumpy]  a:hover {
-    background-color: rgba(255,255,255,0.1);
-    color: white;
-}
-
-@media (min-width: 641px) {
-    .navbar-toggler[b-3qkxyhumpy] {
-        display: none;
+@media (max-width: 768px) {
+    .navbar[b-3qkxyhumpy] {
+        flex-direction: column;
+        text-align: center;
     }
 
-    .collapse[b-3qkxyhumpy] {
-        /* Never collapse the sidebar for wide screens */
-        display: block;
+    .navbar-links[b-3qkxyhumpy] {
+        flex: none;
+        margin-top: 10px;
     }
-    
-    .nav-scrollable[b-3qkxyhumpy] {
-        /* Allow sidebar to scroll for tall menus */
-        height: calc(100vh - 3.5rem);
-        overflow-y: auto;
+
+    .navbar-links ul[b-3qkxyhumpy] {
+        flex-direction: row; 
+    }
+
+    .navbar-brand[b-3qkxyhumpy] {
+        position: static; 
     }
 }
