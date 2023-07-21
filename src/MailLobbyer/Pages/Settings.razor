@@ -4,12 +4,13 @@
 @using Newtonsoft.Json
 @using Newtonsoft.Json.Linq
 @using System.Text
+@using FileHandlerComponent
 
 <PageTitle>Settings</PageTitle>
 
 <h1 class="page-title">Settings</h1>
 
-<form class="input-form" @onsubmit="FormSubmitHandler">
+<form class="input-form" @onsubmit="SettingsFormSubmitHandler">
     <div class="form-group">
         <label for="sendername">Sender name:</label>
         <input type="text" value="@smtpclisettings.Sendername" id="sendername" class="form-control" @oninput="UpdateSendername" aria-label="Sender name" />
@@ -17,7 +18,7 @@
 
     <div class="form-group">
         <label for="senderemail">Sender email:</label>
-        <input type="text" value="@smtpclisettings.Senderemail" id="senderemail" class="form-control" @oninput="UpdateSenderemail" aria-label="Sender email" />
+        <input type="email" value="@smtpclisettings.Senderemail" id="senderemail" class="form-control" @oninput="UpdateSenderemail" aria-label="Sender email" />
     </div>
 
     <div class="form-group">
@@ -27,7 +28,7 @@
 
     <div class="form-group">
         <label for="password">SMTP password:</label>
-        <input type="text" value="@smtpclisettings.Password" id="password" class="form-control" @oninput="UpdatePassword" aria-label="SMTP password" />
+        <input type="password" value="@smtpclisettings.Password" id="password" class="form-control" @oninput="UpdatePassword" aria-label="SMTP password" />
     </div>
 
     <div class="form-group">
@@ -43,8 +44,25 @@
     <button type="submit" class="btn btn-primary">Save</button>
 </form>
 
+<form class="input-form" @onsubmit="CSVFileFormSubmitHandler">
+    <div class="form-group">
+        <label for="inputfiles">Upload CSV contact groups:</label>
+            <div class="custom-inputfile">
+                <InputFile id="inputfiles" OnChange="@FileUploadHandler" multiple />
+            </div>
+    </div>
+
+    <div class="form-group">
+
+
+    </div>
+
+    <button type="submit" class="btn btn-primary">Upload</button>
+</form>
+
 @code {
     private SmtpClientSettingsComponent.SmtpClientSettings smtpclisettings = new SmtpClientSettingsComponent.SmtpClientSettings();
+    private List<IBrowserFile> selectedfiles = new List<IBrowserFile>();
 
     protected override void OnInitialized()
     {
@@ -81,7 +99,7 @@
         smtpclisettings.Port = int.Parse(e.Value.ToString());
     }
 
-    private async Task FormSubmitHandler()
+    private async Task SettingsFormSubmitHandler()
     {
         var builder = new ConfigurationBuilder()
             .SetBasePath(Directory.GetCurrentDirectory())
@@ -116,5 +134,17 @@
             jsontxtwriter.Formatting = Formatting.Indented;
             existingobj.WriteTo(jsontxtwriter);
         }
+    }
+
+    private void FileUploadHandler(InputFileChangeEventArgs e)
+    {
+        selectedfiles = e.GetMultipleFiles().ToList();
+    }
+
+    private async Task CSVFileFormSubmitHandler()
+    {
+        FileHandler filehandlerinstance = new FileHandler();
+
+        await filehandlerinstance.ExtractUploadedFileContents(selectedfiles);
     }
 }

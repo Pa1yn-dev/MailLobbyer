@@ -1,6 +1,7 @@
 ﻿@page "/"
 @using MailLobbyer.CSVServiceComponent
 @using MailLobbyer.EmailHandlerComponent
+@using MailLobbyer.FileHandlerComponent
 @using MailLobbyer.CSVFileClass
 @using MailLobbyer.ContactClass
 
@@ -8,7 +9,7 @@
 
 <h1 class="page-title">Home</h1>
 
-<form class="input-form" @onsubmit="FormSubmitHandler">
+<form class="input-form" @onsubmit="EmailFormSubmitHandler">
     <div class="form-group">
         <label for="subject">Subject:</label>
         <input type="text" id="subject" class="form-control" @bind="subject" aria-label="Subject" />
@@ -102,7 +103,7 @@
         contact.IsSelected = !contact.IsSelected;
     }
 
-    private async Task FormSubmitHandler()
+    private async Task EmailFormSubmitHandler()
     {
         if (string.IsNullOrEmpty(selectedgroup))
         {
@@ -124,14 +125,15 @@
             .Build();
 
         EmailHandler emailhandlerinstance = new EmailHandler(configuration);
+        FileHandler filehandlerinstance = new FileHandler();
 
-        await emailhandlerinstance.ExtractUploadedFileContents(selectedfiles);
+        await filehandlerinstance.ExtractUploadedFileContents(selectedfiles);
 
         foreach (Contact contact in csvserviceinstance.contacts)
         {
             if (!contact.IsSelected == true)
             {
-                await emailhandlerinstance.EmailSyntaxHandler(subject, body, contact, emailhandlerinstance.fileuploads);
+                await emailhandlerinstance.EmailSyntaxHandler(subject, body, contact, filehandlerinstance.fileuploads);
             }
         }
 
