@@ -13,37 +13,38 @@
 <form class="input-form" @onsubmit="SettingsFormSubmitHandler">
     <div class="form-group">
         <label for="sendername">Sender name:</label>
-        <input type="text" value="@smtpclisettings.Sendername" id="sendername" class="form-control" @oninput="UpdateSendername" aria-label="Sender name" />
+        <input type="text" value="@smtpclisettings.Sendername" id="sendername" name="sendername" class="form-control" @oninput="UpdateSendername" aria-label="Sender name" />
     </div>
 
     <div class="form-group">
         <label for="senderemail">Sender email:</label>
-        <input type="email" value="@smtpclisettings.Senderemail" id="senderemail" class="form-control" @oninput="UpdateSenderemail" aria-label="Sender email" />
+        <input type="email" value="@smtpclisettings.Senderemail" id="senderemail" name="senderemail" class="form-control" @oninput="UpdateSenderemail" aria-label="Sender email" />
     </div>
 
     <div class="form-group">
         <label for="username">SMTP username:</label>
-        <input type="text" value="@smtpclisettings.Username" id="username" class="form-control" @oninput="UpdateUsername" aria-label="SMTP username" />
+        <input type="text" value="@smtpclisettings.Username" id="username" name="username" class="form-control" @oninput="UpdateUsername" aria-label="SMTP username" />
     </div>
 
     <div class="form-group">
         <label for="password">SMTP password:</label>
-        <input type="password" value="@smtpclisettings.Password" id="password" class="form-control" @oninput="UpdatePassword" aria-label="SMTP password" />
+        <input type="password" value="@smtpclisettings.Password" id="password" name="password" class="form-control" @oninput="UpdatePassword" aria-label="SMTP password" />
     </div>
 
     <div class="form-group">
         <label for="host">SMTP host:</label>
-        <input type="text" value="@smtpclisettings.Host" id="host" class="form-control" @oninput="UpdateHost" aria-label="SMTP host" />
+        <input type="text" value="@smtpclisettings.Host" id="host" name="host" class="form-control" @oninput="UpdateHost" aria-label="SMTP host" />
     </div>
 
     <div class="form-group">
         <label for="port">SMTP port:</label>
-        <input type="text" value="@smtpclisettings.Port" id="port" class="form-control" @oninput="UpdatePort" aria-label="SMTP port" />
+        <input type="text" value="@smtpclisettings.Port" id="port" name="port" class="form-control" @oninput="UpdatePort" aria-label="SMTP port" />
     </div>
 
     <button type="submit" class="btn btn-primary">Save</button>
 </form>
 
+<!--
 <form class="input-form" @onsubmit="CSVFileFormSubmitHandler">
     <div class="form-group">
         <label for="inputfiles">Upload CSV contact groups:</label>
@@ -59,6 +60,7 @@
 
     <button type="submit" class="btn btn-primary">Upload</button>
 </form>
+-->
 
 @code {
     private SmtpClientSettingsComponent.SmtpClientSettings smtpclisettings = new SmtpClientSettingsComponent.SmtpClientSettings();
@@ -117,7 +119,7 @@
         
 
         
-
+    /*
         JObject existingobj = JObject.Parse(File.ReadAllText(Path.Combine(Directory.GetCurrentDirectory(), "appsettings.json")));
         JObject blockformodification = (JObject)existingobj["SmtpClientSettings"];
 
@@ -134,6 +136,9 @@
             jsontxtwriter.Formatting = Formatting.Indented;
             existingobj.WriteTo(jsontxtwriter);
         }
+
+    */
+
     }
 
     private void FileUploadHandler(InputFileChangeEventArgs e)
@@ -141,10 +146,13 @@
         selectedfiles = e.GetMultipleFiles().ToList();
     }
 
+    /*
     private async Task CSVFileFormSubmitHandler()
     {
         FileHandler filehandlerinstance = new FileHandler();
 
         await filehandlerinstance.ExtractUploadedFileContents(selectedfiles);
     }
+    */
 }
+
