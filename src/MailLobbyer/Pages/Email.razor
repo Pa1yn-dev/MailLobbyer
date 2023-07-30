@@ -1,0 +1,147 @@
+﻿@page "/"
+@using MailLobbyer.CSVServiceComponent
+@using MailLobbyer.EmailHandlerComponent
+@using MailLobbyer.FileHandlerComponent
+@using MailLobbyer.CSVFileClass
+@using MailLobbyer.ContactClass
+
+<PageTitle>Home</PageTitle>
+
+<h1 class="page-title">Home</h1>
+
+<form class="input-form" @onsubmit="EmailFormSubmitHandler">
+    <div class="form-group">
+        <label for="subject">Subject:</label>
+        <input type="text" id="subject" class="form-control" @bind="subject" aria-label="Subject" />
+    </div>
+
+    <div class="form-group">
+        <label for="body">Body:</label>
+        <textarea id="body" class="form-control" @bind="body" aria-label="Body"></textarea>
+    </div>
+
+    <div class="custom-inputfile">
+        <InputFile id="inputfiles" OnChange="@FileUploadHandler" multiple />
+    </div>
+    
+
+    @if (displayform)
+    {
+        <div class="form-group">
+        <label for="contactGroup">Contact Group:</label>
+        <select id="contactGroup" class="form-control" @bind="selectedgroup" required aria-label="Contact Group">
+            <option value="">Select a group</option>
+            @foreach (CSVFile csvfile in csvserviceinstance.CSVFilesindir)
+            {
+                <option value="@csvfile.Filepath" aria-label="@csvfile.Filename">@csvfile.Filename</option>
+            }
+        </select>
+        </div>
+
+        <button type="submit" class="btn btn-primary">Continue</button>
+    }
+    
+    else
+    {
+        <form @onsubmit="ExclusionFormSubmitHandler">
+            <div class="form-group">
+                <label>Contact exclusion:</label>
+                @foreach (Contact contact in csvserviceinstance.contacts)
+                {
+                    <div class="subform-group">
+                        <label for="excludecontacts">@string.Concat(contact.Forename, " ", contact.Surname) - @contact.Email</label>
+                        <input type="checkbox" id="excludecontacts" value="@contact.Email" checked="@contact.IsSelected" @onchange="() => ToggleContactExclusion(contact)" aria-label="Exclude contact: @(string.Concat(contact.Forename, " ", contact.Surname) + " - " + contact.Email)" />
+                    </div>
+                }
+            </div>
+
+            <button type="submit" class="btn btn-primary">Send</button>
+    </form>
+    }
+
+    
+</form>
+
+@code {
+    private bool displayform = true;
+    private string subject;
+    private string body;
+    private List<IBrowserFile> selectedfiles = new List<IBrowserFile>();
+    private string selectedgroup;
+    
+
+    CSVService csvserviceinstance = new CSVService();
+
+    protected override void OnInitialized()
+    {
+        // Checks for a folder for CSV files for contact groups in easy to access locations on both Linux and Windows, if it does not exist a folder is created.
+        string documentspath = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
+        string directoryname = "MailLobbyer";
+        string directorypath = Path.Combine(documentspath, directoryname);
+
+        if (!Directory.Exists(directorypath))
+        {
+            Directory.CreateDirectory(directorypath);
+            Console.WriteLine("CSV contact-grouping directory created successfully.");
+        }
+        else
+        {
+            Console.WriteLine("CSV contact-grouping directory already exists.");
+        }
+
+        csvserviceinstance.CSVFileSeeker(directorypath);
+    }
+
+    private void FileUploadHandler(InputFileChangeEventArgs e)
+    {
+        selectedfiles = e.GetMultipleFiles().ToList();
+    }
+
+    private void ToggleContactExclusion(Contact contact)
+    {
+        contact.IsSelected = !contact.IsSelected;
+    }
+
+    private async Task EmailFormSubmitHandler()
+    {
+        if (string.IsNullOrEmpty(selectedgroup))
+        {
+            // Replace with popup!
+            Console.WriteLine("Please select a group.");
+            return;
+        }
+
+        await csvserviceinstance.CSVParser(selectedgroup);
+
+        displayform = false;
+    }
+
+    private async Task ExclusionFormSubmitHandler()
+    {
+        IConfiguration configuration = new ConfigurationBuilder()
+            .SetBasePath(Directory.GetCurrentDirectory())
+            .AddJsonFile("appsettings.json")
+            .Build();
+
+        EmailHandler emailhandlerinstance = new EmailHandler(configuration);
+        FileHandler filehandlerinstance = new FileHandler();
+
+        await filehandlerinstance.ExtractUploadedFileContents(selectedfiles);
+
+        foreach (Contact contact in csvserviceinstance.contacts)
+        {
+            if (!contact.IsSelected == true)
+            {
+                await emailhandlerinstance.EmailSyntaxHandler(subject, body, contact, filehandlerinstance.fileuploads);
+            }
+        }
+
+        // Reset form fields
+        subject = string.Empty;
+        body = string.Empty;
+        selectedfiles = new List<IBrowserFile>();
+        csvserviceinstance.contacts.Clear();
+        selectedgroup = string.Empty;
+        displayform = true;
+    }
+}
