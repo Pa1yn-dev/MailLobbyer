@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "IPOvLF2o6qXDNze9+6yvQ+Z4wn4+pBBF6UUj/kv6tL7eM9JzwxbXMPKnhqDdRCL+hb43NI0/7iL/7MYF9X2S1A==",
+  "dgSpecHash": "qKOMMZ8+5K5tm4RaVKU34kLf9+bBwKL0UlgQfjDxKvB2u0DNce/+hAkv2IHWBgN6tK5xbI7kfR2C7UZBaUxKNA==",
   "success": true,
   "projectFilePath": "/home/kitt/Documents/GitHub/MailLobbyer/src/MailLobbyer/MailLobbyer.csproj",
   "expectedPackageFiles": [
@@ -11,7 +11,10 @@
     "/home/kitt/.nuget/packages/system.formats.asn1/7.0.0/system.formats.asn1.7.0.0.nupkg.sha512",
     "/home/kitt/.nuget/packages/system.runtime.compilerservices.unsafe/6.0.0/system.runtime.compilerservices.unsafe.6.0.0.nupkg.sha512",
     "/home/kitt/.nuget/packages/system.security.cryptography.pkcs/7.0.2/system.security.cryptography.pkcs.7.0.2.nupkg.sha512",
-    "/home/kitt/.nuget/packages/system.text.encoding.codepages/7.0.0/system.text.encoding.codepages.7.0.0.nupkg.sha512"
+    "/home/kitt/.nuget/packages/system.text.encoding.codepages/7.0.0/system.text.encoding.codepages.7.0.0.nupkg.sha512",
+    "/home/kitt/.nuget/packages/microsoft.netcore.app.runtime.linux-x64/7.0.5/microsoft.netcore.app.runtime.linux-x64.7.0.5.nupkg.sha512",
+    "/home/kitt/.nuget/packages/microsoft.aspnetcore.app.runtime.linux-x64/7.0.5/microsoft.aspnetcore.app.runtime.linux-x64.7.0.5.nupkg.sha512",
+    "/home/kitt/.nuget/packages/microsoft.netcore.app.host.linux-x64/7.0.5/microsoft.netcore.app.host.linux-x64.7.0.5.nupkg.sha512"
   ],
   "logs": []
 }

@@ -323,7 +323,6 @@
 /home/kitt/Documents/GitHub/MailLobbyer/src/MailLobbyer/bin/Release/net7.0/win-x64/hostfxr.dll
 /home/kitt/Documents/GitHub/MailLobbyer/src/MailLobbyer/bin/Release/net7.0/win-x64/hostpolicy.dll
 /home/kitt/Documents/GitHub/MailLobbyer/src/MailLobbyer/bin/Release/net7.0/win-x64/mscordaccore.dll
-/home/kitt/Documents/GitHub/MailLobbyer/src/MailLobbyer/bin/Release/net7.0/win-x64/mscordaccore_amd64_amd64_7.0.723.27404.dll
 /home/kitt/Documents/GitHub/MailLobbyer/src/MailLobbyer/bin/Release/net7.0/win-x64/mscordbi.dll
 /home/kitt/Documents/GitHub/MailLobbyer/src/MailLobbyer/bin/Release/net7.0/win-x64/mscorrc.dll
 /home/kitt/Documents/GitHub/MailLobbyer/src/MailLobbyer/bin/Release/net7.0/win-x64/msquic.dll
@@ -353,3 +352,5 @@
 /home/kitt/Documents/GitHub/MailLobbyer/src/MailLobbyer/obj/Release/net7.0/win-x64/MailLobbyer.pdb
 /home/kitt/Documents/GitHub/MailLobbyer/src/MailLobbyer/obj/Release/net7.0/win-x64/MailLobbyer.genruntimeconfig.cache
 /home/kitt/Documents/GitHub/MailLobbyer/src/MailLobbyer/obj/Release/net7.0/win-x64/ref/MailLobbyer.dll
+/home/kitt/Documents/GitHub/MailLobbyer/src/MailLobbyer/bin/Release/net7.0/win-x64/mscordaccore_amd64_amd64_7.0.523.17405.dll
+/home/kitt/Documents/GitHub/MailLobbyer/src/MailLobbyer/obj/Release/net7.0/win-x64/scopedcss/Shared/Footer.razor.rz.scp.css

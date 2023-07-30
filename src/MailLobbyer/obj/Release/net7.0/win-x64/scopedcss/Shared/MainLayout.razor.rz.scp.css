@@ -2,16 +2,11 @@
     position: relative;
     display: flex;
     flex-direction: column;
+    min-height: 100vh;
 }
 
 main[b-gk9azpv4sx] {
     flex: 1;
-}
-
-.sidebar[b-gk9azpv4sx] {
-    background-color: #7f7f7f;
-    opacity: 1;
-    background: repeating-linear-gradient( -45deg, #000000, #000000 10.5px, #7f7f7f 10.5px, #7f7f7f 52.5px );
 }
 
 .top-row[b-gk9azpv4sx] {
