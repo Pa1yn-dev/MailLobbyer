@@ -2,10 +2,13 @@ html, body {
     font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
 }
 
-.page-title h1 {
-    font-weight: bold;
+.page-title {
+    font-weight: bolder;
     text-decoration: underline;
-    font-size: medium;
+    text-decoration-thickness: 2px ;
+    font-size: 24px;
+    margin-top: 10px;
+    margin-bottom: 10px;
 }
 
 h1:focus {
@@ -29,7 +32,8 @@ a:focus, a:hover {
     color: #fff;
     background-color: rgb(80, 80, 80);
     border-color: rgb(60, 60, 60);
-    margin-top: 10px;
+    margin-top: 20px;
+    margin-bottom: 20px;
 }
 
 .btn:focus,
@@ -91,19 +95,24 @@ a:focus, a:hover {
     padding: 10px;
     margin-top: 10px;
     margin-bottom: 10px;
+    box-shadow: 10px 10px 5px rgba(0, 0, 0, 0.185);
+}
+
+.input-form label {
+    font-weight: bold;
 }
 
 .subform-group {
     border: 1px solid #ccc;
     border-radius: 5px;
     padding: 10px;
-    margin-top: 10px;
-    margin-bottom: 10px;
+    margin-top: 20px;
+    margin-bottom: 20px;
 }
 
 .form-group {
-    margin-top: 10px;
-    margin-bottom: 10px;
+    margin-top: 20px;
+    margin-bottom: 20px;
 }
 
 .custom-inputfile input[type="file"] {
@@ -111,7 +120,63 @@ a:focus, a:hover {
     background-color: rgb(80, 80, 80);
     border: 1px solid rgb(60, 60, 60);
     padding: 10px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+}
+
+.about-block {
+    border: 2px solid #ccc;
+    border-radius: 5px;
+    padding: 10px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    box-shadow: 10px 10px 5px rgba(0, 0, 0, 0.185);
+    align-items: center;
+}
+
+.about-h1 {
+    text-align: center;
     margin-top: 10px;
     margin-bottom: 10px;
-    border-radius: 5px;
+    font-size: 24px;
+    font-weight: bold;
+    text-decoration: underline;
+    text-decoration-thickness: 2px;
+}
+
+.about-logo {
+    border: 2px solid #ccc;
+    border-radius: 20%;
+    max-height: 180px;
+    max-width: 180px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.about-content {
+    display: flex;
+    flex-direction: column; 
+    align-items: center; 
+    text-align: center;
+   
+}
+
+.about-list-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.about-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+}
+
+.about-list li {
+    margin-left: 20px;
+    margin-right: 20px;
 }

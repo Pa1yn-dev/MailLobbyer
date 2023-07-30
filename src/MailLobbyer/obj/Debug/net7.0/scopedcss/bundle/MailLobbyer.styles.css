@@ -1,8 +1,35 @@
+/* _content/MailLobbyer/Shared/Footer.razor.rz.scp.css */
+.footer[b-xujzwtudf5] {
+    background: repeating-linear-gradient( -45deg, #000000, #000000 10px, rgb(80, 80, 80) 10px, rgb(80, 80, 80) 50px );
+    padding: 10px;
+    position: static;
+    
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0.8;
+    border-top: 2px solid rgba(0, 0, 0, 0.8);
+    flex-shrink: 0;
+}
+.footer-text[b-xujzwtudf5] {
+    margin-top: 10px;
+    margin-bottom: 10px; 
+    color: white; 
+    text-align: center; 
+    display: flex; 
+    align-items: center;
+    font-size: smaller;
+    font-weight: medium;
+}
 /* _content/MailLobbyer/Shared/MainLayout.razor.rz.scp.css */
 .page[b-gk9azpv4sx] {
     position: relative;
     display: flex;
     flex-direction: column;
+    min-height: 100vh;
 }
 
 main[b-gk9azpv4sx] {
@@ -74,7 +101,6 @@ main[b-gk9azpv4sx] {
 }
 
 .navbar[b-3qkxyhumpy] {
-    background-color: #515151;
     opacity: 0.8;
     background: repeating-linear-gradient( -45deg, #000000, #000000 10px, rgb(80, 80, 80) 10px, rgb(80, 80, 80) 50px );
     color: white;
@@ -82,6 +108,8 @@ main[b-gk9azpv4sx] {
     justify-content: space-between;
     align-items: center;
     padding: 10px;
+    box-shadow: 10px 10px 5px rgba(0, 0, 0, 0.185);
+    border-bottom: 2px solid rgba(0, 0, 0, 0.8);
 }
 
 .navbar-brand[b-3qkxyhumpy] {
