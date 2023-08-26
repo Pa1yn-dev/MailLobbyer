@@ -8,37 +8,36 @@
 
 <PageTitle>Settings</PageTitle>
 
-<h1 class="page-title">Settings</h1>
-
 <form class="input-form" @onsubmit="SettingsFormSubmitHandler">
+    <h1 class="page-title">Settings</h1>
     <div class="form-group">
         <label for="sendername">Sender name:</label>
-        <input type="text" value="@smtpclisettings.Sendername" id="sendername" name="sendername" class="form-control" @oninput="UpdateSendername" aria-label="Sender name" />
+        <input type="text" placeholder="Enter your sender name" value="@smtpclisettings.Sendername" id="sendername" name="sendername" class="form-control" @oninput="UpdateSendername" aria-label="Sender name" />
     </div>
 
     <div class="form-group">
         <label for="senderemail">Sender email:</label>
-        <input type="email" value="@smtpclisettings.Senderemail" id="senderemail" name="senderemail" class="form-control" @oninput="UpdateSenderemail" aria-label="Sender email" />
+        <input type="email" placeholder="Enter your sender email" value="@smtpclisettings.Senderemail" id="senderemail" name="senderemail" class="form-control" @oninput="UpdateSenderemail" aria-label="Sender email" />
     </div>
 
     <div class="form-group">
         <label for="username">SMTP username:</label>
-        <input type="text" value="@smtpclisettings.Username" id="username" name="username" class="form-control" @oninput="UpdateUsername" aria-label="SMTP username" />
+        <input type="text" placeholder="Enter your SMTP username" value="@smtpclisettings.Username" id="username" name="username" class="form-control" @oninput="UpdateUsername" aria-label="SMTP username" />
     </div>
 
     <div class="form-group">
         <label for="password">SMTP password:</label>
-        <input type="password" value="@smtpclisettings.Password" id="password" name="password" class="form-control" @oninput="UpdatePassword" aria-label="SMTP password" />
+        <input type="password" placeholder="Enter your SMTP password" value="@smtpclisettings.Password" id="password" name="password" class="form-control" @oninput="UpdatePassword" aria-label="SMTP password" />
     </div>
 
     <div class="form-group">
         <label for="host">SMTP host:</label>
-        <input type="text" value="@smtpclisettings.Host" id="host" name="host" class="form-control" @oninput="UpdateHost" aria-label="SMTP host" />
+        <input type="text" placeholder="Enter your SMTP hostname/IP" value="@smtpclisettings.Host" id="host" name="host" class="form-control" @oninput="UpdateHost" aria-label="SMTP host" />
     </div>
 
     <div class="form-group">
         <label for="port">SMTP port:</label>
-        <input type="text" value="@smtpclisettings.Port" id="port" name="port" class="form-control" @oninput="UpdatePort" aria-label="SMTP port" />
+        <input type="text" placeholder="Enter your SMTP port" value="@smtpclisettings.Port" id="port" name="port" class="form-control" @oninput="UpdatePort" aria-label="SMTP port" />
     </div>
 
     <button type="submit" class="btn btn-primary">Save</button>
