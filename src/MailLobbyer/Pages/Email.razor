@@ -45,16 +45,25 @@
         <form class="input-form" @onsubmit="ExclusionFormSubmitHandler">
             <h1 class="page-title">Contact exclusion</h1>
             <div class="form-group">
-                <input type="text" placeholder="Enter a contact to search for" class="form-control" @bind="contactsearch" @oninput="OnContactSearch" aria-label="Subject" />
-                <button type="button" class="btn btn-primary" @onclick="ToggleSelectAll">@toggleselectallstringvalue</button>
-
+                <input type="text" placeholder="Enter a contact to search for" class="form-control" @oninput="OnContactSearch" aria-label="Contact Search" />
                 @if (displaycontactsearch)
-                {
+                { 
+                    @foreach (Contact contact in csvserviceinstance.contacts)
+                    {
+                        @if (contact.IsSearched == true)
+                        {
+                            <div class="subform-group">
+                                <label for="excludecontacts">@string.Concat(contact.Forename, " ", contact.Surname) - @contact.Email</label>
+                                <input type="checkbox" id="excludecontacts" value="@contact.Email" checked="@contact.IsSelected" @onchange="() => ToggleContactExclusion(contact)" aria-label="Exclude contact: @(string.Concat(contact.Forename, " ", contact.Surname) + " - " + contact.Email)" />
+                            </div>
 
+                        }
+                    }
                 }
 
                 else 
                 {
+                    <button type="button" class="btn btn-primary" @onclick="ToggleSelectAll">@toggleselectallstringvalue</button>
                     @foreach (Contact contact in csvserviceinstance.contacts)
                     {
                         <div class="subform-group">
@@ -64,6 +73,7 @@
                     }
                     
                 }
+
             </div>
 
             <button type="submit" class="btn btn-primary">Send</button>
@@ -76,7 +86,7 @@
     private string body;
     private List<IBrowserFile> selectedfiles = new List<IBrowserFile>();
     private string selectedgroup;
-    private string contactsearch;
+    private string contactsearch = string.Empty;
     private bool displaycontactsearch;
     private bool toggleselectallbuttonvalue = true;
     private string toggleselectallstringvalue = "Select all";
@@ -109,9 +119,19 @@
         selectedfiles = e.GetMultipleFiles().ToList();
     }
 
-    private void OnContactSearch()
+    private void OnContactSearch(ChangeEventArgs e)
     {
-        displaycontactsearch = string.IsNullOrEmpty(contactsearch);
+        contactsearch = e.Value.ToString();
+        displaycontactsearch = !string.IsNullOrEmpty(contactsearch);
+
+        foreach(Contact contact in csvserviceinstance.contacts)
+        {
+            contact.IsSearched = !string.IsNullOrEmpty(contactsearch) &&
+            (contact.Email.Contains(contactsearch, StringComparison.OrdinalIgnoreCase) == true ||
+             contact.Forename.Contains(contactsearch, StringComparison.OrdinalIgnoreCase) == true ||
+             contact.Surname.Contains(contactsearch, StringComparison.OrdinalIgnoreCase) == true);
+
+        }
     }
 
     private void ToggleSelectAll()
