@@ -7,6 +7,7 @@ namespace MailLobbyer.ContactClass
         public string Forename { get; set; }
         public string Email { get; set; }
         public bool IsSelected { get; set;}
+        public bool IsSearched { get; set; }
 
         public Contact (string prefix, string surname, string forename, string email)
         {
