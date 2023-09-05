@@ -36,9 +36,7 @@
             
         }
     </div>
-        
-
-    
+          
     @if (displayform)
     {
         <div class="form-group">
@@ -97,9 +95,10 @@
     }
 
 @code {
-    private HubConnection? hubConnection;
+    private HubConnection? csvhubconnection;
     private List<CSVFile> csvfilesonserver = new List<CSVFile>();
 
+    CSVService csvserviceinstance = new CSVService();
 
     private bool displayform = true;
     private string subject;
@@ -113,24 +112,24 @@
     private string toggleselectallbuttonstringvalue = "Select all";
     
 
-    CSVService csvserviceinstance = new CSVService();
+    
 
     protected override async Task OnInitializedAsync()
     {
-        hubConnection = new HubConnectionBuilder()
+        csvhubconnection = new HubConnectionBuilder()
             .WithUrl(Navigation.ToAbsoluteUri("/csvhub"))
             .Build();
+            
 
+        await csvhubconnection.StartAsync();
         
 
-        await hubConnection.StartAsync();
-
-        if (hubConnection is not null)
+        if (csvhubconnection is not null)
         {
-            await hubConnection.SendAsync("CSVFileSeeker");
+            await csvhubconnection.SendAsync("CSVFileSeeker");
 
 
-            csvfilesonserver = await hubConnection.InvokeAsync<List<CSVFile>>("GetCSVFilesInMemory");
+            csvfilesonserver = await csvhubconnection.InvokeAsync<List<CSVFile>>("GetCSVFilesInMemory");
         }
     }
 
@@ -203,10 +202,9 @@
             Console.WriteLine("Please select a group.");
             return;
         }
-
-        await csvserviceinstance.CSVParser(selectedgroup);
-
+        
         displayform = false;
+
     }
 
     private async Task ExclusionFormSubmitHandler()
@@ -243,13 +241,13 @@
 
 
     public bool IsConnected =>
-        hubConnection?.State == HubConnectionState.Connected;
+        csvhubconnection?.State == HubConnectionState.Connected;
 
     public async ValueTask DisposeAsync()
     {
-        if (hubConnection is not null)
+        if (csvhubconnection is not null)
         {
-            await hubConnection.DisposeAsync();
+            await csvhubconnection.DisposeAsync();
         }
     }
 }

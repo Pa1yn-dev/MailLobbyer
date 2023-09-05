@@ -9,23 +9,8 @@ namespace MailLobbyer.CSVServiceComponent
 {
     public class CSVService
     {
-        public List<CSVFile> CSVFilesindir = new List<CSVFile>();
         public List<Contact> contacts = new List<Contact>();
 
-        public void CSVFileSeeker(string directory)
-        {
-            string[] filepaths = Directory.GetFiles(directory);
-
-            foreach (string filepath in filepaths)
-            {
-                CSVFile newcsvfile = new CSVFile(Path.GetFileNameWithoutExtension(filepath), filepath);
-                //System.Console.WriteLine(newcsvfile.Filename);
-                CSVFilesindir.Add(newcsvfile);
-            }
-
-
-        }
-       
         public async Task CSVParser(string csvfilepath)
         {
             await Task.Run(() =>
