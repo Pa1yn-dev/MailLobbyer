@@ -48,7 +48,7 @@
             },
             "Microsoft.AspNetCore.SignalR.Client": {
               "target": "Package",
-              "version": "[7.0.9, )"
+              "version": "[7.0.10, )"
             },
             "Newtonsoft.Json": {
               "target": "Package",

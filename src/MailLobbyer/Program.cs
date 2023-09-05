@@ -27,6 +27,7 @@ if (!app.Environment.IsDevelopment())
     app.UseHsts();
 }
 app.UseResponseCompression();
+app.MapHub<CSVHub>("/csvhub");
 app.MapHub<EmailHub>("/emailhub");
 
 app.UseHttpsRedirection();

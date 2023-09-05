@@ -4,6 +4,9 @@
 @using MailLobbyer.FileHandlerComponent
 @using MailLobbyer.CSVFileClass
 @using MailLobbyer.ContactClass
+@using Microsoft.AspNetCore.SignalR.Client
+@inject NavigationManager Navigation
+@implements IAsyncDisposable
 
 <PageTitle>Email</PageTitle>
 
@@ -42,7 +45,7 @@
         <label for="contactGroup">Contact Group:</label>
         <select id="contactGroup" class="form-control" @bind="selectedgroup" required aria-label="Contact Group">
             <option value="">Select a group</option>
-            @foreach (CSVFile csvfile in csvserviceinstance.CSVFilesindir)
+            @foreach (CSVFile csvfile in csvfilesonserver)
             {
                 <option value="@csvfile.Filepath" aria-label="@csvfile.Filename">@csvfile.Filename</option>
             }
@@ -94,6 +97,10 @@
     }
 
 @code {
+    private HubConnection? hubConnection;
+    private List<CSVFile> csvfilesonserver = new List<CSVFile>();
+
+
     private bool displayform = true;
     private string subject;
     private string body;
@@ -108,24 +115,23 @@
 
     CSVService csvserviceinstance = new CSVService();
 
-    protected override void OnInitialized()
+    protected override async Task OnInitializedAsync()
     {
-        // Checks for a folder for CSV files for contact groups in easy to access locations on both Linux and Windows, if it does not exist a folder is created.
-        string documentspath = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
-        string directoryname = "MailLobbyer";
-        string directorypath = Path.Combine(documentspath, directoryname);
+        hubConnection = new HubConnectionBuilder()
+            .WithUrl(Navigation.ToAbsoluteUri("/csvhub"))
+            .Build();
 
-        if (!Directory.Exists(directorypath))
-        {
-            Directory.CreateDirectory(directorypath);
-            Console.WriteLine("CSV contact-grouping directory created successfully.");
-        }
-        else
-        {
-            Console.WriteLine("CSV contact-grouping directory already exists.");
-        }
+        
 
-        csvserviceinstance.CSVFileSeeker(directorypath);
+        await hubConnection.StartAsync();
+
+        if (hubConnection is not null)
+        {
+            await hubConnection.SendAsync("CSVFileSeeker");
+
+
+            csvfilesonserver = await hubConnection.InvokeAsync<List<CSVFile>>("GetCSVFilesInMemory");
+        }
     }
 
     private void FileUploadHandler(InputFileChangeEventArgs e)
@@ -232,5 +238,18 @@
         toggleselectallbuttonboolvalue = true;
         toggleselectallbuttonstringvalue = "Select all";
         displayform = true;
+    }
+
+
+
+    public bool IsConnected =>
+        hubConnection?.State == HubConnectionState.Connected;
+
+    public async ValueTask DisposeAsync()
+    {
+        if (hubConnection is not null)
+        {
+            await hubConnection.DisposeAsync();
+        }
     }
 }
