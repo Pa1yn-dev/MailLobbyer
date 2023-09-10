@@ -1,19 +1,18 @@
 using Microsoft.AspNetCore.SignalR;
 using MailLobbyer.ContactClass;
 using MailLobbyer.FileUploadClass;
-using MailLobbyer.SmtpClientSettingsComponent;
 using MailKit.Net.Smtp;
 using MailKit.Security;
 using MimeKit;
 using MailLobbyer.EmailClass;
+using MailLobbyer.SettingsProfilesClass;
 
 namespace MailLobbyer.Server.Hubs;
 
 public class EmailHub : Hub
 {
-    private List<Email> nonscheduledemails = new List<Email>();
 
-    public async Task EmailHandler(string subject, string body, Contact contact, List<FileUpload> fileuploads)
+    public async Task EmailHandler(string subject, string body, Contact contact, List<FileUpload> fileuploads, SettingsProfiles profile)
     {
         await Task.Run(async () =>
         {
@@ -33,7 +32,7 @@ public class EmailHub : Hub
                        .Replace(surnamesyntax, contact.Surname, StringComparison.OrdinalIgnoreCase);
 
                        var message = new MimeMessage();
-            message.From.Add(new MailboxAddress("Test", "Test@gmail.com"));
+            message.From.Add(new MailboxAddress(profile.SenderName, profile.SenderEmail));
             message.To.Add(new MailboxAddress(string.Concat(contact.Forename, " ", contact.Surname), contact.Email));
             message.Subject = subject;
 
@@ -51,28 +50,16 @@ public class EmailHub : Hub
 
             message.Body = builder.ToMessageBody();
 
-
-
-
-
-
-
-
-            //message.Body = new TextPart("plain") { Text = body };
-            /*
             using (var client = new SmtpClient())
             {
-                await client.ConnectAsync("smtp.gmail.com", 587, SecureSocketOptions.StartTls);
-                await client.AuthenticateAsync("peterhamilton522@gmail.com", "okakgvqorczjjllu");
+                await client.ConnectAsync(profile.Host, profile.Port, SecureSocketOptions.StartTls);
+                await client.AuthenticateAsync(profile.Username, profile.Password);
                 await client.SendAsync(message);
                 await client.DisconnectAsync(true);
-                Console.WriteLine("Sent");
             }
-            */
+            
         });
-    
-        
-
+ 
     }
 
     public override async Task OnDisconnectedAsync(Exception exception)

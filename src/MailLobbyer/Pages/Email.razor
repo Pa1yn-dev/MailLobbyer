@@ -1,6 +1,5 @@
 ﻿@page "/"
 @using MailLobbyer.CSVServiceComponent
-@using MailLobbyer.EmailHandlerComponent
 @using MailLobbyer.FileHandlerComponent
 @using MailLobbyer.CSVFileClass
 @using MailLobbyer.ContactClass
@@ -112,7 +111,6 @@
     private HubConnection? settingshubconnection;
     private List<CSVFile> csvfilesonserver = new List<CSVFile>();
     private List<SettingsProfiles> settingsprofilesonserver = new List<SettingsProfiles>();
-
 
     //Legacy client side    
     CSVService csvserviceinstance = new CSVService();
@@ -253,16 +251,25 @@
             .AddJsonFile("appsettings.json")
             .Build();
 
-        EmailHandler emailhandlerinstance = new EmailHandler(configuration);
         FileHandler filehandlerinstance = new FileHandler();
 
         await filehandlerinstance.ExtractUploadedFileContents(selectedfiles);
 
-        foreach (Contact contact in csvserviceinstance.contacts)
+        foreach (SettingsProfiles profile in settingsprofilesonserver)
         {
-            if (!contact.IsSelected == true)
+            if(profile.Id == selectedsettingsprofile)
             {
-                await emailhubconnection.SendAsync("EmailHandler", subject, body, contact, filehandlerinstance.fileuploads);
+                foreach (Contact contact in csvserviceinstance.contacts)
+                {
+                    if (!contact.IsSelected == true)
+                    {
+                        await emailhubconnection.SendAsync("EmailHandler", subject, body, contact, filehandlerinstance.fileuploads, profile);
+                    }
+                }
+            }
+            else
+            {
+                System.Console.WriteLine("Profile not found on server");
             }
         }
 
