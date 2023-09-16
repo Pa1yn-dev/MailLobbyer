@@ -1,9 +1,12 @@
 ﻿@page "/"
 @using MailLobbyer.CSVServiceComponent
-@using MailLobbyer.EmailHandlerComponent
 @using MailLobbyer.FileHandlerComponent
 @using MailLobbyer.CSVFileClass
 @using MailLobbyer.ContactClass
+@using MailLobbyer.SettingsProfilesClass
+@using Microsoft.AspNetCore.SignalR.Client
+@inject NavigationManager Navigation
+@implements IAsyncDisposable
 
 <PageTitle>Email</PageTitle>
 
@@ -33,16 +36,25 @@
             
         }
     </div>
-        
 
-    
+    <div class="form-group">
+        <label for="SettingsProfiles">Settings Profile:</label>
+        <select id="SettingsProfiles" class="form-control" @bind="selectedsettingsprofile" aria-label="Settings profiles">
+        <option value="@Guid.Empty">Select a profile</option>
+        @foreach (SettingsProfiles profile in settingsprofilesonserver)
+        {
+            <option value="@profile.Id" aria-label="@profile.SenderEmail">@profile.SenderEmail</option>
+        }
+        </select>
+    </div>
+          
     @if (displayform)
     {
         <div class="form-group">
         <label for="contactGroup">Contact Group:</label>
         <select id="contactGroup" class="form-control" @bind="selectedgroup" required aria-label="Contact Group">
             <option value="">Select a group</option>
-            @foreach (CSVFile csvfile in csvserviceinstance.CSVFilesindir)
+            @foreach (CSVFile csvfile in csvfilesonserver)
             {
                 <option value="@csvfile.Filepath" aria-label="@csvfile.Filename">@csvfile.Filename</option>
             }
@@ -94,6 +106,15 @@
     }
 
 @code {
+    private HubConnection? csvhubconnection;
+    private HubConnection? emailhubconnection;
+    private HubConnection? settingshubconnection;
+    private List<CSVFile> csvfilesonserver = new List<CSVFile>();
+    private List<SettingsProfiles> settingsprofilesonserver = new List<SettingsProfiles>();
+
+    //Legacy client side    
+    CSVService csvserviceinstance = new CSVService();
+
     private bool displayform = true;
     private string subject;
     private string body;
@@ -104,28 +125,47 @@
     private bool istoggleselectallbuttondisabled;
     private bool toggleselectallbuttonboolvalue = true;
     private string toggleselectallbuttonstringvalue = "Select all";
+    private Guid selectedsettingsprofile;
     
 
-    CSVService csvserviceinstance = new CSVService();
+    
 
-    protected override void OnInitialized()
+    protected override async Task OnInitializedAsync()
     {
-        // Checks for a folder for CSV files for contact groups in easy to access locations on both Linux and Windows, if it does not exist a folder is created.
-        string documentspath = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
-        string directoryname = "MailLobbyer";
-        string directorypath = Path.Combine(documentspath, directoryname);
+        csvhubconnection = new HubConnectionBuilder()
+            .WithUrl(Navigation.ToAbsoluteUri("/csvhub"))
+            .Build();
 
-        if (!Directory.Exists(directorypath))
+        emailhubconnection = new HubConnectionBuilder()
+            .WithUrl(Navigation.ToAbsoluteUri("/emailhub"))
+            .Build();
+
+        settingshubconnection = new HubConnectionBuilder()
+            .WithUrl(Navigation.ToAbsoluteUri("/settingshub"))
+            .Build();
+            
+
+        await csvhubconnection.StartAsync();
+        await emailhubconnection.StartAsync();
+        await settingshubconnection.StartAsync();
+        
+
+        if (csvhubconnection is not null)
         {
-            Directory.CreateDirectory(directorypath);
-            Console.WriteLine("CSV contact-grouping directory created successfully.");
-        }
-        else
-        {
-            Console.WriteLine("CSV contact-grouping directory already exists.");
+            await csvhubconnection.SendAsync("CSVFileSeeker");
+
+
+            csvfilesonserver = await csvhubconnection.InvokeAsync<List<CSVFile>>("GetCSVFilesInMemory");
         }
 
-        csvserviceinstance.CSVFileSeeker(directorypath);
+        if (settingshubconnection is not null)
+        {
+            // Replace with profiles reading when implemented.
+            // await csvhubconnection.SendAsync("CSVFileSeeker");
+
+
+            settingsprofilesonserver = await settingshubconnection.InvokeAsync<List<SettingsProfiles>>("GetProfiles");
+        }
     }
 
     private void FileUploadHandler(InputFileChangeEventArgs e)
@@ -199,8 +239,9 @@
         }
 
         await csvserviceinstance.CSVParser(selectedgroup);
-
+        
         displayform = false;
+
     }
 
     private async Task ExclusionFormSubmitHandler()
@@ -210,16 +251,30 @@
             .AddJsonFile("appsettings.json")
             .Build();
 
-        EmailHandler emailhandlerinstance = new EmailHandler(configuration);
         FileHandler filehandlerinstance = new FileHandler();
 
-        await filehandlerinstance.ExtractUploadedFileContents(selectedfiles);
-
-        foreach (Contact contact in csvserviceinstance.contacts)
+        foreach (IBrowserFile file in selectedfiles)
         {
-            if (!contact.IsSelected == true)
+            await filehandlerinstance.ExtractUploadedFileContents(file);
+        }
+
+        
+
+        foreach (SettingsProfiles profile in settingsprofilesonserver)
+        {
+            if(profile.Id == selectedsettingsprofile)
             {
-                await emailhandlerinstance.EmailSyntaxHandler(subject, body, contact, filehandlerinstance.fileuploads);
+                foreach (Contact contact in csvserviceinstance.contacts)
+                {
+                    if (!contact.IsSelected == true)
+                    {
+                        await emailhubconnection.SendAsync("EmailHandler", subject, body, contact, filehandlerinstance.fileuploads, profile);
+                    }
+                }
+            }
+            else
+            {
+                System.Console.WriteLine("Profile not found on server");
             }
         }
 
@@ -232,5 +287,29 @@
         toggleselectallbuttonboolvalue = true;
         toggleselectallbuttonstringvalue = "Select all";
         displayform = true;
+    }
+
+
+
+    public bool IsConnected =>
+        csvhubconnection?.State == HubConnectionState.Connected;
+        
+
+    public async ValueTask DisposeAsync()
+    {
+        if (csvhubconnection is not null)
+        {
+            await csvhubconnection.DisposeAsync();
+        }
+
+        if (emailhubconnection is not null)
+        {
+            await emailhubconnection.DisposeAsync();
+        }
+
+        if (settingshubconnection is not null)
+        {
+            await settingshubconnection.DisposeAsync();
+        }
     }
 }

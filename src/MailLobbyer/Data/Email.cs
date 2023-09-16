@@ -1,23 +1,16 @@
-using MailLobbyer.ContactClass;
-using MailLobbyer.FileUploadClass;
+using MailLobbyer.SettingsProfilesClass;
+using MimeKit;
 
 namespace MailLobbyer.EmailClass;
 
     public class Email 
     {
-        public string Subject { get; set; }
-        public string Body { get; set; }
-        public FileUpload[] Attachments { get; set; }
+        public MimeMessage ProcessedEmailContents { get; set; }
+        public SettingsProfiles SelectedProfile { get; set; }
 
-        public Contact[] Selectedcontacts { get; set; }
-
-    
-
-        public Email(string subject, string body, FileUpload[] attachments, Contact[] selectedcontacts)
+        public Email(MimeMessage processedemailcontents, SettingsProfiles selectedprofile)
         {
-            Subject = subject;
-            Body = body;
-            Attachments = attachments;
-            Selectedcontacts = selectedcontacts;
+            ProcessedEmailContents = processedemailcontents;
+            SelectedProfile = selectedprofile;
         }
     }
