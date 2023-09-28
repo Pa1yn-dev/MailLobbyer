@@ -11,28 +11,33 @@ namespace MailLobbyer.CSVServiceComponent
     {
         public List<Contact> contacts = new List<Contact>();
 
-        public async Task CSVParser(string csvfilepath)
+        public async Task CSVParser(byte[] selectedcsvfilecontents)
         {
             await Task.Run(() =>
             {
                 try
                 {
-                    using (StreamReader reader = new StreamReader(csvfilepath))
+                    using (MemoryStream ms = new MemoryStream(selectedcsvfilecontents))
                     {
-                        string currentline;
-
-                        //Skip headers used for XLSX reference before conversion to CSV
-                        reader.ReadLine();
-
-                        while((currentline = reader.ReadLine()) != null)
+                        using (StreamReader reader = new StreamReader(ms))
                         {
-                            string[] substrings = currentline.Split(',');
+                            string currentline;
+
+                            //Skip headers used for XLSX reference before conversion to CSV
+                            reader.ReadLine();
+
+                            while((currentline = reader.ReadLine()) != null)
+                            {
+                                string[] substrings = currentline.Split(',');
                     
-                            Contact newcontact = new Contact(substrings[0], substrings [1], substrings[2], substrings[3]);
-                            contacts.Add(newcontact);
-                    }
+                                Contact newcontact = new Contact(substrings[0], substrings [1], substrings[2], substrings[3]);
+                                contacts.Add(newcontact);
+                            }
+
+                        }
 
                     }
+                    
                 }
                 catch(Exception e)
                 {

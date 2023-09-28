@@ -52,11 +52,11 @@
     {
         <div class="form-group">
         <label for="contactGroup">Contact Group:</label>
-        <select id="contactGroup" class="form-control" @bind="selectedgroup" required aria-label="Contact Group">
+        <select id="contactGroup" class="form-control" @bind="selectedcsvfileid" required aria-label="Contact Group">
             <option value="">Select a group</option>
             @foreach (CSVFile csvfile in csvfilesonserver)
             {
-                <option value="@csvfile.Filepath" aria-label="@csvfile.Filename">@csvfile.Filename</option>
+                <option value="@csvfile.Id" aria-label="@csvfile.Filename">@csvfile.Filename</option>
             }
         </select>
         </div>
@@ -119,7 +119,7 @@
     private string subject;
     private string body;
     private List<IBrowserFile> selectedfiles = new List<IBrowserFile>();
-    private string selectedgroup;
+    private Guid selectedcsvfileid;
     private string contactsearch = string.Empty;
     private bool displaycontactsearch;
     private bool istoggleselectallbuttondisabled;
@@ -231,14 +231,21 @@
 
     private async Task EmailFormSubmitHandler()
     {
-        if (string.IsNullOrEmpty(selectedgroup))
+        if (selectedcsvfileid == null)
         {
             // Replace with popup!
             Console.WriteLine("Please select a group.");
             return;
         }
 
-        await csvserviceinstance.CSVParser(selectedgroup);
+        foreach (CSVFile csvfile in csvfilesonserver)
+        {
+            if (csvfile.Id == selectedcsvfileid)
+            {
+                await csvserviceinstance.CSVParser(csvfile.Filecontents);
+            }
+        }
+        
         
         displayform = false;
 
@@ -283,7 +290,7 @@
         body = string.Empty;
         selectedfiles = new List<IBrowserFile>();
         csvserviceinstance.contacts.Clear();
-        selectedgroup = string.Empty;
+        selectedcsvfileid = Guid.Empty;
         toggleselectallbuttonboolvalue = true;
         toggleselectallbuttonstringvalue = "Select all";
         displayform = true;
