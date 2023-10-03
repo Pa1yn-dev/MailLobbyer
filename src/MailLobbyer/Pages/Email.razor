@@ -53,11 +53,11 @@
         <div class="form-group">
         <label for="contactGroup">Contact Group:</label>
         <select id="contactGroup" class="form-control" @bind="selectedcsvfileid" required aria-label="Contact Group">
-            <option value="">Select a group</option>
-            @foreach (CSVFile csvfile in csvfilesonserver)
-            {
-                <option value="@csvfile.Id" aria-label="@csvfile.Filename">@csvfile.Filename</option>
-            }
+        <option value="@Guid.Empty">Select a group</option>
+        @foreach (CSVFile csvfile in csvfilesonserver)
+        {
+            <option value="@csvfile.Id" aria-label="@csvfile.Filename">@csvfile.Filename</option>
+        }
         </select>
         </div>
 
@@ -297,10 +297,6 @@
     }
 
 
-
-    public bool IsConnected =>
-        csvhubconnection?.State == HubConnectionState.Connected;
-        
 
     public async ValueTask DisposeAsync()
     {
