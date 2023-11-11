@@ -50,6 +50,43 @@
         }
       },
       {
+        "HashCode": -1356362581,
+        "Kind": "Components.Component",
+        "Name": "MailLobbyer.Pages.Contacts",
+        "AssemblyName": "MailLobbyer",
+        "CaseSensitive": true,
+        "TagMatchingRules": [
+          {
+            "TagName": "Contacts"
+          }
+        ],
+        "Metadata": {
+          "Common.TypeName": "MailLobbyer.Pages.Contacts",
+          "Common.TypeNameIdentifier": "Contacts",
+          "Common.TypeNamespace": "MailLobbyer.Pages",
+          "Runtime.Name": "Components.IComponent"
+        }
+      },
+      {
+        "HashCode": -311559349,
+        "Kind": "Components.Component",
+        "Name": "MailLobbyer.Pages.Contacts",
+        "AssemblyName": "MailLobbyer",
+        "CaseSensitive": true,
+        "TagMatchingRules": [
+          {
+            "TagName": "MailLobbyer.Pages.Contacts"
+          }
+        ],
+        "Metadata": {
+          "Common.TypeName": "MailLobbyer.Pages.Contacts",
+          "Common.TypeNameIdentifier": "Contacts",
+          "Common.TypeNamespace": "MailLobbyer.Pages",
+          "Components.NameMatch": "Components.FullyQualifiedNameMatch",
+          "Runtime.Name": "Components.IComponent"
+        }
+      },
+      {
         "HashCode": -74380621,
         "Kind": "Components.Component",
         "Name": "MailLobbyer.Shared.MainLayout",
@@ -18895,6 +18932,11 @@
       "FilePath": "/home/kitt/Documents/GitHub/MailLobbyer/src/MailLobbyer/Pages/_Host.cshtml",
       "TargetPath": "Pages\\_Host.cshtml",
       "FileKind": "mvc"
+    },
+    {
+      "FilePath": "/home/kitt/Documents/GitHub/MailLobbyer/src/MailLobbyer/Pages/Contacts.razor",
+      "TargetPath": "Pages\\Contacts.razor",
+      "FileKind": "component"
     }
   ],
   "SerializationFormat": "0.3"
