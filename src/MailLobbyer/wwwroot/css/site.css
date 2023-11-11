@@ -89,6 +89,8 @@ a:focus, a:hover {
     border: 2px solid #ccc;
     border-radius: 5px;
     padding: 10px;
+    margin-top: 10px;
+    margin-bottom: 10px;
 }
 
 .subform-group {

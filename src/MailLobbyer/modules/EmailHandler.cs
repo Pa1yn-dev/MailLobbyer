@@ -13,30 +13,10 @@ namespace MailLobbyer.EmailHandlerComponent
     {
 
         private readonly SmtpClientSettings _smtpSettings;
-        public List<FileUpload> fileuploads = new List<FileUpload>();
         public EmailHandler(IConfiguration configuration)
         {
             _smtpSettings = new SmtpClientSettings();
             configuration.GetSection("SmtpClientSettings").Bind(_smtpSettings);
-        }
-
-        public async Task ExtractUploadedFileContents(List<IBrowserFile> selectedfiles)
-        {
-            if(selectedfiles.Count > 0)
-            {
-                using (var ms = new MemoryStream())
-                {
-                    foreach (var file in selectedfiles)
-                    {
-                        await file.OpenReadStream().CopyToAsync(ms);
-                        byte[] filecontents = ms.ToArray();
-                        FileUpload fileupload = new FileUpload(file.Name, file.Size, filecontents);
-                        fileuploads.Add(fileupload);
-                    }
-
-                }
-                
-            }
         }
 
         public async Task EmailSyntaxHandler(string subject, string body, Contact contact, List<FileUpload> fileuploads)
