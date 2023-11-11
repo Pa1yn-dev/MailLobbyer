@@ -13,37 +13,37 @@
   "ProjectWorkspaceState": {
     "TagHelpers": [
       {
-        "HashCode": 743172402,
+        "HashCode": -731264388,
         "Kind": "Components.Component",
-        "Name": "MailLobbyer.Pages.About",
+        "Name": "MailLobbyer.Pages.Index",
         "AssemblyName": "MailLobbyer",
         "CaseSensitive": true,
         "TagMatchingRules": [
           {
-            "TagName": "About"
+            "TagName": "Index"
           }
         ],
         "Metadata": {
-          "Common.TypeName": "MailLobbyer.Pages.About",
-          "Common.TypeNameIdentifier": "About",
+          "Common.TypeName": "MailLobbyer.Pages.Index",
+          "Common.TypeNameIdentifier": "Index",
           "Common.TypeNamespace": "MailLobbyer.Pages",
           "Runtime.Name": "Components.IComponent"
         }
       },
       {
-        "HashCode": 486482924,
+        "HashCode": 329039401,
         "Kind": "Components.Component",
-        "Name": "MailLobbyer.Pages.About",
+        "Name": "MailLobbyer.Pages.Index",
         "AssemblyName": "MailLobbyer",
         "CaseSensitive": true,
         "TagMatchingRules": [
           {
-            "TagName": "MailLobbyer.Pages.About"
+            "TagName": "MailLobbyer.Pages.Index"
           }
         ],
         "Metadata": {
-          "Common.TypeName": "MailLobbyer.Pages.About",
-          "Common.TypeNameIdentifier": "About",
+          "Common.TypeName": "MailLobbyer.Pages.Index",
+          "Common.TypeNameIdentifier": "Index",
           "Common.TypeNamespace": "MailLobbyer.Pages",
           "Components.NameMatch": "Components.FullyQualifiedNameMatch",
           "Runtime.Name": "Components.IComponent"
@@ -87,37 +87,37 @@
         }
       },
       {
-        "HashCode": -731264388,
+        "HashCode": 743172402,
         "Kind": "Components.Component",
-        "Name": "MailLobbyer.Pages.Index",
+        "Name": "MailLobbyer.Pages.About",
         "AssemblyName": "MailLobbyer",
         "CaseSensitive": true,
         "TagMatchingRules": [
           {
-            "TagName": "Index"
+            "TagName": "About"
           }
         ],
         "Metadata": {
-          "Common.TypeName": "MailLobbyer.Pages.Index",
-          "Common.TypeNameIdentifier": "Index",
+          "Common.TypeName": "MailLobbyer.Pages.About",
+          "Common.TypeNameIdentifier": "About",
           "Common.TypeNamespace": "MailLobbyer.Pages",
           "Runtime.Name": "Components.IComponent"
         }
       },
       {
-        "HashCode": 329039401,
+        "HashCode": 486482924,
         "Kind": "Components.Component",
-        "Name": "MailLobbyer.Pages.Index",
+        "Name": "MailLobbyer.Pages.About",
         "AssemblyName": "MailLobbyer",
         "CaseSensitive": true,
         "TagMatchingRules": [
           {
-            "TagName": "MailLobbyer.Pages.Index"
+            "TagName": "MailLobbyer.Pages.About"
           }
         ],
         "Metadata": {
-          "Common.TypeName": "MailLobbyer.Pages.Index",
-          "Common.TypeNameIdentifier": "Index",
+          "Common.TypeName": "MailLobbyer.Pages.About",
+          "Common.TypeNameIdentifier": "About",
           "Common.TypeNamespace": "MailLobbyer.Pages",
           "Components.NameMatch": "Components.FullyQualifiedNameMatch",
           "Runtime.Name": "Components.IComponent"
