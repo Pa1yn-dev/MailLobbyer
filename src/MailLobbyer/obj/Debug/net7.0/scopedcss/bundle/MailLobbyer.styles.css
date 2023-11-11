@@ -11,7 +11,7 @@ main[b-gk9azpv4sx] {
 
 .sidebar[b-gk9azpv4sx] {
     background-color: #7f7f7f;
-    opacity: 0.8;
+    opacity: 1;
     background: repeating-linear-gradient( -45deg, #000000, #000000 10.5px, #7f7f7f 10.5px, #7f7f7f 52.5px );
 }
 
@@ -106,7 +106,7 @@ main[b-gk9azpv4sx] {
     }
 
     .nav-item[b-3qkxyhumpy]  a {
-        color: #d7d7d7;
+        color: white;
         border-radius: 4px;
         height: 3rem;
         display: flex;
