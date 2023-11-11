@@ -41,6 +41,10 @@
             "MailKit": {
               "target": "Package",
               "version": "[4.1.0, )"
+            },
+            "Newtonsoft.Json": {
+              "target": "Package",
+              "version": "[13.0.3, )"
             }
           },
           "imports": [

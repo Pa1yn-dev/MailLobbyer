@@ -1,5 +1,92 @@
 @page "/Settings"
+@inject IConfiguration Configuration;
+@using System.IO;
+@using Newtonsoft.Json;
 
 <PageTitle>Settings</PageTitle>
 
-<h3>WIP</h3>
+<h1 class="page-title">Settings</h1>
+
+<form @onsubmit="FormSubmitHandler">
+    <div class="form-group">
+        <label for="sendername">Sender name:</label>
+        <input type="text" value="@smtpclisettings.Sendername" id="sendername" class="form-control" @oninput="UpdateSendername" />
+
+        <label for="senderemail">Sender email:</label>
+        <input type="text" value="@smtpclisettings.Senderemail" id="senderemail" class="form-control" @oninput="UpdateSenderemail" />
+
+        <label for="username">Smtp username:</label>
+        <input type="text" value="@smtpclisettings.Username" id="username" class="form-control" @oninput="UpdateUsername" />
+
+        <label for="password">Smtp password:</label>
+        <input type="text" value="@smtpclisettings.Password" id="password" class="form-control" @oninput="UpdatePassword" />
+
+        <label for="host">Smtp host:</label>
+        <input type="text" value="@smtpclisettings.Host" id="host" class="form-control" @oninput="UpdateHost" />
+
+        <label for="port">Smtp port:</label>
+        <input type="text" value="@smtpclisettings.Port" id="port" class="form-control" @oninput="UpdatePort" />
+    </div>
+
+    <button type="submit" class="btn btn-primary">Save</button>
+</form>
+
+@code {
+    private SmtpClientSettingsComponent.SmtpClientSettings smtpclisettings = new SmtpClientSettingsComponent.SmtpClientSettings();
+
+    protected override void OnInitialized()
+    {
+        Configuration.Bind("SmtpClientSettings", smtpclisettings);
+    }
+
+    private void UpdateSendername(ChangeEventArgs e)
+    {
+        smtpclisettings.Sendername = e.Value.ToString();
+    }
+
+    private void UpdateSenderemail(ChangeEventArgs e)
+    {
+        smtpclisettings.Senderemail = e.Value.ToString();
+    }
+
+    private void UpdateUsername(ChangeEventArgs e)
+    {
+        smtpclisettings.Username = e.Value.ToString();
+    }
+
+    private void UpdatePassword(ChangeEventArgs e)
+    {
+        smtpclisettings.Password = e.Value.ToString();
+    }
+
+    private void UpdateHost(ChangeEventArgs e)
+    {
+        smtpclisettings.Host = e.Value.ToString();
+    }
+
+    private void UpdatePort(ChangeEventArgs e)
+    {
+        smtpclisettings.Port = int.Parse(e.Value.ToString());
+    }
+
+    private async Task FormSubmitHandler()
+    {
+        Configuration["SmtpClientSettings:Sendername"] = smtpclisettings.Sendername;
+        Configuration["SmtpClientSettings:Senderemail"] = smtpclisettings.Senderemail;
+        Configuration["SmtpClientSettings:Username"] = smtpclisettings.Username;
+        Configuration["SmtpClientSettings:Password"] = smtpclisettings.Password;
+        Configuration["SmtpClientSettings:Host"] = smtpclisettings.Host;
+        Configuration["SmtpClientSettings:Port"] = smtpclisettings.Port.ToString();
+
+        
+
+        var builder = new ConfigurationBuilder()
+            .SetBasePath(Directory.GetCurrentDirectory())
+            .AddJsonFile("appsettings.json", optional: false, reloadOnChange: true);
+
+        Configuration = builder.Build();
+        
+        
+
+    }
+}
