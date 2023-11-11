@@ -353,8 +353,7 @@
     ]
   },
   "packageFolders": {
-    "/home/kitt/.nuget/packages/": {},
-    "/home/kitt/.local/share/godot/mono/GodotNuGetFallbackFolder": {}
+    "/home/kitt/.nuget/packages/": {}
   },
   "project": {
     "version": "1.0.0",
@@ -365,12 +364,8 @@
       "packagesPath": "/home/kitt/.nuget/packages/",
       "outputPath": "/home/kitt/Documents/GitHub/MailLobbyer/src/MailLobbyer/obj/",
       "projectStyle": "PackageReference",
-      "fallbackFolders": [
-        "/home/kitt/.local/share/godot/mono/GodotNuGetFallbackFolder"
-      ],
       "configFilePaths": [
-        "/home/kitt/.nuget/NuGet/NuGet.Config",
-        "/home/kitt/.nuget/NuGet/config/Godot.Offline.Config"
+        "/home/kitt/.nuget/NuGet/NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net7.0"
@@ -418,7 +413,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/7.0.105/RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/7.0.107/RuntimeIdentifierGraph.json"
       }
     }
   }
