@@ -33,7 +33,10 @@ a:focus, a:hover {
     background-color: rgb(80, 80, 80);
     border-color: rgb(60, 60, 60);
     margin-top: 20px;
+    margin-left: 5px;
+    margin-right: 5px;
     margin-bottom: 20px;
+    border-radius: 20px;
 }
 .btn-primary:disabled,
 .btn-primary:disabled:hover,
@@ -97,7 +100,7 @@ a:focus, a:hover {
 
 .input-form {
     border: 2px solid #ccc;
-    border-radius: 3px;
+    border-radius: 10px;
     padding: 10px;
     margin-top: 10px;
     margin-bottom: 10px;
@@ -110,7 +113,7 @@ a:focus, a:hover {
 
 .subform-group {
     border: 1px solid #ccc;
-    border-radius: 3px;
+    border-radius: 10px;
     padding: 10px;
     margin-top: 20px;
     margin-bottom: 20px;
@@ -122,18 +125,34 @@ a:focus, a:hover {
 }
 
 .custom-inputfile input[type="file"] {
-    color: white;
-    background-color: rgb(80, 80, 80);
-    border: 1px solid rgb(60, 60, 60);
-    padding: 10px;
+    display: none;
+}
+
+.inputfile-form {
+    text-align: center;
     margin-top: 20px;
     margin-bottom: 20px;
-    border-radius: 5px;
+    display: flex;
+    align-items: center;
+
+}
+
+.selectedfile-container {
+    display: inline-block;
+}
+
+.btn-selectedfile {
+    color: #fff;
+    background-color: rgb(80, 80, 80);
+    border-color: rgb(60, 60, 60);
+    margin-left: 5px;
+    margin-right: 5px;
+    border-radius: 10px;
 }
 
 .about-block {
     border: 2px solid #ccc;
-    border-radius: 3px;
+    border-radius: 10px;
     padding: 10px;
     margin-top: 20px;
     margin-bottom: 20px;

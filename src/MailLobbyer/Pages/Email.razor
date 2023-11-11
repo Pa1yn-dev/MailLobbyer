@@ -20,8 +20,21 @@
     </div>
 
     <div class="custom-inputfile">
-        <InputFile id="inputfiles" OnChange="@FileUploadHandler" multiple />
+        <InputFile id="inputfiles" OnChange="@FileUploadHandler" style="display: none;" multiple />
     </div>
+
+    <div class="inputfile-form">
+        <input type="button" class="btn btn-primary"value="Browse..." onclick="document.getElementById('inputfiles').click();" />
+        @foreach (var file in selectedfiles)
+        {
+            <div class="selectedfile-container">
+                <button type="button" id="file" class="btn-selectedfile" @onclick="() => RemoveFile(file)">@file.Name  X</button>
+            </div>
+            
+        }
+    </div>
+        
+
     
     @if (displayform)
     {
@@ -117,7 +130,13 @@
 
     private void FileUploadHandler(InputFileChangeEventArgs e)
     {
-        selectedfiles = e.GetMultipleFiles().ToList();
+        selectedfiles.AddRange(e.GetMultipleFiles());
+    }
+
+    private void RemoveFile(IBrowserFile file)
+    {
+        selectedfiles.Remove(file);
+
     }
 
     private void OnContactSearch(ChangeEventArgs e)
