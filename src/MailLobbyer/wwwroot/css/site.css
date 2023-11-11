@@ -35,7 +35,13 @@ a:focus, a:hover {
     margin-top: 20px;
     margin-bottom: 20px;
 }
-
+.btn-primary:disabled,
+.btn-primary:disabled:hover,
+.btn-primary:disabled:focus {
+    opacity: 0.6; 
+    background-color: rgb(80, 80, 80); 
+    border-color: rgb(60, 60, 60);
+}
 .btn:focus,
 .btn:active:focus,
 .btn-link.nav-link:focus,

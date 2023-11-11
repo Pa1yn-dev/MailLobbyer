@@ -46,8 +46,9 @@
             <h1 class="page-title">Contact exclusion</h1>
             <div class="form-group">
                 <input type="text" placeholder="Enter a contact to search for" class="form-control" @oninput="OnContactSearch" aria-label="Contact Search" />
+                <button type="button" class="btn btn-primary" disabled="@istoggleselectallbuttondisabled" @onclick="ToggleSelectAll">@toggleselectallbuttonstringvalue</button>
                 @if (displaycontactsearch)
-                { 
+                {
                     @foreach (Contact contact in csvserviceinstance.contacts)
                     {
                         @if (contact.IsSearched == true)
@@ -63,7 +64,6 @@
 
                 else 
                 {
-                    <button type="button" class="btn btn-primary" @onclick="ToggleSelectAll">@toggleselectallstringvalue</button>
                     @foreach (Contact contact in csvserviceinstance.contacts)
                     {
                         <div class="subform-group">
@@ -88,8 +88,9 @@
     private string selectedgroup;
     private string contactsearch = string.Empty;
     private bool displaycontactsearch;
-    private bool toggleselectallbuttonvalue = true;
-    private string toggleselectallstringvalue = "Select all";
+    private bool istoggleselectallbuttondisabled;
+    private bool toggleselectallbuttonboolvalue = true;
+    private string toggleselectallbuttonstringvalue = "Select all";
     
 
     CSVService csvserviceinstance = new CSVService();
@@ -124,6 +125,16 @@
         contactsearch = e.Value.ToString();
         displaycontactsearch = !string.IsNullOrEmpty(contactsearch);
 
+        if (displaycontactsearch == true)
+        {
+            istoggleselectallbuttondisabled = true; 
+        }
+
+        else
+        {
+            istoggleselectallbuttondisabled = false; 
+        }
+
         foreach(Contact contact in csvserviceinstance.contacts)
         {
             contact.IsSearched = !string.IsNullOrEmpty(contactsearch) &&
@@ -136,16 +147,16 @@
 
     private void ToggleSelectAll()
     {
-        toggleselectallbuttonvalue = !toggleselectallbuttonvalue;
+        toggleselectallbuttonboolvalue = !toggleselectallbuttonboolvalue;
 
-        if(!toggleselectallbuttonvalue)
+        if(!toggleselectallbuttonboolvalue)
         {
-            toggleselectallstringvalue = "Deselect all";
+            toggleselectallbuttonstringvalue = "Deselect all";
         }
         
         else
         {
-            toggleselectallstringvalue = "Select all";
+            toggleselectallbuttonstringvalue = "Select all";
         }
 
         foreach (Contact contact in csvserviceinstance.contacts)
@@ -199,8 +210,8 @@
         selectedfiles = new List<IBrowserFile>();
         csvserviceinstance.contacts.Clear();
         selectedgroup = string.Empty;
-        toggleselectallbuttonvalue = true;
-        toggleselectallstringvalue = "Select all";
+        toggleselectallbuttonboolvalue = true;
+        toggleselectallbuttonstringvalue = "Select all";
         displayform = true;
     }
 }
