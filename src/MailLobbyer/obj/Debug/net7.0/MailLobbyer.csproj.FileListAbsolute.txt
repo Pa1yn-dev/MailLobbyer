@@ -38,3 +38,13 @@
 /home/kitt/Documents/GitHub/MailLobbyer/src/MailLobbyer/obj/Debug/net7.0/MailLobbyer.genruntimeconfig.cache
 /home/kitt/Documents/GitHub/MailLobbyer/src/MailLobbyer/obj/Debug/net7.0/ref/MailLobbyer.dll
 /home/kitt/Documents/GitHub/MailLobbyer/src/MailLobbyer/obj/Debug/net7.0/scopedcss/Shared/Footer.razor.rz.scp.css
+/home/kitt/Documents/GitHub/MailLobbyer/src/MailLobbyer/bin/Debug/net7.0/Microsoft.AspNetCore.Connections.Abstractions.dll
+/home/kitt/Documents/GitHub/MailLobbyer/src/MailLobbyer/bin/Debug/net7.0/Microsoft.AspNetCore.Http.Connections.Client.dll
+/home/kitt/Documents/GitHub/MailLobbyer/src/MailLobbyer/bin/Debug/net7.0/Microsoft.AspNetCore.Http.Connections.Common.dll
+/home/kitt/Documents/GitHub/MailLobbyer/src/MailLobbyer/bin/Debug/net7.0/Microsoft.AspNetCore.SignalR.Client.dll
+/home/kitt/Documents/GitHub/MailLobbyer/src/MailLobbyer/bin/Debug/net7.0/Microsoft.AspNetCore.SignalR.Client.Core.dll
+/home/kitt/Documents/GitHub/MailLobbyer/src/MailLobbyer/bin/Debug/net7.0/Microsoft.AspNetCore.SignalR.Common.dll
+/home/kitt/Documents/GitHub/MailLobbyer/src/MailLobbyer/bin/Debug/net7.0/Microsoft.AspNetCore.SignalR.Protocols.Json.dll
+/home/kitt/Documents/GitHub/MailLobbyer/src/MailLobbyer/bin/Debug/net7.0/Microsoft.Extensions.Features.dll
+/home/kitt/Documents/GitHub/MailLobbyer/src/MailLobbyer/bin/Debug/net7.0/Microsoft.Extensions.Logging.Abstractions.dll
+/home/kitt/Documents/GitHub/MailLobbyer/src/MailLobbyer/bin/Debug/net7.0/Microsoft.Extensions.Options.dll
