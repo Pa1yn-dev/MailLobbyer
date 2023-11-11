@@ -57,6 +57,10 @@
       "PackagePath": "staticwebassets/favicon.png"
     },
     {
+      "Id": "/home/kitt/Documents/GitHub/MailLobbyer/src/MailLobbyer/wwwroot/favicon.svg",
+      "PackagePath": "staticwebassets/favicon.svg"
+    },
+    {
       "Id": "obj/Release/net7.0/staticwebassets/msbuild.MailLobbyer.Microsoft.AspNetCore.StaticWebAssets.props",
       "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
     },
