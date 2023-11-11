@@ -5,44 +5,66 @@
 @using Newtonsoft.Json.Linq
 @using System.Text
 @using FileHandlerComponent
+@using MailLobbyer.SettingsProfilesClass
+@using Microsoft.AspNetCore.SignalR.Client
+@inject NavigationManager Navigation
+@inject IJSRuntime JSRuntime
+@implements IAsyncDisposable
 
 <PageTitle>Settings</PageTitle>
 
-<form class="input-form" @onsubmit="SettingsFormSubmitHandler">
+    <form class="input-form" @onsubmit="SettingsFormSubmitHandler">
     <h1 class="page-title">Settings</h1>
+
+    <div class="form-group">
+        <label for="SettingsProfiles">Settings Profile:</label>
+        <select id="SettingsProfiles" class="form-control" @bind="selectedsettingsprofile" aria-label="Settings profiles">
+        <option value="@Guid.Empty">Select a profile</option>
+        @foreach (SettingsProfiles profile in settingsprofilesonserver)
+        {
+            <option value="@profile.Id" aria-label="@profile.ProfileName">@profile.ProfileName | @profile.SenderName | @profile.SenderEmail | @profile.Username | @profile.Host | @profile.Port</option>
+        }
+        </select>
+        <button type="button" class="btn btn-primary" @onclick="RemoveSelectedProfile">Remove</button>
+    </div>  
+
+    <div class="form-group">
+        <label for="profilename">Profile name:</label>
+        <input type="text" placeholder="Enter the profile name" id="profilename" name="profilename" class="form-control" @bind="profilename" aria-label="Profile name" />
+    </div>
+
     <div class="form-group">
         <label for="sendername">Sender name:</label>
-        <input type="text" placeholder="Enter your sender name" value="@smtpclisettings.Sendername" id="sendername" name="sendername" class="form-control" @oninput="UpdateSendername" aria-label="Sender name" />
+        <input type="text" placeholder="Enter your sender name" id="sendername" name="sendername" class="form-control" @bind="sendername" aria-label="Sender name" />
     </div>
 
     <div class="form-group">
         <label for="senderemail">Sender email:</label>
-        <input type="email" placeholder="Enter your sender email" value="@smtpclisettings.Senderemail" id="senderemail" name="senderemail" class="form-control" @oninput="UpdateSenderemail" aria-label="Sender email" />
+        <input type="email" placeholder="Enter your sender email" id="senderemail" name="senderemail" class="form-control" @bind="senderemail" aria-label="Sender email" />
     </div>
 
     <div class="form-group">
         <label for="username">SMTP username:</label>
-        <input type="text" placeholder="Enter your SMTP username" value="@smtpclisettings.Username" id="username" name="username" class="form-control" @oninput="UpdateUsername" aria-label="SMTP username" />
+        <input type="text" placeholder="Enter your SMTP username" id="username" name="username" class="form-control" @bind="username" aria-label="SMTP username" />
     </div>
 
     <div class="form-group">
         <label for="password">SMTP password:</label>
-        <input type="password" placeholder="Enter your SMTP password" value="@smtpclisettings.Password" id="password" name="password" class="form-control" @oninput="UpdatePassword" aria-label="SMTP password" />
+        <input type="password" placeholder="Enter your SMTP password" id="password" name="password" class="form-control" @bind="password" aria-label="SMTP password" />
     </div>
 
     <div class="form-group">
         <label for="host">SMTP host:</label>
-        <input type="text" placeholder="Enter your SMTP hostname/IP" value="@smtpclisettings.Host" id="host" name="host" class="form-control" @oninput="UpdateHost" aria-label="SMTP host" />
+        <input type="text" placeholder="Enter your SMTP hostname/IP" id="host" name="host" class="form-control" @bind="host" aria-label="SMTP host" />
     </div>
 
     <div class="form-group">
         <label for="port">SMTP port:</label>
-        <input type="text" placeholder="Enter your SMTP port" value="@smtpclisettings.Port" id="port" name="port" class="form-control" @oninput="UpdatePort" aria-label="SMTP port" />
+        <input type="text" placeholder="Enter your SMTP port" id="port" name="port" class="form-control" @bind="port" aria-label="SMTP port" />
     </div>
 
     <button type="submit" class="btn btn-primary">Save</button>
-</form>
-
+    </form>
 
 <form class="input-form" @onsubmit="CSVFileFormSubmitHandler">
     <div class="form-group">
@@ -52,92 +74,62 @@
             </div>
     </div>
 
-    <div class="form-group">
-
-
-    </div>
-
     <button type="submit" class="btn btn-primary">Upload</button>
 </form>
 
-
 @code {
-    private SmtpClientSettingsComponent.SmtpClientSettings smtpclisettings = new SmtpClientSettingsComponent.SmtpClientSettings();
+    private HubConnection? settingshubconnection;
+    private List<SettingsProfiles> settingsprofilesonserver = new List<SettingsProfiles>();
     private List<IBrowserFile> selectedfiles = new List<IBrowserFile>();
-
-    protected override void OnInitialized()
+    
+    private Guid selectedsettingsprofile;
+    private string profilename;
+    private string sendername;
+    private string senderemail;
+    private string username;
+    private string password;
+    private string host;
+    private int port;
+    
+    protected override async Task OnInitializedAsync()
     {
-        Configuration.Bind("SmtpClientSettings", smtpclisettings);
+        settingshubconnection = new HubConnectionBuilder()
+            .WithUrl(Navigation.ToAbsoluteUri("/settingshub"))
+            .Build();
+            
+
+        await settingshubconnection.StartAsync();
+        
+
+        if (settingshubconnection is not null)
+        {
+            // Replace with profiles reading when implemented.
+            // await csvhubconnection.SendAsync("CSVFileSeeker");
+
+
+            settingsprofilesonserver = await settingshubconnection.InvokeAsync<List<SettingsProfiles>>("GetProfiles");
+        }
     }
 
-    private void UpdateSendername(ChangeEventArgs e)
+    private void RemoveSelectedProfile()
     {
-        smtpclisettings.Sendername = e.Value.ToString();
-    }
-
-    private void UpdateSenderemail(ChangeEventArgs e)
-    {
-        smtpclisettings.Senderemail = e.Value.ToString();
-    }
-
-    private void UpdateUsername(ChangeEventArgs e)
-    {
-        smtpclisettings.Username = e.Value.ToString();
-    }
-
-    private void UpdatePassword(ChangeEventArgs e)
-    {
-        smtpclisettings.Password = e.Value.ToString();
-    }
-
-    private void UpdateHost(ChangeEventArgs e)
-    {
-        smtpclisettings.Host = e.Value.ToString();
-    }
-
-    private void UpdatePort(ChangeEventArgs e)
-    {
-        smtpclisettings.Port = int.Parse(e.Value.ToString());
+        settingshubconnection.SendAsync("RemoveSettingsProfile", selectedsettingsprofile);
     }
 
     private async Task SettingsFormSubmitHandler()
     {
-        var builder = new ConfigurationBuilder()
-            .SetBasePath(Directory.GetCurrentDirectory())
-            .AddJsonFile("appsettings.json", optional: false, reloadOnChange: true);
+        settingshubconnection.SendAsync("AddSettingProfile", profilename, sendername, senderemail, username, password, host, port);
 
-        Configuration = builder.Build();
+        selectedsettingsprofile = Guid.Empty;
+        sendername = string.Empty;
+        senderemail = string.Empty;
+        username = string.Empty;
+        password = string.Empty;
+        host = string.Empty;
+
+        await JSRuntime.InvokeVoidAsync("eval","location.reload(true)");
         
-        // Update the values in memory
-        Configuration["SmtpClientSettings:Sendername"] = smtpclisettings.Sendername;
-        Configuration["SmtpClientSettings:Senderemail"] = smtpclisettings.Senderemail;
-        Configuration["SmtpClientSettings:Username"] = smtpclisettings.Username;
-        Configuration["SmtpClientSettings:Password"] = smtpclisettings.Password;
-        Configuration["SmtpClientSettings:Host"] = smtpclisettings.Host;
-        Configuration["SmtpClientSettings:Port"] = smtpclisettings.Port.ToString();
         
-
-        
-    
-        JObject existingobj = JObject.Parse(File.ReadAllText(Path.Combine(Directory.GetCurrentDirectory(), "appsettings.json")));
-        JObject blockformodification = (JObject)existingobj["SmtpClientSettings"];
-
-        blockformodification["Sendername"] = Configuration["SmtpClientSettings:Sendername"];
-        blockformodification["Senderemail"] = Configuration["SmtpClientSettings:Senderemail"];
-        blockformodification["Username"] = Configuration["SmtpClientSettings:Username"];
-        blockformodification["Password"] = Configuration["SmtpClientSettings:Password"];
-        blockformodification["Host"] = Configuration["SmtpClientSettings:Host"];
-        blockformodification["Port"] = Configuration["SmtpClientSettings:Port"];
-
-        using (StreamWriter writer = File.CreateText(Path.Combine(Directory.GetCurrentDirectory(), "appsettings.json")))
-        using (JsonTextWriter jsontxtwriter = new JsonTextWriter(writer))
-        {
-            jsontxtwriter.Formatting = Formatting.Indented;
-            existingobj.WriteTo(jsontxtwriter);
-        }
-
-    
-
     }
 
     private void FileUploadHandler(InputFileChangeEventArgs e)
@@ -152,6 +144,14 @@
 
         await filehandlerinstance.ExtractUploadedFileContents(selectedfiles);
     }
+
+    public async ValueTask DisposeAsync()
+    {
+        if (settingshubconnection is not null)
+        {
+            await settingshubconnection.DisposeAsync();
+            settingsprofilesonserver.Clear();
+        }
+    }
     
 }
-
