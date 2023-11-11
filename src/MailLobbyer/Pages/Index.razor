@@ -1,4 +1,6 @@
 ﻿@page "/"
+@using MailLobbyer.CSVServiceComponent
+@using MailLobbyer.CSVFileClass
 
 <PageTitle>Index</PageTitle>
 
@@ -22,11 +24,13 @@
 
     <div class="form-group">
         <label for="contactGroup">Contact Group:</label>
-        <select id="contactGroup" class="form-control">
-            <option value="group1">Group 1</option>
-            <option value="group2">Group 2</option>
-            <option value="group3">Group 3</option>
-        </select>
+        <select id="contactGroup" class="form-control" @bind="selectedgroup">
+    @foreach (CSVFile csvfile in csvserviceinstance.CSVFilesindir)
+    {
+        <option value="@csvfile.Filepath">@csvfile.Filename</option>
+
+    }
+</select>
     </div>
 
     <button type="submit" class="btn btn-primary">Send</button>
@@ -37,6 +41,15 @@
     private string subject;
     private string body;
     private string exclude;
+    private string selectedgroup;
+
+    private CSVService csvserviceinstance;
+
+
+        protected override void OnInitialized()
+        {
+            csvserviceinstance = new CSVService();
+        }
 
     private async Task FormSubmitHandler()
     {

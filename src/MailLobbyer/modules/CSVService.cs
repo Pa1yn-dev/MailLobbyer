@@ -19,6 +19,7 @@ namespace MailLobbyer.CSVServiceComponent
             foreach (string filepath in filepaths)
             {
                 CSVFile newcsvfile = new CSVFile(Path.GetFileNameWithoutExtension(filepath), filepath);
+                //System.Console.WriteLine(newcsvfile.Filename);
                 CSVFilesindir.Add(newcsvfile);
             }
 
