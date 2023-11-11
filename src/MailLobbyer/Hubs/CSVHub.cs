@@ -1,12 +1,14 @@
 using Microsoft.AspNetCore.SignalR;
 using MailLobbyer.CSVFileClass;
+using MailLobbyer.ContactClass;
 
 namespace MailLobbyer.Server.Hubs;
 
 public class CSVHub : Hub
 {
     private static List<CSVFile> csvfilesinmemory = new List<CSVFile>();
-    public void CSVFileSeeker()
+
+    public async Task CSVFileSeeker()
     {
         string directorypath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments), "MailLobbyer");
 
@@ -30,7 +32,9 @@ public class CSVHub : Hub
             csvfilesinmemory.Add(newcsvfile);
             System.Console.WriteLine(newcsvfile.Filename);
         }
-    } 
+    }
+
+
 
     public async Task<List<CSVFile>> GetCSVFilesInMemory()
     {
