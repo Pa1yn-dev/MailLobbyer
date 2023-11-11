@@ -1,7 +1,9 @@
 @page "/Settings"
-@inject IConfiguration Configuration;
-@using System.IO;
-@using Newtonsoft.Json;
+@inject IConfiguration Configuration
+@using System.IO
+@using Newtonsoft.Json
+@using Newtonsoft.Json.Linq
+@using System.Text
 
 <PageTitle>Settings</PageTitle>
 
@@ -71,6 +73,7 @@
 
     private async Task FormSubmitHandler()
     {
+        // Update the values in memory
         Configuration["SmtpClientSettings:Sendername"] = smtpclisettings.Sendername;
         Configuration["SmtpClientSettings:Senderemail"] = smtpclisettings.Senderemail;
         Configuration["SmtpClientSettings:Username"] = smtpclisettings.Username;
@@ -78,15 +81,27 @@
         Configuration["SmtpClientSettings:Host"] = smtpclisettings.Host;
         Configuration["SmtpClientSettings:Port"] = smtpclisettings.Port.ToString();
 
-        
-
         var builder = new ConfigurationBuilder()
             .SetBasePath(Directory.GetCurrentDirectory())
             .AddJsonFile("appsettings.json", optional: false, reloadOnChange: true);
 
         Configuration = builder.Build();
-        
-        
 
+        JObject existingobj = JObject.Parse(File.ReadAllText(Path.Combine(Directory.GetCurrentDirectory(), "appsettings.json")));
+        JObject blockformodification = (JObject)existingobj["SmtpClientSettings"];
+
+        blockformodification["Sendername"] = Configuration["SmtpClientSettings:Sendername"];
+        blockformodification["Senderemail"] = Configuration["SmtpClientSettings:Senderemail"];
+        blockformodification["Username"] = Configuration["SmtpClientSettings:Username"];
+        blockformodification["Password"] = Configuration["SmtpClientSettings:Password"];
+        blockformodification["Host"] = Configuration["SmtpClientSettings:Host"];
+        blockformodification["Port"] = Configuration["SmtpClientSettings:Port"];
+
+        using (StreamWriter writer = File.CreateText(Path.Combine(Directory.GetCurrentDirectory(), "appsettings.json")))
+        using (JsonTextWriter jsontxtwriter = new JsonTextWriter(writer))
+        {
+            jsontxtwriter.Formatting = Formatting.Indented;
+            existingobj.WriteTo(jsontxtwriter);
+        }
     }
 }
