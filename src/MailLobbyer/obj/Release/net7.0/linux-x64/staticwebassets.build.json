@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "wj5pPNyh9LQ486SslUacMiLv1y7/V/HD6t1lZk2HUk8=",
+  "Hash": "zFDqOyfm294RCF2eJ/ngSm4o8l2zxo1NlI6HJN0ewDw=",
   "Source": "MailLobbyer",
   "BasePath": "_content/MailLobbyer",
   "Mode": "Default",
@@ -270,6 +270,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot/favicon.png"
+    },
+    {
+      "Identity": "/home/kitt/Documents/GitHub/MailLobbyer/src/MailLobbyer/wwwroot/favicon.svg",
+      "SourceId": "MailLobbyer",
+      "SourceType": "Discovered",
+      "ContentRoot": "/home/kitt/Documents/GitHub/MailLobbyer/src/MailLobbyer/wwwroot/",
+      "BasePath": "_content/MailLobbyer",
+      "RelativePath": "favicon.svg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot/favicon.svg"
     }
   ]
 }

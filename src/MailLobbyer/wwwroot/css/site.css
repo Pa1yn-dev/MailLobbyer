@@ -93,26 +93,12 @@ a, .btn-link {
     margin-bottom: 10px;
 }
 
-.custom-inputfile {
-    position: relative;
-    overflow: hidden;
-    display: inline-block;
-    margin-top: 10px;
-    align-items: center;
-}
-
 .custom-inputfile input[type="file"] {
-    position: absolute;
-    top: 0;
-    right: 0;
-    opacity: 0;
-}
-
-.custom-inputfile label {
-    display: inline-block;
-    padding: 6px 12px;
-    background-color: #007bff;
-    color: #fff;
-    border-radius: 4px;
-    text-align: center;
+    color: white;
+    background-color: #1b6ec2;
+    border: 1px solid #1861ac;
+    padding: 10px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
 }

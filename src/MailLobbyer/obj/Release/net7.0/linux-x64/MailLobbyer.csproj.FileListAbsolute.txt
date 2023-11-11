@@ -351,3 +351,8 @@
 /home/kitt/Documents/GitHub/MailLobbyer/src/MailLobbyer/obj/Release/net7.0/linux-x64/MailLobbyer.pdb
 /home/kitt/Documents/GitHub/MailLobbyer/src/MailLobbyer/obj/Release/net7.0/linux-x64/MailLobbyer.genruntimeconfig.cache
 /home/kitt/Documents/GitHub/MailLobbyer/src/MailLobbyer/obj/Release/net7.0/linux-x64/ref/MailLobbyer.dll
+/home/kitt/Documents/GitHub/MailLobbyer/src/MailLobbyer/bin/Release/net7.0/linux-x64/publish/beta-v1.0.0/win-x64/web.config
+/home/kitt/Documents/GitHub/MailLobbyer/src/MailLobbyer/bin/Release/net7.0/linux-x64/publish/beta-v1.0.0/win-x64/appsettings.Development.json
+/home/kitt/Documents/GitHub/MailLobbyer/src/MailLobbyer/bin/Release/net7.0/linux-x64/publish/beta-v1.0.0/win-x64/appsettings.json
+/home/kitt/Documents/GitHub/MailLobbyer/src/MailLobbyer/bin/Release/net7.0/linux-x64/publish/beta-v1.0.0/win-x64/MailLobbyer.deps.json
+/home/kitt/Documents/GitHub/MailLobbyer/src/MailLobbyer/bin/Release/net7.0/linux-x64/publish/beta-v1.0.0/win-x64/MailLobbyer.runtimeconfig.json
