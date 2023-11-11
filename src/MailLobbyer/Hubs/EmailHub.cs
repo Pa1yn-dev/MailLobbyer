@@ -11,11 +11,18 @@ namespace MailLobbyer.Server.Hubs;
 
 public class EmailHub : Hub
 {
+    private static int sentemails = 0;
 
     public async Task EmailHandler(string subject, string body, Contact contact, List<FileUpload> fileuploads, SettingsProfiles profile)
     {
         await Task.Run(async () =>
         {
+            if (sentemails >= 20)
+            {
+                // If 20 emails are sent, wait 5 minutes.
+                await Task.Delay(300000);
+            }
+
             string prefixsyntax = "/P";
             string fullnamesyntax = "/FN";
             string forenamesyntax = "/F";
@@ -57,9 +64,15 @@ public class EmailHub : Hub
                 await client.SendAsync(message);
                 await client.DisconnectAsync(true);
             }
+
+            lock(this)
+            {
+                sentemails++;
+            }
+
+            
             
         });
- 
     }
 
     public override async Task OnDisconnectedAsync(Exception exception)

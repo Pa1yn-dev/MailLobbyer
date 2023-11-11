@@ -67,11 +67,11 @@
     <button type="submit" class="btn btn-primary">Save</button>
     </form>
 
-<form class="input-form" @onsubmit="CSVFileFormSubmitHandler">
+<div class="input-form">
     <div class="form-group">
         <label for="inputfiles">Upload CSV contact groups:</label>
             <div class="custom-inputfile">
-                <InputFile id="inputfiles" OnChange="@FileUploadHandler" multiple />
+                <InputFile id="inputfiles" OnChange="@FileUploadHandler" accept=".csv, .txt" multiple />
             </div>
             <div class="inputfile-form">
                 <input type="button" class="btn btn-primary"value="Browse..." onclick="document.getElementById('inputfiles').click();" />
@@ -87,15 +87,16 @@
 
     @if(selectedfiles.Count > 0)
     {
-        <button type="submit" class="btn btn-primary">Upload</button>
+        <button type="button" @onclick="UploadCSVFile" class="btn btn-primary">Upload</button>
     }
-    
-</form>
-
-    <form class="input-form" @onsubmit="CSVFileRemoveSubmitHandler">
+    else
+    {
+        <button type="button" @onclick="UploadCSVFile" disabled class="btn btn-primary">Upload</button>
+    }
+      
     <div class="form-group">
         <label for="inputfiles">Remove CSV files on server:</label>
-        <select id="contactGroup" class="form-control" @bind="selectedcsvfilename" required aria-label="Contact Group">
+        <select id="inputfiles" class="form-control" @bind="selectedcsvfilename" required aria-label="CSV files">
             <option value="">Select a file</option>
             @foreach (CSVFile csvfile in csvfilesonserver)
             {
@@ -106,9 +107,13 @@
 
     @if(selectedcsvfilename != null)
     {
-        <button type="submit" class="btn btn-primary">Delete</button>
+        <button type="button" @onclick="RemoveCSVFile" class="btn btn-primary">Delete</button>
+    }
+    else
+    {
+        <button type="button" @onclick="RemoveCSVFile" disabled class="btn btn-primary">Delete</button>
     } 
-</form>
+</div>
 
 @code {
     private HubConnection? settingshubconnection;
@@ -192,7 +197,7 @@
 
     }
     
-    private async Task CSVFileFormSubmitHandler()
+    private async Task UploadCSVFile()
     {
         foreach (IBrowserFile file in selectedfiles)
         {
@@ -203,7 +208,7 @@
         
     }
 
-    private async Task CSVFileRemoveSubmitHandler()
+    private async Task RemoveCSVFile()
     {
         await csvhubconnection.SendAsync("RemoveCSVFile", selectedcsvfilename);
 
