@@ -3,9 +3,8 @@
 @using MailLobbyer.EmailHandlerComponent
 @using MailLobbyer.CSVFileClass
 @using MailLobbyer.ContactClass
-@using MailLobbyer.FileUploadClass
 
-<PageTitle>Index</PageTitle>
+<PageTitle>Home</PageTitle>
 
 <h1 class="page-title">Home</h1>
 
@@ -65,7 +64,6 @@
     private string subject;
     private string body;
     private List<IBrowserFile> selectedfiles = new List<IBrowserFile>();
-    private string? exclude;
     private string selectedgroup;
     
 
@@ -128,14 +126,13 @@
         {
             if (!contact.IsSelected == true)
             {
-                await emailhandlerinstance.EmailSyntaxHandler(subject, body, exclude, contact, emailhandlerinstance.fileuploads);
+                await emailhandlerinstance.EmailSyntaxHandler(subject, body, contact, emailhandlerinstance.fileuploads);
             }
         }
 
         // Reset form fields
         subject = string.Empty;
         body = string.Empty;
-        exclude = null;
         selectedgroup = string.Empty;
         displayform = true;
     }
