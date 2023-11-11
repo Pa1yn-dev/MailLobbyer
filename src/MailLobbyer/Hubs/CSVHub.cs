@@ -48,14 +48,11 @@ public class CSVHub : Hub
 
     public async Task CSVFilesToUpload(IBrowserFile file)
     {
-        const long MaxAllowedFileSize = 26214400;
         string directorypath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments), "MailLobbyer");
-
-
-
+        
         using (FileStream fs = new FileStream(directorypath, FileMode.Create))
         {
-            await file.OpenReadStream(MaxAllowedFileSize).CopyToAsync(fs);
+            await file.OpenReadStream().CopyToAsync(fs);
         }
         
     }
