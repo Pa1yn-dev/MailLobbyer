@@ -2,7 +2,32 @@
 
 <PageTitle>Index</PageTitle>
 
-<h1>Hello, world!</h1>
+<h3>Send group email</h3>
 
-Welcome to your new app.
+<form>
+    <div class="form-group">
+        <label for="sender-name">Sender Name:</label>
+        <input type="text" id="sender-name" class="form-control" />
+    </div>
 
+    <div class="form-group">
+        <label for="subject">Subject:</label>
+        <input type="text" id="subject" class="form-control" />
+    </div>
+
+    <div class="form-group">
+        <label for="body">Body:</label>
+        <textarea id="body" class="form-control"></textarea>
+    </div>
+
+    <div class="form-group">
+        <label for="contactGroup">Contact Group:</label>
+        <select id="contactGroup" class="form-control">
+            <option value="group1">Group 1</option>
+            <option value="group2">Group 2</option>
+            <option value="group3">Group 3</option>
+        </select>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Send</button>
+</form>
