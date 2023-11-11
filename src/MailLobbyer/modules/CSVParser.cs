@@ -8,11 +8,11 @@ namespace MailLobbyer.CSVParserComponent
 {
     public class CSVParser
     {
-       public async Task CSVReader(IBrowserFile selectedcsvfile )
+       public async Task CSVReader(string csvfilepath)
        {
         try
         {
-            using (StreamReader reader = new StreamReader(selectedcsvfile.OpenReadStream()))
+            using (StreamReader reader = new StreamReader(csvfilepath))
             {
                 //Skip headers used for XLSX reference before conversion to CSV
                 reader.ReadLine();
