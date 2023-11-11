@@ -19,7 +19,11 @@
         <textarea id="body" class="form-control" @bind="body" aria-label="Body"></textarea>
     </div>
 
-    <InputFile OnChange="@FileUploadHandler" multiple />
+    <div class="custom-inputfile">
+        <label for="inputfiles">Select files:</label>
+        <InputFile id="inputfiles" OnChange="@FileUploadHandler" multiple />
+    </div>
+    
 
     @if (displayform)
     {
