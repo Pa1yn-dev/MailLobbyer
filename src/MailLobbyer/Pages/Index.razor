@@ -1,6 +1,7 @@
 ﻿@page "/"
 @using MailLobbyer.CSVServiceComponent
 @using MailLobbyer.CSVFileClass
+@using MailLobbyer.ContactClass
 
 <PageTitle>Index</PageTitle>
 
@@ -24,7 +25,8 @@
 
     <div class="form-group">
         <label for="contactGroup">Contact Group:</label>
-        <select id="contactGroup" class="form-control" @bind="selectedgroup">
+        <select id="contactGroup" class="form-control" @bind="selectedgroup" required>
+            <option value="">Select a group</option>
     @foreach (CSVFile csvfile in csvserviceinstance.CSVFilesindir)
     {
         <option value="@csvfile.Filepath">@csvfile.Filename</option>
@@ -39,11 +41,11 @@
 
     private string subject;
     private string body;
-    private string exclude;
+    private string? exclude;
     private string selectedgroup;
     CSVService csvserviceinstance = new CSVService();
 
-    protected override async Task OnInitializedAsync()
+    protected override void OnInitialized()
     {
         //Checks for a folder for CSV files for contact groups in easy to access locations on both Linux and Windows, if it does not exist a folder is created.
         string documentspath = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
@@ -62,25 +64,31 @@
 
         
         csvserviceinstance.CSVFileSeeker(directorypath);
-
-        foreach (CSVFile csvfile in csvserviceinstance.CSVFilesindir)
-        {
-            await csvserviceinstance.CSVParser(csvfile.Filepath);
-            
-        }
     }
-
-    
 
     private async Task FormSubmitHandler()
     {
+        if (string.IsNullOrEmpty(selectedgroup))
+        {
+            // Replace with popup!
+            Console.WriteLine("Please select a group.");
+            return;
+        }
+
+        await csvserviceinstance.CSVParser(selectedgroup);
+
         IConfiguration configuration = new ConfigurationBuilder()
             .SetBasePath(Directory.GetCurrentDirectory())
             .AddJsonFile("appsettings.json")
             .Build();
 
         EmailHandlerComponent.EmailHandler emailHandler = new EmailHandlerComponent.EmailHandler(configuration);
-        await emailHandler.SendEmailAsync("peter","peterhamilton522@gmail.com", subject, body);
+        
+
+        foreach (Contact contact in csvserviceinstance.contacts)
+        {
+            await emailHandler.SendEmailAsync(string.Concat(contact.Forename, "", contact.Surname),contact.Email, subject, body);
+        }
     }
 
 }
