@@ -48,11 +48,7 @@ csvserviceinstance.CSVFileSeeker(directorypath);
 
 foreach (CSVFile csvfile in csvserviceinstance.CSVFilesindir)
 {
-    Type csvfiletype = csvfile.GetType();
-    foreach (var property in csvfiletype.GetProperties())
-    {
-        csvserviceinstance.CSVParser(property.GetValue(Filepath));
-    }
+    csvserviceinstance.CSVParser(csvfile.Filepath);
 }
 
 app.Run();
