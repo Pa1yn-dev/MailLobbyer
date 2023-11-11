@@ -97,7 +97,7 @@ a:focus, a:hover {
 
 .input-form {
     border: 2px solid #ccc;
-    border-radius: 5px;
+    border-radius: 3px;
     padding: 10px;
     margin-top: 10px;
     margin-bottom: 10px;
@@ -110,7 +110,7 @@ a:focus, a:hover {
 
 .subform-group {
     border: 1px solid #ccc;
-    border-radius: 5px;
+    border-radius: 3px;
     padding: 10px;
     margin-top: 20px;
     margin-bottom: 20px;
@@ -133,7 +133,7 @@ a:focus, a:hover {
 
 .about-block {
     border: 2px solid #ccc;
-    border-radius: 5px;
+    border-radius: 3px;
     padding: 10px;
     margin-top: 20px;
     margin-bottom: 20px;
