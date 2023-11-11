@@ -11,7 +11,6 @@ namespace MailLobbyer.FileUploadClass
             Filename = filename;
             Filesize = filesize;
             Filecontents = filecontents;
-
         }
     }
 
