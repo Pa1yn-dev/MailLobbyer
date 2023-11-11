@@ -1,5 +1,7 @@
 using Microsoft.AspNetCore.Components;
 using Microsoft.AspNetCore.Components.Web;
+using MailLobbyer.CSVServiceComponent;
+using MailLobbyer.CSVFileClass;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -39,6 +41,18 @@ if (!Directory.Exists(directorypath))
 else
 {
     Console.WriteLine("CSV contact-grouping directory already exists.");
+}
+
+CSVService csvserviceinstance = new CSVService();
+csvserviceinstance.CSVFileSeeker(directorypath);
+
+foreach (CSVFile csvfile in csvserviceinstance.CSVFilesindir)
+{
+    Type csvfiletype = csvfile.GetType();
+    foreach (var property in csvfiletype.GetProperties())
+    {
+        csvserviceinstance.CSVParser(property.GetValue(Filepath));
+    }
 }
 
 app.Run();
