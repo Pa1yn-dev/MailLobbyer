@@ -45,13 +45,24 @@
         <form class="input-form" @onsubmit="ExclusionFormSubmitHandler">
             <h1 class="page-title">Contact exclusion</h1>
             <div class="form-group">
+                <input type="text" placeholder="Enter a contact to search for" class="form-control" @bind="contactsearch" @oninput="OnContactSearch" aria-label="Subject" />
                 <button type="button" class="btn btn-primary" @onclick="ToggleSelectAll">@toggleselectallstringvalue</button>
-                @foreach (Contact contact in csvserviceinstance.contacts)
+
+                @if (displaycontactsearch)
                 {
-                    <div class="subform-group">
-                        <label for="excludecontacts">@string.Concat(contact.Forename, " ", contact.Surname) - @contact.Email</label>
-                        <input type="checkbox" id="excludecontacts" value="@contact.Email" checked="@contact.IsSelected" @onchange="() => ToggleContactExclusion(contact)" aria-label="Exclude contact: @(string.Concat(contact.Forename, " ", contact.Surname) + " - " + contact.Email)" />
-                    </div>
+
+                }
+
+                else 
+                {
+                    @foreach (Contact contact in csvserviceinstance.contacts)
+                    {
+                        <div class="subform-group">
+                            <label for="excludecontacts">@string.Concat(contact.Forename, " ", contact.Surname) - @contact.Email</label>
+                            <input type="checkbox" id="excludecontacts" value="@contact.Email" checked="@contact.IsSelected" @onchange="() => ToggleContactExclusion(contact)" aria-label="Exclude contact: @(string.Concat(contact.Forename, " ", contact.Surname) + " - " + contact.Email)" />
+                        </div>
+                    }
+                    
                 }
             </div>
 
@@ -65,6 +76,8 @@
     private string body;
     private List<IBrowserFile> selectedfiles = new List<IBrowserFile>();
     private string selectedgroup;
+    private string contactsearch;
+    private bool displaycontactsearch;
     private bool toggleselectallbuttonvalue = true;
     private string toggleselectallstringvalue = "Select all";
     
@@ -94,6 +107,11 @@
     private void FileUploadHandler(InputFileChangeEventArgs e)
     {
         selectedfiles = e.GetMultipleFiles().ToList();
+    }
+
+    private void OnContactSearch()
+    {
+        displaycontactsearch = string.IsNullOrEmpty(contactsearch);
     }
 
     private void ToggleSelectAll()
