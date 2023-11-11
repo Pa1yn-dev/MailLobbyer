@@ -5,11 +5,14 @@ using MailLobbyer.SmtpClientSettingsComponent;
 using MailKit.Net.Smtp;
 using MailKit.Security;
 using MimeKit;
+using MailLobbyer.EmailClass;
 
 namespace MailLobbyer.Server.Hubs;
 
 public class EmailHub : Hub
 {
+    private List<Email> nonscheduledemails = new List<Email>();
+
     public async Task EmailHandler(string subject, string body, Contact contact, List<FileUpload> fileuploads)
     {
         await Task.Run(async () =>
@@ -47,8 +50,16 @@ public class EmailHub : Hub
             }
 
             message.Body = builder.ToMessageBody();
-            //message.Body = new TextPart("plain") { Text = body };
 
+
+
+
+
+
+
+
+            //message.Body = new TextPart("plain") { Text = body };
+            /*
             using (var client = new SmtpClient())
             {
                 await client.ConnectAsync("smtp.gmail.com", 587, SecureSocketOptions.StartTls);
@@ -57,7 +68,7 @@ public class EmailHub : Hub
                 await client.DisconnectAsync(true);
                 Console.WriteLine("Sent");
             }
-
+            */
         });
     
         

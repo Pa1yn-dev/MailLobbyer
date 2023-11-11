@@ -39,12 +39,12 @@
     </div>
 
     <div class="form-group">
-        <label for="SettingsProfiles">Select settings profile:</label>
-        <select id="SettingsProfiles" class="form-control" @bind="selectedsettingsprofile" required aria-label="Contact Group">
-        <option value="">Select a settings profile</option>
+        <label for="SettingsProfiles">Settings Profile:</label>
+        <select id="SettingsProfiles" class="form-control" @bind="selectedsettingsprofile" aria-label="Settings profiles">
+        <option value="@Guid.Empty">Select a profile</option>
         @foreach (SettingsProfiles profile in settingsprofilesonserver)
         {
-            <option value="@profile.SenderEmail" aria-label="@profile.SenderEmail">@profile.SenderEmail</option>
+            <option value="@profile.Id" aria-label="@profile.SenderEmail">@profile.SenderEmail</option>
         }
         </select>
     </div>
@@ -127,7 +127,7 @@
     private bool istoggleselectallbuttondisabled;
     private bool toggleselectallbuttonboolvalue = true;
     private string toggleselectallbuttonstringvalue = "Select all";
-    private string selectedsettingsprofile;
+    private Guid selectedsettingsprofile;
     
 
     
