@@ -6,6 +6,7 @@
 @using System.Text
 @using FileHandlerComponent
 @using MailLobbyer.SettingsProfilesClass
+@using MailLobbyer.CSVFileClass
 @using Microsoft.AspNetCore.SignalR.Client
 @inject NavigationManager Navigation
 @inject IJSRuntime JSRuntime
@@ -72,17 +73,52 @@
             <div class="custom-inputfile">
                 <InputFile id="inputfiles" OnChange="@FileUploadHandler" multiple />
             </div>
+            <div class="inputfile-form">
+                <input type="button" class="btn btn-primary"value="Browse..." onclick="document.getElementById('inputfiles').click();" />
+                @foreach (var file in selectedfiles)
+                {
+                    <div class="selectedfile-container">
+                        <button type="button" id="file" class="btn-selectedfile" @onclick="() => RemoveFile(file)">@file.Name  X</button>
+                    </div>
+            
+                }
+            </div>
     </div>
 
-    <button type="submit" class="btn btn-primary">Upload</button>
+    @if(selectedfiles.Count > 0)
+    {
+        <button type="submit" class="btn btn-primary">Upload</button>
+    }
+    
+</form>
+
+    <form class="input-form" @onsubmit="CSVFileRemoveSubmitHandler">
+    <div class="form-group">
+        <label for="inputfiles">Remove CSV files on server:</label>
+        <select id="contactGroup" class="form-control" @bind="selectedcsvfilename" required aria-label="Contact Group">
+            <option value="">Select a file</option>
+            @foreach (CSVFile csvfile in csvfilesonserver)
+            {
+                <option value="@csvfile.Filename" aria-label="@csvfile.Filename">@csvfile.Filename</option>
+            }
+        </select>
+    </div>
+
+    @if(selectedcsvfilename != null)
+    {
+        <button type="submit" class="btn btn-primary">Delete</button>
+    } 
 </form>
 
 @code {
     private HubConnection? settingshubconnection;
+    private HubConnection? csvhubconnection;
+    private List<CSVFile> csvfilesonserver = new List<CSVFile>();
     private List<SettingsProfiles> settingsprofilesonserver = new List<SettingsProfiles>();
     private List<IBrowserFile> selectedfiles = new List<IBrowserFile>();
     
     private Guid selectedsettingsprofile;
+    private string selectedcsvfilename;
     private string profilename;
     private string sendername;
     private string senderemail;
@@ -96,9 +132,14 @@
         settingshubconnection = new HubConnectionBuilder()
             .WithUrl(Navigation.ToAbsoluteUri("/settingshub"))
             .Build();
+        
+        csvhubconnection = new HubConnectionBuilder()
+            .WithUrl(Navigation.ToAbsoluteUri("/csvhub"))
+            .Build();
             
 
         await settingshubconnection.StartAsync();
+        await csvhubconnection.StartAsync();
         
 
         if (settingshubconnection is not null)
@@ -108,6 +149,14 @@
 
 
             settingsprofilesonserver = await settingshubconnection.InvokeAsync<List<SettingsProfiles>>("GetProfiles");
+        }
+
+        if (csvhubconnection is not null)
+        {
+            await csvhubconnection.SendAsync("CSVFileSeeker");
+
+
+            csvfilesonserver = await csvhubconnection.InvokeAsync<List<CSVFile>>("GetCSVFilesInMemory");
         }
     }
 
@@ -137,14 +186,28 @@
         selectedfiles = e.GetMultipleFiles().ToList();
     }
 
+    private void RemoveFile(IBrowserFile file)
+    {
+        selectedfiles.Remove(file);
+
+    }
     
     private async Task CSVFileFormSubmitHandler()
     {
-        /*
-        FileHandler filehandlerinstance = new FileHandler();
+        foreach (IBrowserFile file in selectedfiles)
+        {
+            await csvhubconnection.SendAsync("CSVFilesToUpload", file);
+        }
 
-        await filehandlerinstance.ExtractUploadedFileContents(selectedfiles);
-        */
+        await JSRuntime.InvokeVoidAsync("eval","location.reload(true)");
+        
+    }
+
+    private async Task CSVFileRemoveSubmitHandler()
+    {
+        await csvhubconnection.SendAsync("RemoveCSVFile", selectedcsvfilename);
+
+        await JSRuntime.InvokeVoidAsync("eval","location.reload(true)");
     }
     
 
@@ -154,6 +217,11 @@
         {
             await settingshubconnection.DisposeAsync();
             settingsprofilesonserver.Clear();
+        }
+
+        if (csvhubconnection is not null)
+        {
+            await csvhubconnection.DisposeAsync();
         }
     }
     
