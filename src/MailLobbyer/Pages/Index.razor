@@ -91,6 +91,12 @@
         {
             await emailHandler.EmailSyntaxHandler(subject, body, exclude, contact);
         }
+
+        //Reset form fields
+        subject = string.Empty;
+        body = string.Empty;
+        exclude = null;
+        selectedgroup = string.Empty;
     }
 
 }
