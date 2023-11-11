@@ -3,6 +3,7 @@ using MailKit.Security;
 using MimeKit;
 using System.Threading.Tasks;
 using MailLobbyer.SmtpClientSettingsComponent;
+using MailLobbyer.ContactClass;
 
 namespace MailLobbyer.EmailHandlerComponent
 {
@@ -14,6 +15,26 @@ namespace MailLobbyer.EmailHandlerComponent
         {
             _smtpSettings = new SmtpClientSettings();
             configuration.GetSection("SmtpClientSettings").Bind(_smtpSettings);
+        }
+
+        public async Task EmailSyntaxHandler(string subject, string body, string exclude, Contact contact)
+        {
+            string prefixsyntax = "/P";
+            string fullnamesyntax = "/FN";
+            string forenamesyntax = "/F";
+            string surnamesyntax = "/S";
+
+            subject = subject.Replace(prefixsyntax, contact.Prefix, StringComparison.OrdinalIgnoreCase)
+                            .Replace(fullnamesyntax, string.Concat(contact.Forename, " ", contact.Surname), StringComparison.OrdinalIgnoreCase)
+                            .Replace(forenamesyntax, contact.Forename, StringComparison.OrdinalIgnoreCase)
+                            .Replace(surnamesyntax, contact.Surname, StringComparison.OrdinalIgnoreCase);
+            
+            body = body.Replace(prefixsyntax, contact.Prefix, StringComparison.OrdinalIgnoreCase)
+                            .Replace(fullnamesyntax, string.Concat(contact.Forename, " ", contact.Surname), StringComparison.OrdinalIgnoreCase)
+                            .Replace(forenamesyntax, contact.Forename, StringComparison.OrdinalIgnoreCase)
+                            .Replace(surnamesyntax, contact.Surname, StringComparison.OrdinalIgnoreCase);
+            
+            await SendEmailAsync(string.Concat(contact.Forename, " ", contact.Surname),contact.Email,subject,body);
         }
 
         public async Task SendEmailAsync(string RecipientName, string RecipientEmail, string subject, string body)
