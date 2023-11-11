@@ -253,7 +253,12 @@
 
         FileHandler filehandlerinstance = new FileHandler();
 
-        await filehandlerinstance.ExtractUploadedFileContents(selectedfiles);
+        foreach (IBrowserFile file in selectedfiles)
+        {
+            await filehandlerinstance.ExtractUploadedFileContents(file);
+        }
+
+        
 
         foreach (SettingsProfiles profile in settingsprofilesonserver)
         {

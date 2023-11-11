@@ -8,24 +8,17 @@ namespace MailLobbyer.FileHandlerComponent
         private const long MaxAllowedFileSize = 26214400;
         public List<FileUpload> fileuploads = new List<FileUpload>();
 
-        public async Task ExtractUploadedFileContents(List<IBrowserFile> selectedfiles)
+        public async Task ExtractUploadedFileContents(IBrowserFile file)
         {
-            if(selectedfiles.Count > 0)
+            using (var ms = new MemoryStream())
             {
-                using (var ms = new MemoryStream())
-                {
-                    foreach (var file in selectedfiles)
-                    {
-                        await file.OpenReadStream(MaxAllowedFileSize).CopyToAsync(ms);
-                        byte[] filecontents = ms.ToArray();
-                        FileUpload fileupload = new FileUpload(file.Name, file.Size, filecontents);
-                        fileuploads.Add(fileupload);
-                    }
-
-                }
-                
+                await file.OpenReadStream(MaxAllowedFileSize).CopyToAsync(ms);
+                byte[] filecontents = ms.ToArray();
+                FileUpload fileupload = new FileUpload(file.Name, file.Size, filecontents);
+                fileuploads.Add(fileupload);
             }
+                
         }
-
-    }
+    }   
 }
+
