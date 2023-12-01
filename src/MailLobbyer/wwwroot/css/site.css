@@ -16,41 +16,41 @@ h1:focus {
 }
 
 a, .btn-link {
-    color: rgb(60, 60, 60);
+    color: rgb(0, 0, 0);
 }
 
 a:focus, a:hover {
-    color: rgb(100, 100, 100);
+    color: rgb(80, 80, 80);
 }
 
 .btn-primary:hover,
 .btn-primary:focus {
-    background-color: rgb(100, 100, 100);
+    background-color: rgb(80, 80, 80);
 }
 
 .btn-primary {
     color: #fff;
-    background-color: rgb(80, 80, 80);
-    border-color: rgb(60, 60, 60);
+    background-color: rgb(0, 0, 0);
+    border-color: rgb(0, 0, 0);
     margin-top: 20px;
     margin-left: 5px;
     margin-right: 5px;
     margin-bottom: 20px;
-    border-radius: 20px;
+    border-radius: 5px;
 }
 .btn-primary:disabled,
 .btn-primary:disabled:hover,
 .btn-primary:disabled:focus {
     opacity: 0.6; 
-    background-color: rgb(80, 80, 80); 
-    border-color: rgb(60, 60, 60);
+    background-color: rgb(0, 0, 0); 
+    border-color: rgb(0, 0, 0);
 }
 .btn:focus,
 .btn:active:focus,
 .btn-link.nav-link:focus,
 .form-control:focus,
 .form-check-input:focus {
-    box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem rgb(100, 100, 100);
+    box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem rgb(80, 80, 80);
 }
 
 .content {
@@ -100,7 +100,7 @@ a:focus, a:hover {
 
 .input-form {
     border: 2px solid #ccc;
-    border-radius: 10px;
+    border-radius: 5px;
     padding: 10px;
     margin-top: 10px;
     margin-bottom: 10px;
@@ -113,7 +113,7 @@ a:focus, a:hover {
 
 .subform-group {
     border: 1px solid #ccc;
-    border-radius: 10px;
+    border-radius: 5px;
     padding: 10px;
     margin-top: 20px;
     margin-bottom: 20px;
@@ -143,16 +143,16 @@ a:focus, a:hover {
 
 .btn-selectedfile {
     color: #fff;
-    background-color: rgb(80, 80, 80);
-    border-color: rgb(60, 60, 60);
+    background-color: rgb(0, 0, 0);
+    border-color: rgb(0, 0, 0);
     margin-left: 5px;
     margin-right: 5px;
-    border-radius: 10px;
+    border-radius: 5px;
 }
 
 .about-block {
     border: 2px solid #ccc;
-    border-radius: 10px;
+    border-radius: 5px;
     padding: 10px;
     margin-top: 20px;
     margin-bottom: 20px;

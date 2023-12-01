@@ -1,23 +1,17 @@
 .footer[b-xujzwtudf5] {
-    background: repeating-linear-gradient( -45deg, #000000, #000000 10px, rgb(80, 80, 80) 10px, rgb(80, 80, 80) 50px );
+    background: rgb(0,0,0, 0.9);
+    border-top: 2px solid rgba(0, 0, 0, 0.9);
+    box-shadow: 10px -10px 5px rgba(0, 0, 0, 0.185);
     padding: 10px;
-    position: static;
-    
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    opacity: 0.8;
-    border-top: 2px solid rgba(0, 0, 0, 0.8);
-    flex-shrink: 0;
+    position: relative;
 }
+
 .footer-text[b-xujzwtudf5] {
     margin-top: 10px;
     margin-bottom: 10px; 
     color: white; 
-    text-align: center; 
+    text-align: center;
+    justify-content: center; 
     display: flex; 
     align-items: center;
     font-size: smaller;
