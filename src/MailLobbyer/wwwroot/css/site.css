@@ -100,6 +100,7 @@ a:focus, a:hover {
 
 .input-form {
     border: 2px solid #ccc;
+    background-color: rgba(255, 255, 255, 0.95);
     border-radius: 5px;
     padding: 10px;
     margin-top: 10px;
@@ -152,6 +153,7 @@ a:focus, a:hover {
 
 .about-block {
     border: 2px solid #ccc;
+    background-color: rgba(255, 255, 255, 0.95);
     border-radius: 5px;
     padding: 10px;
     margin-top: 20px;
