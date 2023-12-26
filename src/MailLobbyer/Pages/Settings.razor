@@ -149,6 +149,7 @@
 
         if (settingshubconnection is not null)
         {
+            await settingshubconnection.SendAsync("SettingsProfilesSeeker");
             // Replace with profiles reading when implemented.
             // await csvhubconnection.SendAsync("CSVFileSeeker");
 
@@ -168,6 +169,9 @@
     private void RemoveSelectedProfile()
     {
         settingshubconnection.SendAsync("RemoveSettingsProfile", selectedsettingsprofile);
+
+        JSRuntime.InvokeVoidAsync("eval","location.reload(true)");
+
     }
 
     private async Task SettingsFormSubmitHandler()

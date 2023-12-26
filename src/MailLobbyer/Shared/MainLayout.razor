@@ -1,13 +1,19 @@
 ﻿@inherits LayoutComponentBase
 
 <PageTitle>MailLobbyer</PageTitle>
-<NavMenu />
-<div class="page">
-    <main>
-        <article class="content px-4">
-            @Body
-        </article>
-    </main>
+<div class="background">
+
+    <NavMenu />
+
+    <div class="page">
+        <main>
+            <article class="content-body">
+                @Body
+            </article>
+        </main>
+    </div>
+
+    <Footer />
 </div>
 
-<Footer />
+

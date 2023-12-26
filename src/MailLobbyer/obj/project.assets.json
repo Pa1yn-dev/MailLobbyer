@@ -1100,24 +1100,19 @@
     ]
   },
   "packageFolders": {
-    "/home/kitt/.nuget/packages/": {},
-    "/home/kitt/.local/share/godot/mono/GodotNuGetFallbackFolder": {}
+    "/home/pa1yn/.nuget/packages/": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/home/kitt/Documents/GitHub/MailLobbyer/src/MailLobbyer/MailLobbyer.csproj",
+      "projectUniqueName": "/home/pa1yn/Documents/GitHub/MailLobbyer/src/MailLobbyer/MailLobbyer.csproj",
       "projectName": "MailLobbyer",
-      "projectPath": "/home/kitt/Documents/GitHub/MailLobbyer/src/MailLobbyer/MailLobbyer.csproj",
-      "packagesPath": "/home/kitt/.nuget/packages/",
-      "outputPath": "/home/kitt/Documents/GitHub/MailLobbyer/src/MailLobbyer/obj/",
+      "projectPath": "/home/pa1yn/Documents/GitHub/MailLobbyer/src/MailLobbyer/MailLobbyer.csproj",
+      "packagesPath": "/home/pa1yn/.nuget/packages/",
+      "outputPath": "/home/pa1yn/Documents/GitHub/MailLobbyer/src/MailLobbyer/obj/",
       "projectStyle": "PackageReference",
-      "fallbackFolders": [
-        "/home/kitt/.local/share/godot/mono/GodotNuGetFallbackFolder"
-      ],
       "configFilePaths": [
-        "/home/kitt/.nuget/NuGet/NuGet.Config",
-        "/home/kitt/.nuget/NuGet/config/Godot.Offline.Config"
+        "/home/pa1yn/.nuget/NuGet/NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net7.0"
@@ -1165,6 +1160,12 @@
         ],
         "assetTargetFallback": true,
         "warn": true,
+        "downloadDependencies": [
+          {
+            "name": "Microsoft.AspNetCore.App.Ref",
+            "version": "[7.0.13, 7.0.13]"
+          }
+        ],
         "frameworkReferences": {
           "Microsoft.AspNetCore.App": {
             "privateAssets": "none"
@@ -1173,7 +1174,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/7.0.105/RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/7.0.113/RuntimeIdentifierGraph.json"
       }
     }
   }
