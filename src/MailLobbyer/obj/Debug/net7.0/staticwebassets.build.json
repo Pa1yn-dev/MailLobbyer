@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "NTyfGLf4HteZM9YK3+5syYmHRWGkSeoLzvGwrMCLyPs=",
+  "Hash": "yJYmRXHAIHqlDjxd2TOmJK8vBR7K8WGMukL+PJ4mS9c=",
   "Source": "MailLobbyer",
   "BasePath": "_content/MailLobbyer",
   "Mode": "Default",
@@ -10,17 +10,17 @@
     {
       "Name": "MailLobbyer/wwwroot",
       "Source": "MailLobbyer",
-      "ContentRoot": "/home/kitt/Documents/GitHub/MailLobbyer/src/MailLobbyer/wwwroot/",
+      "ContentRoot": "/home/pa1yn/Documents/GitHub/MailLobbyer/src/MailLobbyer/wwwroot/",
       "BasePath": "_content/MailLobbyer",
       "Pattern": "**"
     }
   ],
   "Assets": [
     {
-      "Identity": "/home/kitt/Documents/GitHub/MailLobbyer/src/MailLobbyer/obj/Debug/net7.0/scopedcss/bundle/MailLobbyer.styles.css",
+      "Identity": "/home/pa1yn/Documents/GitHub/MailLobbyer/src/MailLobbyer/obj/Debug/net7.0/scopedcss/bundle/MailLobbyer.styles.css",
       "SourceId": "MailLobbyer",
       "SourceType": "Computed",
-      "ContentRoot": "/home/kitt/Documents/GitHub/MailLobbyer/src/MailLobbyer/obj/Debug/net7.0/scopedcss/bundle/",
+      "ContentRoot": "/home/pa1yn/Documents/GitHub/MailLobbyer/src/MailLobbyer/obj/Debug/net7.0/scopedcss/bundle/",
       "BasePath": "_content/MailLobbyer",
       "RelativePath": "MailLobbyer.styles.css",
       "AssetKind": "All",
@@ -31,13 +31,13 @@
       "AssetTraitValue": "ApplicationBundle",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "/home/kitt/Documents/GitHub/MailLobbyer/src/MailLobbyer/obj/Debug/net7.0/scopedcss/bundle/MailLobbyer.styles.css"
+      "OriginalItemSpec": "/home/pa1yn/Documents/GitHub/MailLobbyer/src/MailLobbyer/obj/Debug/net7.0/scopedcss/bundle/MailLobbyer.styles.css"
     },
     {
-      "Identity": "/home/kitt/Documents/GitHub/MailLobbyer/src/MailLobbyer/obj/Debug/net7.0/scopedcss/projectbundle/MailLobbyer.bundle.scp.css",
+      "Identity": "/home/pa1yn/Documents/GitHub/MailLobbyer/src/MailLobbyer/obj/Debug/net7.0/scopedcss/projectbundle/MailLobbyer.bundle.scp.css",
       "SourceId": "MailLobbyer",
       "SourceType": "Computed",
-      "ContentRoot": "/home/kitt/Documents/GitHub/MailLobbyer/src/MailLobbyer/obj/Debug/net7.0/scopedcss/projectbundle/",
+      "ContentRoot": "/home/pa1yn/Documents/GitHub/MailLobbyer/src/MailLobbyer/obj/Debug/net7.0/scopedcss/projectbundle/",
       "BasePath": "_content/MailLobbyer",
       "RelativePath": "MailLobbyer.bundle.scp.css",
       "AssetKind": "All",
@@ -48,13 +48,13 @@
       "AssetTraitValue": "ProjectBundle",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "/home/kitt/Documents/GitHub/MailLobbyer/src/MailLobbyer/obj/Debug/net7.0/scopedcss/projectbundle/MailLobbyer.bundle.scp.css"
+      "OriginalItemSpec": "/home/pa1yn/Documents/GitHub/MailLobbyer/src/MailLobbyer/obj/Debug/net7.0/scopedcss/projectbundle/MailLobbyer.bundle.scp.css"
     },
     {
-      "Identity": "/home/kitt/Documents/GitHub/MailLobbyer/src/MailLobbyer/wwwroot/css/bootstrap/bootstrap.min.css",
+      "Identity": "/home/pa1yn/Documents/GitHub/MailLobbyer/src/MailLobbyer/wwwroot/css/bootstrap/bootstrap.min.css",
       "SourceId": "MailLobbyer",
       "SourceType": "Discovered",
-      "ContentRoot": "/home/kitt/Documents/GitHub/MailLobbyer/src/MailLobbyer/wwwroot/",
+      "ContentRoot": "/home/pa1yn/Documents/GitHub/MailLobbyer/src/MailLobbyer/wwwroot/",
       "BasePath": "_content/MailLobbyer",
       "RelativePath": "css/bootstrap/bootstrap.min.css",
       "AssetKind": "All",
@@ -68,10 +68,10 @@
       "OriginalItemSpec": "wwwroot/css/bootstrap/bootstrap.min.css"
     },
     {
-      "Identity": "/home/kitt/Documents/GitHub/MailLobbyer/src/MailLobbyer/wwwroot/css/bootstrap/bootstrap.min.css.map",
+      "Identity": "/home/pa1yn/Documents/GitHub/MailLobbyer/src/MailLobbyer/wwwroot/css/bootstrap/bootstrap.min.css.map",
       "SourceId": "MailLobbyer",
       "SourceType": "Discovered",
-      "ContentRoot": "/home/kitt/Documents/GitHub/MailLobbyer/src/MailLobbyer/wwwroot/",
+      "ContentRoot": "/home/pa1yn/Documents/GitHub/MailLobbyer/src/MailLobbyer/wwwroot/",
       "BasePath": "_content/MailLobbyer",
       "RelativePath": "css/bootstrap/bootstrap.min.css.map",
       "AssetKind": "All",
@@ -85,10 +85,10 @@
       "OriginalItemSpec": "wwwroot/css/bootstrap/bootstrap.min.css.map"
     },
     {
-      "Identity": "/home/kitt/Documents/GitHub/MailLobbyer/src/MailLobbyer/wwwroot/css/open-iconic/FONT-LICENSE",
+      "Identity": "/home/pa1yn/Documents/GitHub/MailLobbyer/src/MailLobbyer/wwwroot/css/open-iconic/FONT-LICENSE",
       "SourceId": "MailLobbyer",
       "SourceType": "Discovered",
-      "ContentRoot": "/home/kitt/Documents/GitHub/MailLobbyer/src/MailLobbyer/wwwroot/",
+      "ContentRoot": "/home/pa1yn/Documents/GitHub/MailLobbyer/src/MailLobbyer/wwwroot/",
       "BasePath": "_content/MailLobbyer",
       "RelativePath": "css/open-iconic/FONT-LICENSE",
       "AssetKind": "All",
@@ -102,10 +102,10 @@
       "OriginalItemSpec": "wwwroot/css/open-iconic/FONT-LICENSE"
     },
     {
-      "Identity": "/home/kitt/Documents/GitHub/MailLobbyer/src/MailLobbyer/wwwroot/css/open-iconic/font/css/open-iconic-bootstrap.min.css",
+      "Identity": "/home/pa1yn/Documents/GitHub/MailLobbyer/src/MailLobbyer/wwwroot/css/open-iconic/font/css/open-iconic-bootstrap.min.css",
       "SourceId": "MailLobbyer",
       "SourceType": "Discovered",
-      "ContentRoot": "/home/kitt/Documents/GitHub/MailLobbyer/src/MailLobbyer/wwwroot/",
+      "ContentRoot": "/home/pa1yn/Documents/GitHub/MailLobbyer/src/MailLobbyer/wwwroot/",
       "BasePath": "_content/MailLobbyer",
       "RelativePath": "css/open-iconic/font/css/open-iconic-bootstrap.min.css",
       "AssetKind": "All",
@@ -119,10 +119,10 @@
       "OriginalItemSpec": "wwwroot/css/open-iconic/font/css/open-iconic-bootstrap.min.css"
     },
     {
-      "Identity": "/home/kitt/Documents/GitHub/MailLobbyer/src/MailLobbyer/wwwroot/css/open-iconic/font/fonts/open-iconic.eot",
+      "Identity": "/home/pa1yn/Documents/GitHub/MailLobbyer/src/MailLobbyer/wwwroot/css/open-iconic/font/fonts/open-iconic.eot",
       "SourceId": "MailLobbyer",
       "SourceType": "Discovered",
-      "ContentRoot": "/home/kitt/Documents/GitHub/MailLobbyer/src/MailLobbyer/wwwroot/",
+      "ContentRoot": "/home/pa1yn/Documents/GitHub/MailLobbyer/src/MailLobbyer/wwwroot/",
       "BasePath": "_content/MailLobbyer",
       "RelativePath": "css/open-iconic/font/fonts/open-iconic.eot",
       "AssetKind": "All",
@@ -136,10 +136,10 @@
       "OriginalItemSpec": "wwwroot/css/open-iconic/font/fonts/open-iconic.eot"
     },
     {
-      "Identity": "/home/kitt/Documents/GitHub/MailLobbyer/src/MailLobbyer/wwwroot/css/open-iconic/font/fonts/open-iconic.otf",
+      "Identity": "/home/pa1yn/Documents/GitHub/MailLobbyer/src/MailLobbyer/wwwroot/css/open-iconic/font/fonts/open-iconic.otf",
       "SourceId": "MailLobbyer",
       "SourceType": "Discovered",
-      "ContentRoot": "/home/kitt/Documents/GitHub/MailLobbyer/src/MailLobbyer/wwwroot/",
+      "ContentRoot": "/home/pa1yn/Documents/GitHub/MailLobbyer/src/MailLobbyer/wwwroot/",
       "BasePath": "_content/MailLobbyer",
       "RelativePath": "css/open-iconic/font/fonts/open-iconic.otf",
       "AssetKind": "All",
@@ -153,10 +153,10 @@
       "OriginalItemSpec": "wwwroot/css/open-iconic/font/fonts/open-iconic.otf"
     },
     {
-      "Identity": "/home/kitt/Documents/GitHub/MailLobbyer/src/MailLobbyer/wwwroot/css/open-iconic/font/fonts/open-iconic.svg",
+      "Identity": "/home/pa1yn/Documents/GitHub/MailLobbyer/src/MailLobbyer/wwwroot/css/open-iconic/font/fonts/open-iconic.svg",
       "SourceId": "MailLobbyer",
       "SourceType": "Discovered",
-      "ContentRoot": "/home/kitt/Documents/GitHub/MailLobbyer/src/MailLobbyer/wwwroot/",
+      "ContentRoot": "/home/pa1yn/Documents/GitHub/MailLobbyer/src/MailLobbyer/wwwroot/",
       "BasePath": "_content/MailLobbyer",
       "RelativePath": "css/open-iconic/font/fonts/open-iconic.svg",
       "AssetKind": "All",
@@ -170,10 +170,10 @@
       "OriginalItemSpec": "wwwroot/css/open-iconic/font/fonts/open-iconic.svg"
     },
     {
-      "Identity": "/home/kitt/Documents/GitHub/MailLobbyer/src/MailLobbyer/wwwroot/css/open-iconic/font/fonts/open-iconic.ttf",
+      "Identity": "/home/pa1yn/Documents/GitHub/MailLobbyer/src/MailLobbyer/wwwroot/css/open-iconic/font/fonts/open-iconic.ttf",
       "SourceId": "MailLobbyer",
       "SourceType": "Discovered",
-      "ContentRoot": "/home/kitt/Documents/GitHub/MailLobbyer/src/MailLobbyer/wwwroot/",
+      "ContentRoot": "/home/pa1yn/Documents/GitHub/MailLobbyer/src/MailLobbyer/wwwroot/",
       "BasePath": "_content/MailLobbyer",
       "RelativePath": "css/open-iconic/font/fonts/open-iconic.ttf",
       "AssetKind": "All",
@@ -187,10 +187,10 @@
       "OriginalItemSpec": "wwwroot/css/open-iconic/font/fonts/open-iconic.ttf"
     },
     {
-      "Identity": "/home/kitt/Documents/GitHub/MailLobbyer/src/MailLobbyer/wwwroot/css/open-iconic/font/fonts/open-iconic.woff",
+      "Identity": "/home/pa1yn/Documents/GitHub/MailLobbyer/src/MailLobbyer/wwwroot/css/open-iconic/font/fonts/open-iconic.woff",
       "SourceId": "MailLobbyer",
       "SourceType": "Discovered",
-      "ContentRoot": "/home/kitt/Documents/GitHub/MailLobbyer/src/MailLobbyer/wwwroot/",
+      "ContentRoot": "/home/pa1yn/Documents/GitHub/MailLobbyer/src/MailLobbyer/wwwroot/",
       "BasePath": "_content/MailLobbyer",
       "RelativePath": "css/open-iconic/font/fonts/open-iconic.woff",
       "AssetKind": "All",
@@ -204,10 +204,10 @@
       "OriginalItemSpec": "wwwroot/css/open-iconic/font/fonts/open-iconic.woff"
     },
     {
-      "Identity": "/home/kitt/Documents/GitHub/MailLobbyer/src/MailLobbyer/wwwroot/css/open-iconic/ICON-LICENSE",
+      "Identity": "/home/pa1yn/Documents/GitHub/MailLobbyer/src/MailLobbyer/wwwroot/css/open-iconic/ICON-LICENSE",
       "SourceId": "MailLobbyer",
       "SourceType": "Discovered",
-      "ContentRoot": "/home/kitt/Documents/GitHub/MailLobbyer/src/MailLobbyer/wwwroot/",
+      "ContentRoot": "/home/pa1yn/Documents/GitHub/MailLobbyer/src/MailLobbyer/wwwroot/",
       "BasePath": "_content/MailLobbyer",
       "RelativePath": "css/open-iconic/ICON-LICENSE",
       "AssetKind": "All",
@@ -221,10 +221,10 @@
       "OriginalItemSpec": "wwwroot/css/open-iconic/ICON-LICENSE"
     },
     {
-      "Identity": "/home/kitt/Documents/GitHub/MailLobbyer/src/MailLobbyer/wwwroot/css/open-iconic/README.md",
+      "Identity": "/home/pa1yn/Documents/GitHub/MailLobbyer/src/MailLobbyer/wwwroot/css/open-iconic/README.md",
       "SourceId": "MailLobbyer",
       "SourceType": "Discovered",
-      "ContentRoot": "/home/kitt/Documents/GitHub/MailLobbyer/src/MailLobbyer/wwwroot/",
+      "ContentRoot": "/home/pa1yn/Documents/GitHub/MailLobbyer/src/MailLobbyer/wwwroot/",
       "BasePath": "_content/MailLobbyer",
       "RelativePath": "css/open-iconic/README.md",
       "AssetKind": "All",
@@ -238,10 +238,10 @@
       "OriginalItemSpec": "wwwroot/css/open-iconic/README.md"
     },
     {
-      "Identity": "/home/kitt/Documents/GitHub/MailLobbyer/src/MailLobbyer/wwwroot/css/site.css",
+      "Identity": "/home/pa1yn/Documents/GitHub/MailLobbyer/src/MailLobbyer/wwwroot/css/site.css",
       "SourceId": "MailLobbyer",
       "SourceType": "Discovered",
-      "ContentRoot": "/home/kitt/Documents/GitHub/MailLobbyer/src/MailLobbyer/wwwroot/",
+      "ContentRoot": "/home/pa1yn/Documents/GitHub/MailLobbyer/src/MailLobbyer/wwwroot/",
       "BasePath": "_content/MailLobbyer",
       "RelativePath": "css/site.css",
       "AssetKind": "All",
@@ -255,10 +255,10 @@
       "OriginalItemSpec": "wwwroot/css/site.css"
     },
     {
-      "Identity": "/home/kitt/Documents/GitHub/MailLobbyer/src/MailLobbyer/wwwroot/favicon.png",
+      "Identity": "/home/pa1yn/Documents/GitHub/MailLobbyer/src/MailLobbyer/wwwroot/favicon.png",
       "SourceId": "MailLobbyer",
       "SourceType": "Discovered",
-      "ContentRoot": "/home/kitt/Documents/GitHub/MailLobbyer/src/MailLobbyer/wwwroot/",
+      "ContentRoot": "/home/pa1yn/Documents/GitHub/MailLobbyer/src/MailLobbyer/wwwroot/",
       "BasePath": "_content/MailLobbyer",
       "RelativePath": "favicon.png",
       "AssetKind": "All",
@@ -272,10 +272,10 @@
       "OriginalItemSpec": "wwwroot/favicon.png"
     },
     {
-      "Identity": "/home/kitt/Documents/GitHub/MailLobbyer/src/MailLobbyer/wwwroot/favicon.svg",
+      "Identity": "/home/pa1yn/Documents/GitHub/MailLobbyer/src/MailLobbyer/wwwroot/favicon.svg",
       "SourceId": "MailLobbyer",
       "SourceType": "Discovered",
-      "ContentRoot": "/home/kitt/Documents/GitHub/MailLobbyer/src/MailLobbyer/wwwroot/",
+      "ContentRoot": "/home/pa1yn/Documents/GitHub/MailLobbyer/src/MailLobbyer/wwwroot/",
       "BasePath": "_content/MailLobbyer",
       "RelativePath": "favicon.svg",
       "AssetKind": "All",

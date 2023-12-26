@@ -9,49 +9,49 @@ build_property.EnforceExtendedAnalyzerRules =
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = MailLobbyer
 build_property.RootNamespace = MailLobbyer
-build_property.ProjectDir = /home/kitt/Documents/GitHub/MailLobbyer/src/MailLobbyer/
+build_property.ProjectDir = /home/pa1yn/Documents/GitHub/MailLobbyer/src/MailLobbyer/
 build_property.RazorLangVersion = 7.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = /home/kitt/Documents/GitHub/MailLobbyer/src/MailLobbyer
+build_property.MSBuildProjectDirectory = /home/pa1yn/Documents/GitHub/MailLobbyer/src/MailLobbyer
 build_property._RazorSourceGeneratorDebug = 
 
-[/home/kitt/Documents/GitHub/MailLobbyer/src/MailLobbyer/App.razor]
+[/home/pa1yn/Documents/GitHub/MailLobbyer/src/MailLobbyer/App.razor]
 build_metadata.AdditionalFiles.TargetPath = QXBwLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
-[/home/kitt/Documents/GitHub/MailLobbyer/src/MailLobbyer/Pages/About.razor]
+[/home/pa1yn/Documents/GitHub/MailLobbyer/src/MailLobbyer/Pages/About.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXMvQWJvdXQucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
-[/home/kitt/Documents/GitHub/MailLobbyer/src/MailLobbyer/Pages/Email.razor]
+[/home/pa1yn/Documents/GitHub/MailLobbyer/src/MailLobbyer/Pages/Email.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXMvRW1haWwucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
-[/home/kitt/Documents/GitHub/MailLobbyer/src/MailLobbyer/Pages/Settings.razor]
+[/home/pa1yn/Documents/GitHub/MailLobbyer/src/MailLobbyer/Pages/Settings.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXMvU2V0dGluZ3MucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
-[/home/kitt/Documents/GitHub/MailLobbyer/src/MailLobbyer/_Imports.razor]
+[/home/pa1yn/Documents/GitHub/MailLobbyer/src/MailLobbyer/_Imports.razor]
 build_metadata.AdditionalFiles.TargetPath = X0ltcG9ydHMucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
-[/home/kitt/Documents/GitHub/MailLobbyer/src/MailLobbyer/Shared/Footer.razor]
+[/home/pa1yn/Documents/GitHub/MailLobbyer/src/MailLobbyer/Shared/Footer.razor]
 build_metadata.AdditionalFiles.TargetPath = U2hhcmVkL0Zvb3Rlci5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = b-xujzwtudf5
 
-[/home/kitt/Documents/GitHub/MailLobbyer/src/MailLobbyer/Shared/MainLayout.razor]
+[/home/pa1yn/Documents/GitHub/MailLobbyer/src/MailLobbyer/Shared/MainLayout.razor]
 build_metadata.AdditionalFiles.TargetPath = U2hhcmVkL01haW5MYXlvdXQucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = b-gk9azpv4sx
 
-[/home/kitt/Documents/GitHub/MailLobbyer/src/MailLobbyer/Shared/NavMenu.razor]
+[/home/pa1yn/Documents/GitHub/MailLobbyer/src/MailLobbyer/Shared/NavMenu.razor]
 build_metadata.AdditionalFiles.TargetPath = U2hhcmVkL05hdk1lbnUucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = b-3qkxyhumpy
 
-[/home/kitt/Documents/GitHub/MailLobbyer/src/MailLobbyer/Pages/Error.cshtml]
+[/home/pa1yn/Documents/GitHub/MailLobbyer/src/MailLobbyer/Pages/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXMvRXJyb3IuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[/home/kitt/Documents/GitHub/MailLobbyer/src/MailLobbyer/Pages/_Host.cshtml]
+[/home/pa1yn/Documents/GitHub/MailLobbyer/src/MailLobbyer/Pages/_Host.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXMvX0hvc3QuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
