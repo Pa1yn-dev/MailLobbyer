@@ -11,7 +11,6 @@ public class SettingsHub : Hub
     private static List<SettingsProfiles> settingsprofilesinmemory = new List<SettingsProfiles>();
     private static string directorypath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments), "MailLobbyer", "Profiles");
     private static string[] filepaths;
-    private static List<SettingsProfiles> profiles = new List<SettingsProfiles>();
 
     public async Task SettingsProfilesSeeker()
     {
@@ -63,11 +62,13 @@ public class SettingsHub : Hub
 
     public async Task RemoveSettingsProfile(Guid ident)
     {
-        foreach (SettingsProfiles profile in profiles)
-        {
-            if(profile.Id == ident)
+        filepaths = Directory.GetFiles(directorypath);
+
+        foreach (string filepath in filepaths)
+        {    
+            if(Path.GetFileNameWithoutExtension(filepath) == ident.ToString())
             {
-                settingsprofilesinmemory.Remove(profile);
+                File.Delete(filepath);
             }
             else
             {
