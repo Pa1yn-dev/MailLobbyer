@@ -1,0 +1,19 @@
+.footer[b-xujzwtudf5] {
+    background: rgb(0,0,0, 0.9);
+    border-top: 2px solid rgba(0, 0, 0, 0.9);
+    box-shadow: 10px -10px 5px rgba(0, 0, 0, 0.185);
+    padding: 10px;
+    position: relative;
+}
+
+.footer-text[b-xujzwtudf5] {
+    margin-top: 10px;
+    margin-bottom: 10px; 
+    color: white; 
+    text-align: center;
+    justify-content: center; 
+    display: flex; 
+    align-items: center;
+    font-size: smaller;
+    font-weight: medium;
+}

@@ -4,8 +4,11 @@ using MailLobbyer.CSVServiceComponent;
 using MailLobbyer.CSVFileClass;
 using Microsoft.AspNetCore.ResponseCompression;
 using MailLobbyer.Server.Hubs;
+using ElectronNET.API;
+using ElectronNET.API.Entities;
 
 var builder = WebApplication.CreateBuilder(args);
+builder.WebHost.UseElectron(args);
 
 // Add services to the container.
 builder.Services.AddRazorPages();
@@ -16,6 +19,8 @@ builder.Services.AddResponseCompression(opts =>
    opts.MimeTypes = ResponseCompressionDefaults.MimeTypes.Concat(
          new[] { "application/octet-stream" });
 });
+
+builder.Services.AddElectron();
 
 var app = builder.Build();
 
@@ -41,6 +46,13 @@ app.MapBlazorHub();
 app.MapFallbackToPage("/_Host");
 
 
-app.Run();
+await app.StartAsync();
+
+var electronBrowserWindowOptions = new BrowserWindowOptions {AutoHideMenuBar = true};
+await Electron.WindowManager.CreateWindowAsync(electronBrowserWindowOptions);
+
+
+app.WaitForShutdown();
+
 
 
