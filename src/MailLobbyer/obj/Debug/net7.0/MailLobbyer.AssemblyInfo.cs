@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("MailLobbyer")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+9d32b3532b18f42a46db4914bf2c8dbf6c68fd22")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+b1216d9a73a11211904f0c5369f25319feac5236")]
 [assembly: System.Reflection.AssemblyProductAttribute("MailLobbyer")]
 [assembly: System.Reflection.AssemblyTitleAttribute("MailLobbyer")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

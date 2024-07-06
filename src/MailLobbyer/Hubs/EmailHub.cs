@@ -21,6 +21,7 @@ public class EmailHub : Hub
             {
                 // If 20 emails are sent, wait 5 minutes.
                 await Task.Delay(300000);
+                sentemails = 0;
             }
 
             string prefixsyntax = "/P";

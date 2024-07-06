@@ -160,7 +160,7 @@
 
         if (settingshubconnection is not null)
         {
-            await csvhubconnection.SendAsync("SettingsProfilesSeeker");
+            await settingshubconnection.SendAsync("SettingsProfilesSeeker");
 
             // Replace with profiles reading when implemented.
             // await csvhubconnection.SendAsync("CSVFileSeeker");
