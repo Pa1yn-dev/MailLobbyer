@@ -17,12 +17,6 @@ public class CSVHub : Hub
         if (!Directory.Exists(directorypath))
         {
             Directory.CreateDirectory(directorypath);
-            System.Console.WriteLine("CSV contact-grouping directory created successfully.");
-        }
-
-        else
-        {
-            System.Console.WriteLine("CSV contact-grouping directory already exists.");
         }
 
         // Later on change to use config values set by the user
@@ -30,7 +24,6 @@ public class CSVHub : Hub
 
         foreach (string filepath in filepaths)
         {
-
             using (var ms = new MemoryStream())
             {
                 using(FileStream fs = new FileStream(filepath, FileMode.Open,FileAccess.Read))
@@ -66,10 +59,7 @@ public class CSVHub : Hub
                 File.Delete(filepath);
             }
         }
-        
     }
-
-
 
     public async Task<List<CSVFile>> GetCSVFilesInMemory()
     {

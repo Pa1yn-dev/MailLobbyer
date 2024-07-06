@@ -1,5 +1,0 @@
-/home/kitt/Documents/GitHub/MailLobbyer/src/MailLobbyer/bin/Release/net7.0/win-x64/publish/appsettings.Development.json
-/home/kitt/Documents/GitHub/MailLobbyer/src/MailLobbyer/bin/Release/net7.0/win-x64/publish/appsettings.json
-/home/kitt/Documents/GitHub/MailLobbyer/src/MailLobbyer/bin/Release/net7.0/win-x64/publish/MailLobbyer.pdb
-/home/kitt/Documents/GitHub/MailLobbyer/src/MailLobbyer/bin/Release/net7.0/win-x64/publish/aspnetcorev2_inprocess.dll
-/home/kitt/Documents/GitHub/MailLobbyer/src/MailLobbyer/bin/Release/net7.0/win-x64/publish/MailLobbyer.exe

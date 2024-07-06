@@ -1,0 +1,132 @@
+/* _content/MailLobbyer/Shared/Footer.razor.rz.scp.css */
+.footer[b-xujzwtudf5] {
+    background: rgb(0,0,0, 0.9);
+    border-top: 2px solid rgba(0, 0, 0, 0.9);
+    box-shadow: 10px -10px 5px rgba(0, 0, 0, 0.185);
+    padding: 10px;
+    position: relative;
+}
+
+.footer-text[b-xujzwtudf5] {
+    margin-top: 10px;
+    margin-bottom: 10px; 
+    color: white; 
+    text-align: center;
+    justify-content: center; 
+    display: flex; 
+    align-items: center;
+    font-size: smaller;
+    font-weight: medium;
+}
+/* _content/MailLobbyer/Shared/MainLayout.razor.rz.scp.css */
+.page[b-gk9azpv4sx] {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    position: relative;
+}
+
+.background[b-gk9azpv4sx] {
+    position: relative;
+    background-color: rgba(255, 255, 255, 1);
+}
+.background img[b-gk9azpv4sx] {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; 
+}
+
+main[b-gk9azpv4sx] {
+    flex: 1;
+}
+
+
+
+
+
+
+
+
+
+/* _content/MailLobbyer/Shared/NavMenu.razor.rz.scp.css */
+.navbar ul[b-3qkxyhumpy],
+.navbar li[b-3qkxyhumpy] {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.navbar[b-3qkxyhumpy] {
+    background: rgb(0,0,0, 0.9);
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    box-shadow: 10px 10px 5px rgba(0, 0, 0, 0.185);
+    border-bottom: 2px solid rgba(0, 0, 0, 0.1);
+}
+
+.navbar-brand[b-3qkxyhumpy] {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.navbar-brand img[b-3qkxyhumpy] {
+    max-width: auto;
+    max-height: 8vh;
+    
+}
+
+.navbar-links[b-3qkxyhumpy] {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}
+
+.navbar-links ul[b-3qkxyhumpy] {
+    display: flex;
+    justify-content: center;
+}
+
+.navbar-links li[b-3qkxyhumpy] {
+    margin-left: 15px;
+}
+
+.navbar-links a[b-3qkxyhumpy] {
+    color: white;
+    text-decoration: none;
+    padding: 5px 10px;
+}
+
+.navbar-links a:hover[b-3qkxyhumpy] {
+    background-color: rgba(80, 80, 80, 0.9);
+    border-radius: 5px;
+}
+
+.navbar-link[b-3qkxyhumpy] {
+    color: white;
+}
+
+@media (max-width: 768px) {
+    .navbar[b-3qkxyhumpy] {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .navbar-links[b-3qkxyhumpy] {
+        flex: none;
+        margin-top: 10px;
+    }
+
+    .navbar-links ul[b-3qkxyhumpy] {
+        flex-direction: row; 
+    }
+
+    .navbar-brand[b-3qkxyhumpy] {
+        position: static; 
+    }
+}
