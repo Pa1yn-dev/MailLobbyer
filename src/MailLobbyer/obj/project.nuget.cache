@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "SpBESkY3keQpdyKR4g7jqNIig5HIrN1Iz7Tghy3nBoNZJQexBbmMtjTWodvrYrLzyFeGqFaYbN86UIXg2h2w/A==",
+  "dgSpecHash": "GGsZXO+x40+S9f0wfN9qZLEKPOoSvgegrMJAcZkXfhpZN9T6kNqXS0XBoF9WWLchUJKGP6aBW/A1jLVzJNpBPw==",
   "success": true,
   "projectFilePath": "/home/pa1yn/Documents/GitHub/MailLobbyer/src/MailLobbyer/MailLobbyer.csproj",
   "expectedPackageFiles": [
@@ -28,7 +28,9 @@
     "/home/pa1yn/.nuget/packages/system.security.cryptography.pkcs/7.0.2/system.security.cryptography.pkcs.7.0.2.nupkg.sha512",
     "/home/pa1yn/.nuget/packages/system.text.encoding.codepages/7.0.0/system.text.encoding.codepages.7.0.0.nupkg.sha512",
     "/home/pa1yn/.nuget/packages/system.threading.channels/7.0.0/system.threading.channels.7.0.0.nupkg.sha512",
-    "/home/pa1yn/.nuget/packages/microsoft.aspnetcore.app.ref/7.0.13/microsoft.aspnetcore.app.ref.7.0.13.nupkg.sha512"
+    "/home/pa1yn/.nuget/packages/microsoft.netcore.app.ref/7.0.17/microsoft.netcore.app.ref.7.0.17.nupkg.sha512",
+    "/home/pa1yn/.nuget/packages/microsoft.aspnetcore.app.ref/7.0.17/microsoft.aspnetcore.app.ref.7.0.17.nupkg.sha512",
+    "/home/pa1yn/.nuget/packages/microsoft.netcore.app.host.linux-x64/7.0.17/microsoft.netcore.app.host.linux-x64.7.0.17.nupkg.sha512"
   ],
   "logs": []
 }

@@ -233,7 +233,7 @@
 
     private async Task EmailFormSubmitHandler()
     {
-        if (selectedcsvfileid == null)
+        if (selectedcsvfileid == Guid.Empty)
         {
             // Replace with popup!
             Console.WriteLine("Please select a group.");
