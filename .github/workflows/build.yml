@@ -1,0 +1,47 @@
+name: Build MailLobbyer for OSX
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: macos-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v2
+
+    - name: Set up .NET Core
+      uses: actions/setup-dotnet@v2
+      with:
+        dotnet-version: '6.0'  
+
+    - name: Install ElectronNET.CLI
+      run: dotnet tool install ElectronNET.CLI -g
+
+    - name: Install Node.js
+      uses: actions/setup-node@v2
+      with:
+        node-version: '22'  
+
+    - name: Restore NuGet packages
+      run: dotnet restore
+
+    - name: Build Electron.NET app for macOS
+      run: electronize build /target osx
+
+    - name: Zip built package
+      run: |
+        mkdir -p builds
+        zip -r builds/ML-OSX-$(date +'%Y%m%d').zip bin/desktop
+
+    - name: Upload built package
+      uses: actions/upload-artifact@v2
+      with:
+        name: ML-OSX-$(date +'%Y%m%d')
+        path: builds/ML-OSX-$(date +'%Y%m%d').zip
