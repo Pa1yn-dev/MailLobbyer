@@ -1,4 +1,4 @@
-name: Build MailLobbyer for OSX, Linux and Windows.
+name: Build MailLobbyer for OSX.
 
 on:
   push:
@@ -51,87 +51,6 @@ jobs:
         name: ML-OSX-$(date +'%Y%m%d')
         path: builds/ML-OSX-$(date +'%Y%m%d').zip
 
-  build-Linux:
-    runs-on: ubuntu-latest
-    steps:
-    - name: Checkout repository
-      uses: actions/checkout@v2
-
-    - name: Set up .NET Core
-      uses: actions/setup-dotnet@v2
-      with:
-        dotnet-version: '6.0'  
-
-    - name: Install ElectronNET.CLI
-      run: dotnet tool install ElectronNET.CLI -g
-
-    - name: Install Node.js
-      uses: actions/setup-node@v2
-      with:
-        node-version: '22'  
-
-    - name: Restore NuGet packages
-      run: dotnet restore
-      working-directory: src/MailLobbyer
-
-    - name: Build Electron.NET app for Linux
-      run: electronize build /target linux
-      working-directory: src/MailLobbyer
-
-    - name: Zip built package
-      run: |
-        mkdir -p builds
-        zip -r builds/ML-Linux-$(date +'%Y%m%d').zip src/MailLobbyer/bin/desktop
-
-    - name: Clear bin/desktop
-      run: rm -rf src/MailLobbyer/bin/desktop/*
-        
-    - name: Upload built package
-      uses: actions/upload-artifact@v2
-      with:
-        name: ML-Linux-$(date +'%Y%m%d')
-        path: builds/ML-Linux-$(date +'%Y%m%d').zip
-
-  build-Windows:
-    runs-on: windows-latest
-    steps:
-    - name: Checkout repository
-      uses: actions/checkout@v2
-
-    - name: Set up .NET Core
-      uses: actions/setup-dotnet@v2
-      with:
-        dotnet-version: '6.0'  
-
-    - name: Install ElectronNET.CLI
-      run: dotnet tool install ElectronNET.CLI -g
-
-    - name: Install Node.js
-      uses: actions/setup-node@v2
-      with:
-        node-version: '22'  
-
-    - name: Restore NuGet packages
-      run: dotnet restore
-      working-directory: src/MailLobbyer
-
-    - name: Build Electron.NET app for Windows
-      run: electronize build /target windows
-      working-directory: src/MailLobbyer
-
-    - name: Zip built package
-      run: |
-        mkdir -p builds
-        zip -r builds/ML-Windows-$(date +'%Y%m%d').zip src/MailLobbyer/bin/desktop
-
-    - name: Clear bin/desktop
-      run: rm -rf src/MailLobbyer/bin/desktop/*
-        
-    - name: Upload built package
-      uses: actions/upload-artifact@v2
-      with:
-        name: ML-Windows-$(date +'%Y%m%d')
-        path: builds/ML-Windows-$(date +'%Y%m%d').zip
 
 
 
