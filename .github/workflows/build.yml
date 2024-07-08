@@ -10,7 +10,7 @@ on:
 
 jobs:
   build-OSX:
-    runs-on: macos-10.15
+    runs-on: macos-latest-large
 
     steps:
     - name: Checkout repository
