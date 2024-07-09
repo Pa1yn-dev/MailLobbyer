@@ -47,7 +47,7 @@ jobs:
       with:
         files: |
           ML-OSX-${{ GitHub.sha }}.zip
-        tag_name: ${{ github.sha }}
+        tag_name: ${{ github.ref }}
         name: ${{ github.event.pull_request.title }}
       env:
         GITHUB_TOKEN: ${{ secrets.ACTION }}
