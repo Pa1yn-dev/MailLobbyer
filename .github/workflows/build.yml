@@ -42,9 +42,10 @@ jobs:
       run: |
         zip -r ML-OSX-${{ github.sha }}.zip src/MailLobbyer/bin/desktop
 
-    - name: Get version
-      run: echo "::set-output name=version::$(dotnet run --project src/MailLobbyer --version)"
-      id: version
+    - name: Get PR Body
+      id: pr_body
+      if: github.event_name == 'pull_request'
+      run: echo "::set-output name=body::${{ github.event.pull_request.body }}"
 
     - name: Create Release
       uses: actions/create-release@v1
@@ -52,9 +53,9 @@ jobs:
       with:
         draft: false
         prerelease: false
-        release_name: ${{ steps.version.outputs.version }}
-        tag_name: ${{ steps.version.outputs.version }}
-        body_path: CHANGELOG.md
+        release_name: ${{ github.event.pull_request.title }}
+        tag_name: ${{ github.sha }}
+        body: ${{ steps.pr_body.outputs.body }}
       env:
         GITHUB_TOKEN: ${{ secrets.ACTION }}
 
