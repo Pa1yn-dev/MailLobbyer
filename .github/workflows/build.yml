@@ -1,7 +1,10 @@
 name: Build and Release MailLobbyer for OSX
 
 on:
-  pull_request:
+ push:
+    branches:
+      - main
+ pull_request:
     types:
       - closed
     branches:
