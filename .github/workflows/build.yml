@@ -1,15 +1,15 @@
-name: Build MailLobbyer for OSX.
+name: Build and Release MailLobbyer for OSX
 
 on:
-  push:
-    branches:
-      - main
   pull_request:
+    types:
+      - closed
     branches:
       - main
 
 jobs:
   build-OSX:
+    if: github.event.pull_request.merged == true
     runs-on: macos-13
 
     steps:
@@ -19,7 +19,7 @@ jobs:
     - name: Set up .NET Core
       uses: actions/setup-dotnet@v2
       with:
-        dotnet-version: '6.0'  
+        dotnet-version: '6.0'
 
     - name: Install ElectronNET.CLI
       run: dotnet tool install ElectronNET.CLI -g
@@ -27,7 +27,7 @@ jobs:
     - name: Install Node.js
       uses: actions/setup-node@v2
       with:
-        node-version: '22'  
+        node-version: '22'
 
     - name: Restore NuGet packages
       run: dotnet restore
@@ -37,20 +37,16 @@ jobs:
       run: electronize build /target osx
       working-directory: src/MailLobbyer
 
-    - name: Zip built package
+    - name: Create zip file
       run: |
-        mkdir -p builds
-        zip -r builds/ML-OSX-$(date +'%Y%m%d').zip src/MailLobbyer/bin/desktop
+        zip -r ML-OSX-$(date +'%Y%m%d').zip src/MailLobbyer/bin/desktop
 
-    - name: Clear bin/desktop
-      run: rm -rf src/MailLobbyer/bin/desktop/*
-        
-    - name: Upload built package
-      uses: actions/upload-artifact@v2
+    - name: Upload artifact to GitHub Releases
+      uses: softprops/action-gh-release@v1
       with:
-        name: ML-OSX-$(date +'%Y%m%d')
-        path: builds/ML-OSX-$(date +'%Y%m%d').zip
-
-
-
-
+        files: |
+          ML-OSX-$(date +'%Y%m%d').zip
+        tag_name: ${{ github.sha }}
+        release_name: ${{ github.event.pull_request.title }}
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
