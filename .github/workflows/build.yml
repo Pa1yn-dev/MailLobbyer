@@ -40,13 +40,13 @@ jobs:
 
     - name: Create zip file
       run: |
-        zip -r ML-OSX-$(date +'%Y%m%d').zip src/MailLobbyer/bin/desktop
+        zip -r ML-OSX-${{ GitHub.sha }}.zip src/MailLobbyer/bin/desktop
 
     - name: Upload artifact to GitHub Releases
       uses: softprops/action-gh-release@v1
       with:
         files: |
-          ML-OSX-$(date +'%Y%m%d').zip
+          ML-OSX-${{ GitHub.sha }}.zip
         tag_name: ${{ github.sha }}
         release_name: ${{ github.event.pull_request.title }}
       env:
