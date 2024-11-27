@@ -35,7 +35,7 @@ jobs:
       working-directory: src/MailLobbyer
 
     - name: Build Electron.NET app for OSX
-      run: electronize build /target osx
+      run: electronize build /target osx --arch x64,arm64
       working-directory: src/MailLobbyer
 
     - name: Create zip file
