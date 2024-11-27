@@ -11,7 +11,7 @@ on:
 jobs:
   build-OSX:
     if: github.event.pull_request.merged == true || github.event_name == 'workflow_dispatch'
-    runs-on: macos-13
+    runs-on: macos-latest
 
     steps:
     - name: Checkout repository
