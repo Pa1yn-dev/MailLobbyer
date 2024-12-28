@@ -5,13 +5,13 @@
   },
   "name": "MailLobbyer",
   "author": "Peter Hamilton",
-  "singleInstance": false,
+  "singleInstance": true,
   "environment": "Production",
   "build": {
     "appId": "com.MailLobbyer.app",
     "productName": "MailLobbyer",
     "copyright": "Copyright © 2024",
-    "buildVersion": "1.0.0",
+    "buildVersion": "1.2.2",
     "compression": "maximum",
     "directories": {
       "output": "../../../bin/Desktop"
@@ -30,6 +30,7 @@
         "filter": [ "**/*" ]
       },
       "**/*"
-    ]
+    ],
+    "icon": "./wwwroot/favicon.png"
   }
 }

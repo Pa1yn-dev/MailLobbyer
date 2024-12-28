@@ -54,7 +54,7 @@ jobs:
         draft: false
         prerelease: false
         release_name: ${{ github.event.pull_request.title }}
-        tag_name: v1.2.0
+        tag_name: v1.2.2
         body: ${{ steps.pr_body.outputs.body }}
       env:
         GITHUB_TOKEN: ${{ secrets.ACTION }}
