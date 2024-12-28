@@ -192,7 +192,7 @@
 
     private void FileUploadHandler(InputFileChangeEventArgs e)
     {
-        selectedfiles = e.GetMultipleFiles().ToList();
+        selectedfiles.AddRange(e.GetMultipleFiles());
     }
 
     private void RemoveFile(IBrowserFile file)
@@ -205,8 +205,15 @@
     {
         foreach (IBrowserFile file in selectedfiles)
         {
-            await csvhubconnection.SendAsync("CSVFilesToUpload", file);
+            using (var memoryStream = new MemoryStream())
+            {
+                await file.OpenReadStream().CopyToAsync(memoryStream);
+                byte[] fileBytes = memoryStream.ToArray();
+                
+                await csvhubconnection.SendAsync("CSVFilesToUpload", file.Name, fileBytes);
+            }
         }
+
 
         await JSRuntime.InvokeVoidAsync("eval","location.reload(true)");
         
