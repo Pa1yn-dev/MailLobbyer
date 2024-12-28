@@ -192,7 +192,7 @@
 
     private void FileUploadHandler(InputFileChangeEventArgs e)
     {
-        selectedfiles = e.GetMultipleFiles().ToList();
+        selectedfiles.AddRange(e.GetMultipleFiles());
     }
 
     private void RemoveFile(IBrowserFile file)
