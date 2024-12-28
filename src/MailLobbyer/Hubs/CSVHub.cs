@@ -39,7 +39,7 @@ public class CSVHub : Hub
         }
     }
 
-    public async Task CSVFilesToUpload(IBrowserFile file)
+    public async Task CSVFilesToUpload(String fileName, byte[] fileBytes)
     {
         string directorypath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments), "MailLobbyer");
 
@@ -48,11 +48,15 @@ public class CSVHub : Hub
             Directory.CreateDirectory(directorypath);
         }
 
-        string filepath = Path.Combine(directorypath, file.Name);
-        
-        using (FileStream fs = new FileStream(filepath, FileMode.Create))
+        try
         {
-            await file.OpenReadStream().CopyToAsync(fs);
+            string filepath = Path.Combine(directorypath, fileName);
+            await File.WriteAllBytesAsync(filepath, fileBytes);
+            Console.WriteLine("File saved successfully.");
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine($"Error saving file: {ex.Message}");
         }
         
     }
