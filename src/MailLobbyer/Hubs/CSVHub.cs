@@ -42,8 +42,15 @@ public class CSVHub : Hub
     public async Task CSVFilesToUpload(IBrowserFile file)
     {
         string directorypath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments), "MailLobbyer");
+
+        if (!Directory.Exists(directorypath))
+        {
+            Directory.CreateDirectory(directorypath);
+        }
+
+        string filepath = Path.Combine(directorypath, file.Name);
         
-        using (FileStream fs = new FileStream(directorypath, FileMode.Create))
+        using (FileStream fs = new FileStream(filepath, FileMode.Create))
         {
             await file.OpenReadStream().CopyToAsync(fs);
         }
