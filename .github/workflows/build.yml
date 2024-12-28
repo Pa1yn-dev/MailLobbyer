@@ -1,0 +1,70 @@
+name: Build and Release MailLobbyer for OSX
+
+on:
+  pull_request:
+    types:
+      - closed
+    branches:
+      - main
+  workflow_dispatch:
+
+jobs:
+  build-OSX:
+    if: github.event.pull_request.merged == true || github.event_name == 'workflow_dispatch'
+    runs-on: macos-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v2
+
+    - name: Set up .NET Core
+      uses: actions/setup-dotnet@v2
+      with:
+        dotnet-version: '6.0'
+
+    - name: Install ElectronNET.CLI
+      run: dotnet tool install ElectronNET.CLI -g
+
+    - name: Install Node.js
+      uses: actions/setup-node@v2
+      with:
+        node-version: '22'
+
+    - name: Restore NuGet packages
+      run: dotnet restore
+      working-directory: src/MailLobbyer
+
+    - name: Build Electron.NET app for OSX
+      run: electronize build /target osx --arch x64,arm64
+      working-directory: src/MailLobbyer
+
+    - name: Create zip file
+      run: |
+        zip -r ML-OSX-${{ github.sha }}.zip src/MailLobbyer/bin/desktop
+
+    - name: Get PR Body
+      id: pr_body
+      if: github.event_name == 'pull_request'
+      run: echo "::set-output name=body::${{ github.event.pull_request.body }}"
+
+    - name: Create Release
+      uses: actions/create-release@v1
+      id: create_release
+      with:
+        draft: false
+        prerelease: false
+        release_name: ${{ github.event.pull_request.title }}
+        tag_name: v1.2.2
+        body: ${{ steps.pr_body.outputs.body }}
+      env:
+        GITHUB_TOKEN: ${{ secrets.ACTION }}
+
+    - name: Upload artifact to GitHub Releases
+      uses: actions/upload-release-asset@v1
+      with:
+        upload_url: ${{ steps.create_release.outputs.upload_url }}
+        asset_path: ML-OSX-${{ github.sha }}.zip
+        asset_name: ML-OSX-${{ steps.version.outputs.version }}.zip
+        asset_content_type: application/zip
+      env:
+        GITHUB_TOKEN: ${{ secrets.ACTION }}
