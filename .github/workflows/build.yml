@@ -11,7 +11,7 @@ on:
 jobs:
   build-OSX:
     if: github.event.pull_request.merged == true || github.event_name == 'workflow_dispatch'
-    runs-on: macos-latest
+    runs-on: macos-13
 
     steps:
     - name: Checkout repository
@@ -35,13 +35,12 @@ jobs:
       working-directory: src/MailLobbyer
 
     - name: Build Electron.NET app for OSX
-      run: electronize build /target osx --arch x64,arm64
+      run: electronize build /target osx
       working-directory: src/MailLobbyer
 
     - name: Create zip file
       run: |
         zip -r ML-OSX-${{ github.sha }}.zip src/MailLobbyer/bin/desktop
-
     - name: Get PR Body
       id: pr_body
       if: github.event_name == 'pull_request'
@@ -54,7 +53,7 @@ jobs:
         draft: false
         prerelease: false
         release_name: ${{ github.event.pull_request.title }}
-        tag_name: v1.2.2
+        tag_name: v1.2.3
         body: ${{ steps.pr_body.outputs.body }}
       env:
         GITHUB_TOKEN: ${{ secrets.ACTION }}
