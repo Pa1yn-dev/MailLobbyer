@@ -16,6 +16,16 @@
     "directories": {
       "output": "../../../bin/Desktop"
     },
+    "linux": {
+      "icon": "../../../wwwroot/favicon.png"
+      
+    },
+    "win": {
+      "icon": "../../../wwwroot/favicon.png"
+    },
+    "mac": {
+      "icon": "../../../wwwroot/favicon.png"
+    },
     "extraResources": [
       {
         "from": "./bin",
@@ -30,7 +40,6 @@
         "filter": [ "**/*" ]
       },
       "**/*"
-    ],
-    "icon": "./wwwroot/favicon.png"
+    ]
   }
 }
